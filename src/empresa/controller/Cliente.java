@@ -71,8 +71,8 @@ public class Cliente {
         return nome;
     }
     
-    public void save() throws SQLException{
-        ClienteDAO.create(this);
+    public boolean save() throws SQLException{
+       return ClienteDAO.create(this);
     }
     
     public void update() throws SQLException {

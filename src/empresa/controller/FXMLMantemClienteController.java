@@ -6,12 +6,15 @@
 package empresa.controller;
 
 import empresa.model.ClienteDAO;
+
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -26,7 +29,7 @@ public class FXMLMantemClienteController implements Initializable {
     private Cliente c;
     @FXML
     private AnchorPane anchorPane;
-    
+
     @FXML
     private TextField textFieldNome;
 
@@ -47,7 +50,7 @@ public class FXMLMantemClienteController implements Initializable {
 
     @FXML
     private ComboBox<String> comboPais;
-    
+
     @FXML
     private ComboBox<Cliente> comboBoxClientes;
 
@@ -67,14 +70,14 @@ public class FXMLMantemClienteController implements Initializable {
         comboPais.getItems().add("Brasil");
         comboPais.getItems().add("Estados Unidos");
         comboPais.getItems().add("Canadá");
-        
+
         List<Cliente> l = ClienteDAO.retreaveAll();
         comboBoxClientes.getItems().addAll(l);
     }
-    
-    public void load(){
+
+    public void load() {
         c = comboBoxClientes.getValue();
-        
+
         textFieldNome.setText(c.getNome());
         textFieldCPF.setText(c.getCpf());
         textFieldEndereco.setText(c.getEndereco().getLogradouro());
@@ -98,13 +101,13 @@ public class FXMLMantemClienteController implements Initializable {
 
     public void salvar() throws SQLException {
         boolean insert = false;
-        
-        if (c == null){
+
+        if (c == null) {
             c = new Cliente();
             e = new Endereco();
             insert = true;
         }
-        
+
         e.setBairro(textFieldBairro.getText());
         e.setCep(textFieldCEP.getText());
         e.setCidade(textFieldCidade.getText());
@@ -115,11 +118,25 @@ public class FXMLMantemClienteController implements Initializable {
         c.setNome(textFieldNome.getText());
         c.setCpf(textFieldCPF.getText());
         c.setEndereco(e);
-        
-        if (insert){
-           c.save();
+
+        if (insert) {
+            try {
+                if (c.save()) {
+                    Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
+                    dialogoInfo.setTitle("Sucesso!");
+                    dialogoInfo.setHeaderText("Cliente cadastrado com sucesso!");
+                    dialogoInfo.setContentText("ID do cliente cadastrado: " + c.getPk_cliente());
+                    dialogoInfo.showAndWait();
+                }
+            } catch (Exception e) {
+                Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
+                dialogoInfo.setTitle("Erro");
+                dialogoInfo.setHeaderText("Um erro aconteceu");
+                dialogoInfo.setContentText(e.getMessage());
+                dialogoInfo.showAndWait();
+            }
         } else {
-           c.update();
+            c.update();
         }
         limpaTela();
     }
