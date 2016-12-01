@@ -24,11 +24,11 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("view/FXMLTelaPrincipal.fxml"));
         
         Scene scene = new Scene(root);
-        
+
         stage.setScene(scene);
         stage.show();
         
-        stage.setTitle("EmpresaFX-TOTAL 1.0");        
+        stage.setTitle("Gerenciamento de empresa v1.0");
         Image icone = new Image(
                 getClass().
                    getResourceAsStream(

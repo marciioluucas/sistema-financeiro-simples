@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class EnderecoDAO {
     
-    public static int create(Endereco e){
+    public static boolean create(Endereco e){
         try {
             Statement stm =
                     BancoDados.createConnection().
@@ -45,11 +45,11 @@ public class EnderecoDAO {
             int key = rs.getInt(1);
             e.setPk_endereco(key);
             
-            return key;
+            return true;
         } catch (SQLException ex) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return 0;
+        return false;
     }
     
     public static Endereco retreave(int pkEndereco){

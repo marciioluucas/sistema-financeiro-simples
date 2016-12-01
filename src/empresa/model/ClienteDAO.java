@@ -23,28 +23,36 @@ public class ClienteDAO {
     private ClienteDAO() {
     }
     
-    public static int create(Cliente c) throws SQLException{
+    public static boolean create(Cliente c) throws SQLException{
 
+        try{
             Statement stm =
                     BancoDados.createConnection().
                             createStatement();
-                        //inset into clientes (nome, cpf) values ('joao','999')
 
-            
-            String sql = 
-              "insert into clientes (nome, cpf) values ('" +
-                    c.getNome() + "','" +
-                    c.getCpf() +"')";
-                                
+
+            String sql =
+                    "insert into clientes (nome, cpf) values ('" +
+                            c.getNome() + "','" +
+                            c.getCpf() +"')";
+
             stm.execute(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stm.getGeneratedKeys();
             rs.next();
             int key = rs.getInt(1);
             c.setPk_cliente(key);
-            
-            EnderecoDAO.create(c.getEndereco());
-            
-            return key;
+            if(EnderecoDAO.create(c.getEndereco())){
+                return true;
+            }else{
+                throw new Exception("Erro ao criar endereço.");
+            }
+
+        }catch (SQLException ex) {
+            throw new SQLException("Erro na query: " + ex.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
     }
     
     public static Cliente retreave(int pk_cliente){
