@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.60" fx:controller="empresa.controller.FXMLMantemClienteController">
+   <children>
+      <Button layoutX="458.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+      <Accordion prefHeight="280.0" prefWidth="600.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <panes>
+            <TitledPane animated="false" prefHeight="175.0" prefWidth="600.0" text="Dados Gerais">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextField fx:id="textFieldNome" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="575.0" promptText="Nome" />
+                        <TextField fx:id="textFieldCPF" layoutX="14.0" layoutY="55.0" prefHeight="25.0" prefWidth="150.0" promptText="CPF" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" prefHeight="243.0" prefWidth="600.0" text="Endereço">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="226.0" prefWidth="598.0">
+                     <children>
+                        <TextField fx:id="textFieldEndereco" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="572.0" promptText="Endereço">
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </TextField>
+                        <TextField fx:id="textFieldBairro" layoutX="14.0" layoutY="49.0" promptText="Bairro" />
+                        <ComboBox fx:id="comboBoxEstado" layoutX="14.0" layoutY="125.0" prefWidth="150.0" promptText="Estado" />
+                        <TextField fx:id="textFieldCidade" layoutX="14.0" layoutY="86.0" prefHeight="25.0" prefWidth="257.0" promptText="Cidade" />
+                        <ComboBox fx:id="comboPais" layoutX="14.0" layoutY="162.0" prefWidth="150.0" promptText="Pais" />
+                        <TextField fx:id="textFieldCEP" layoutX="15.0" layoutY="200.0" promptText="CEP" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+         </panes>
+      </Accordion>
+      <Button layoutX="515.0" layoutY="345.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Button layoutX="395.0" layoutY="345.0" mnemonicParsing="false" onAction="#limpaTela" text="Limpar" />
+      <ComboBox fx:id="comboBoxClientes" layoutX="14.0" layoutY="292.0" prefHeight="25.0" prefWidth="523.0" promptText="Clientes" />
+      <Button layoutX="546.0" layoutY="292.0" mnemonicParsing="false" onAction="#load" text="Load" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="PostgreSQL - empresa@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.6">
+    <database id="1" name="empresa">
+      <object-id>24576</object-id>
+      <visible>1</visible>
+    </database>
+    <database id="2" name="postgres">
+      <object-id>12401</object-id>
+    </database>
+    <schema id="3" parent="1" name="public">
+      <object-id>2200</object-id>
+      <visible>1</visible>
+      <introspection-state-number>663</introspection-state-number>
+      <introspection-timestamp>2016-12-01.10:55:50.175</introspection-timestamp>
+    </schema>
+    <schema id="4" parent="1" name="pg_catalog">
+      <object-id>11</object-id>
+    </schema>
+    <schema id="5" parent="1" name="pg_toast">
+      <object-id>99</object-id>
+    </schema>
+    <schema id="6" parent="1" name="pg_temp_1">
+      <object-id>11848</object-id>
+    </schema>
+    <schema id="7" parent="1" name="pg_toast_temp_1">
+      <object-id>11849</object-id>
+    </schema>
+    <schema id="8" parent="1" name="information_schema">
+      <object-id>12113</object-id>
+    </schema>
+    <sequence id="9" parent="3" name="cargos_pk_cargo_seq">
+      <object-id>24581</object-id>
+      <state-number>548</state-number>
+    </sequence>
+    <sequence id="10" parent="3" name="clientes_enderecos_pk_enderenco_seq">
+      <object-id>24589</object-id>
+      <state-number>552</state-number>
+    </sequence>
+    <sequence id="11" parent="3" name="clientes_pk_cliente_seq">
+      <object-id>24591</object-id>
+      <state-number>554</state-number>
+    </sequence>
+    <sequence id="12" parent="3" name="compras_itens_pk_item_seq">
+      <object-id>24599</object-id>
+      <state-number>558</state-number>
+    </sequence>
+    <sequence id="13" parent="3" name="compras_pk_compra_seq">
+      <object-id>24601</object-id>
+      <state-number>560</state-number>
+    </sequence>
+    <sequence id="14" parent="3" name="financeiros_entradas_pk_financeiro_seq">
+      <object-id>24606</object-id>
+      <state-number>563</state-number>
+    </sequence>
+    <sequence id="15" parent="3" name="financeiros_saidas_pk_financeiro_seq">
+      <object-id>24611</object-id>
+      <state-number>566</state-number>
+    </sequence>
+    <sequence id="16" parent="3" name="fornecedores_enderecos_pk_endereco_seq">
+      <object-id>24619</object-id>
+      <state-number>570</state-number>
+    </sequence>
+    <sequence id="17" parent="3" name="fornecedores_pk_fornecedor_seq">
+      <object-id>24621</object-id>
+      <state-number>572</state-number>
+    </sequence>
+    <sequence id="18" parent="3" name="funcionarios_enderecos_pk_endereco_seq">
+      <object-id>24629</object-id>
+      <state-number>576</state-number>
+    </sequence>
+    <sequence id="19" parent="3" name="funcionarios_pk_funcionario_seq">
+      <object-id>24631</object-id>
+      <state-number>578</state-number>
+    </sequence>
+    <sequence id="20" parent="3" name="log_pk_log_seq">
+      <object-id>24636</object-id>
+      <state-number>581</state-number>
+    </sequence>
+    <sequence id="21" parent="3" name="produtos_pk_produto_seq">
+      <object-id>24641</object-id>
+      <state-number>584</state-number>
+    </sequence>
+    <sequence id="22" parent="3" name="vendas_itens_pk_item_seq">
+      <object-id>24649</object-id>
+      <state-number>588</state-number>
+    </sequence>
+    <sequence id="23" parent="3" name="vendas_pk_venda_seq">
+      <object-id>24651</object-id>
+      <state-number>590</state-number>
+    </sequence>
+    <table id="24" parent="3" name="cargos">
+      <object-id>24578</object-id>
+      <state-number>651</state-number>
+    </table>
+    <table id="25" parent="3" name="clientes">
+      <object-id>24583</object-id>
+      <state-number>661</state-number>
+    </table>
+    <table id="26" parent="3" name="clientes_enderecos">
+      <object-id>24586</object-id>
+      <state-number>652</state-number>
+    </table>
+    <table id="27" parent="3" name="compras">
+      <object-id>24593</object-id>
+      <state-number>656</state-number>
+    </table>
+    <table id="28" parent="3" name="compras_itens">
+      <object-id>24596</object-id>
+      <state-number>659</state-number>
+    </table>
+    <table id="29" parent="3" name="financeiros_entradas">
+      <object-id>24603</object-id>
+      <state-number>655</state-number>
+    </table>
+    <table id="30" parent="3" name="financeiros_saidas">
+      <object-id>24608</object-id>
+      <state-number>656</state-number>
+    </table>
+    <table id="31" parent="3" name="fornecedores">
+      <object-id>24613</object-id>
+      <state-number>657</state-number>
+    </table>
+    <table id="32" parent="3" name="fornecedores_enderecos">
+      <object-id>24616</object-id>
+      <state-number>657</state-number>
+    </table>
+    <table id="33" parent="3" name="funcionarios">
+      <object-id>24623</object-id>
+      <state-number>662</state-number>
+    </table>
+    <table id="34" parent="3" name="funcionarios_enderecos">
+      <object-id>24626</object-id>
+      <state-number>658</state-number>
+    </table>
+    <table id="35" parent="3" name="log">
+      <object-id>24633</object-id>
+      <state-number>580</state-number>
+    </table>
+    <table id="36" parent="3" name="produtos">
+      <object-id>24638</object-id>
+      <state-number>660</state-number>
+    </table>
+    <table id="37" parent="3" name="vendas">
+      <object-id>24643</object-id>
+      <state-number>663</state-number>
+    </table>
+    <table id="38" parent="3" name="vendas_itens">
+      <object-id>24646</object-id>
+      <state-number>663</state-number>
+    </table>
+    <routine id="39" parent="3" name="grava_log">
+      <object-id>24577</object-id>
+      <state-number>546</state-number>
+      <routine-kind>FUNCTION</routine-kind>
+    </routine>
+    <column id="40" parent="24" name="pk_cargo">
+      <state-number>592</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;cargos_pk_cargo_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="41" parent="24" name="nome">
+      <state-number>547</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="42" parent="24" name="descricao">
+      <state-number>547</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(80)|0</data-type>
+    </column>
+    <index id="43" parent="24" name="cargos_pkey">
+      <object-id>24668</object-id>
+      <columns>pk_cargo</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="44" parent="24" name="cargos_pkey">
+      <object-id>24669</object-id>
+      <columns>pk_cargo</columns>
+      <underlying-index>cargos_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="45" parent="25" name="pk_cliente">
+      <state-number>593</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;clientes_pk_cliente_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="46" parent="25" name="nome">
+      <state-number>550</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(80)|0</data-type>
+    </column>
+    <column id="47" parent="25" name="cpf">
+      <state-number>550</state-number>
+      <data-type>char(11)|0</data-type>
+    </column>
+    <index id="48" parent="25" name="clientes_pkey">
+      <object-id>24674</object-id>
+      <columns>pk_cliente</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="49" parent="25" name="clientes_cpf_key">
+      <object-id>24670</object-id>
+      <columns>cpf</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="50" parent="25" name="clientes_pkey">
+      <object-id>24675</object-id>
+      <columns>pk_cliente</columns>
+      <underlying-index>clientes_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <key id="51" parent="25" name="clientes_cpf_key">
+      <object-id>24671</object-id>
+      <columns>cpf</columns>
+      <underlying-index>clientes_cpf_key</underlying-index>
+    </key>
+    <column id="52" parent="26" name="pk_enderenco">
+      <state-number>594</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;clientes_enderecos_pk_enderenco_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="53" parent="26" name="fk_cliente">
+      <state-number>551</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="54" parent="26" name="logradouro">
+      <state-number>551</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="55" parent="26" name="bairro">
+      <state-number>551</state-number>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="56" parent="26" name="cidade">
+      <state-number>551</state-number>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="57" parent="26" name="estado">
+      <state-number>551</state-number>
+      <data-type>char(2)|0</data-type>
+    </column>
+    <column id="58" parent="26" name="pais">
+      <state-number>551</state-number>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="59" parent="26" name="cep">
+      <state-number>551</state-number>
+      <data-type>char(8)|0</data-type>
+    </column>
+    <index id="60" parent="26" name="clientes_enderecos_pkey">
+      <object-id>24672</object-id>
+      <columns>pk_enderenco</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="61" parent="26" name="clientes_enderecos_pkey">
+      <object-id>24673</object-id>
+      <columns>pk_enderenco</columns>
+      <underlying-index>clientes_enderecos_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="62" parent="26" name="clie_ender">
+      <object-id>24711</object-id>
+      <columns>fk_cliente</columns>
+      <ref-key>~.clientes.clientes_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="63" parent="27" name="pk_compra">
+      <state-number>595</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;compras_pk_compra_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="64" parent="27" name="fk_fornecedor">
+      <state-number>556</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="65" parent="27" name="numero">
+      <state-number>556</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="66" parent="27" name="datas">
+      <state-number>556</state-number>
+      <data-type>date|0</data-type>
+    </column>
+    <index id="67" parent="27" name="compras_pkey">
+      <object-id>24678</object-id>
+      <columns>pk_compra</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="68" parent="27" name="compras_pkey">
+      <object-id>24679</object-id>
+      <columns>pk_compra</columns>
+      <underlying-index>compras_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="69" parent="27" name="compra_fornecedor">
+      <object-id>24721</object-id>
+      <columns>fk_fornecedor</columns>
+      <ref-key>~.fornecedores.fornecedores_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="70" parent="28" name="pk_item">
+      <state-number>596</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;compras_itens_pk_item_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="71" parent="28" name="fk_compra">
+      <state-number>557</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="72" parent="28" name="fk_produto">
+      <state-number>557</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="73" parent="28" name="qtd">
+      <state-number>557</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="74" parent="28" name="valor_unitario">
+      <state-number>557</state-number>
+      <data-type>numeric(10,2)|0</data-type>
+    </column>
+    <index id="75" parent="28" name="compras_itens_pkey">
+      <object-id>24676</object-id>
+      <columns>pk_item</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="76" parent="28" name="compras_itens_pkey">
+      <object-id>24677</object-id>
+      <columns>pk_item</columns>
+      <underlying-index>compras_itens_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="77" parent="28" name="compra_compras_itens">
+      <object-id>24716</object-id>
+      <columns>fk_compra</columns>
+      <ref-key>~.compras.compras_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="78" parent="28" name="produto_compras_itens">
+      <object-id>24746</object-id>
+      <columns>fk_produto</columns>
+      <ref-key>~.produtos.produtos_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="79" parent="29" name="pk_financeiro">
+      <state-number>597</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;financeiros_entradas_pk_financeiro_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="80" parent="29" name="fk_venda">
+      <state-number>562</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="81" parent="29" name="data_emissao">
+      <state-number>562</state-number>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="82" parent="29" name="data_vencimento">
+      <state-number>562</state-number>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="83" parent="29" name="data_baixa">
+      <state-number>562</state-number>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="84" parent="29" name="valor">
+      <state-number>562</state-number>
+      <data-type>numeric(10,2)|0</data-type>
+    </column>
+    <index id="85" parent="29" name="financeiros_entradas_pkey">
+      <object-id>24680</object-id>
+      <columns>pk_financeiro</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="86" parent="29" name="financeiros_entradas_pkey">
+      <object-id>24681</object-id>
+      <columns>pk_financeiro</columns>
+      <underlying-index>financeiros_entradas_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="87" parent="29" name="finacei_entradas_vendas">
+      <object-id>24726</object-id>
+      <columns>fk_venda</columns>
+      <ref-key>~.vendas.vendas_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="88" parent="30" name="pk_financeiro">
+      <state-number>598</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;financeiros_saidas_pk_financeiro_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="89" parent="30" name="fk_compra">
+      <state-number>565</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="90" parent="30" name="data_emissao">
+      <state-number>565</state-number>
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="91" parent="30" name="data_vencimento">
+      <state-number>565</state-number>
+      <mandatory>1</mandatory>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="92" parent="30" name="data_baixa">
+      <state-number>565</state-number>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="93" parent="30" name="valor">
+      <state-number>565</state-number>
+      <data-type>numeric(10,2)|0</data-type>
+    </column>
+    <index id="94" parent="30" name="financeiros_saidas_pkey">
+      <object-id>24682</object-id>
+      <columns>pk_financeiro</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="95" parent="30" name="financeiros_saidas_pkey">
+      <object-id>24683</object-id>
+      <columns>pk_financeiro</columns>
+      <underlying-index>financeiros_saidas_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="96" parent="30" name="finacei_saidas_compras">
+      <object-id>24731</object-id>
+      <columns>fk_compra</columns>
+      <ref-key>~.compras.compras_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="97" parent="31" name="pk_fornecedor">
+      <state-number>599</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;fornecedores_pk_fornecedor_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="98" parent="31" name="nome">
+      <state-number>568</state-number>
+      <data-type>varchar(80)|0</data-type>
+    </column>
+    <column id="99" parent="31" name="cpf">
+      <state-number>568</state-number>
+      <mandatory>1</mandatory>
+      <data-type>char(11)|0</data-type>
+    </column>
+    <index id="100" parent="31" name="fornecedores_pkey">
+      <object-id>24688</object-id>
+      <columns>pk_fornecedor</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="101" parent="31" name="fornecedores_cpf_key">
+      <object-id>24684</object-id>
+      <columns>cpf</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="102" parent="31" name="fornecedores_pkey">
+      <object-id>24689</object-id>
+      <columns>pk_fornecedor</columns>
+      <underlying-index>fornecedores_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <key id="103" parent="31" name="fornecedores_cpf_key">
+      <object-id>24685</object-id>
+      <columns>cpf</columns>
+      <underlying-index>fornecedores_cpf_key</underlying-index>
+    </key>
+    <column id="104" parent="32" name="pk_endereco">
+      <state-number>600</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;fornecedores_enderecos_pk_endereco_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="105" parent="32" name="fk_fornecedor">
+      <state-number>569</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="106" parent="32" name="logradouro">
+      <state-number>569</state-number>
+      <data-type>varchar(80)|0</data-type>
+    </column>
+    <column id="107" parent="32" name="bairro">
+      <state-number>569</state-number>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="108" parent="32" name="cidade">
+      <state-number>569</state-number>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="109" parent="32" name="estado">
+      <state-number>569</state-number>
+      <data-type>char(2)|0</data-type>
+    </column>
+    <column id="110" parent="32" name="pais">
+      <state-number>569</state-number>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="111" parent="32" name="cep">
+      <state-number>569</state-number>
+      <data-type>char(11)|0</data-type>
+    </column>
+    <index id="112" parent="32" name="fornecedores_enderecos_pkey">
+      <object-id>24686</object-id>
+      <columns>pk_endereco</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="113" parent="32" name="fornecedores_enderecos_pkey">
+      <object-id>24687</object-id>
+      <columns>pk_endereco</columns>
+      <underlying-index>fornecedores_enderecos_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="114" parent="32" name="forne_ender_fornece">
+      <object-id>24736</object-id>
+      <columns>fk_fornecedor</columns>
+      <ref-key>~.fornecedores.fornecedores_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="115" parent="33" name="pk_funcionario">
+      <state-number>601</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;funcionarios_pk_funcionario_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="116" parent="33" name="fk_cargo">
+      <state-number>574</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="117" parent="33" name="nome">
+      <state-number>574</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(80)|0</data-type>
+    </column>
+    <column id="118" parent="33" name="cpf">
+      <state-number>574</state-number>
+      <mandatory>1</mandatory>
+      <data-type>char(11)|0</data-type>
+    </column>
+    <index id="119" parent="33" name="funcionarios_pkey">
+      <object-id>24694</object-id>
+      <columns>pk_funcionario</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="120" parent="33" name="funcionarios_cpf_key">
+      <object-id>24690</object-id>
+      <columns>cpf</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="121" parent="33" name="funcionarios_pkey">
+      <object-id>24695</object-id>
+      <columns>pk_funcionario</columns>
+      <underlying-index>funcionarios_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <key id="122" parent="33" name="funcionarios_cpf_key">
+      <object-id>24691</object-id>
+      <columns>cpf</columns>
+      <underlying-index>funcionarios_cpf_key</underlying-index>
+    </key>
+    <foreign-key id="123" parent="33" name="carg_fun">
+      <object-id>24706</object-id>
+      <columns>fk_cargo</columns>
+      <ref-key>~.cargos.cargos_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="124" parent="34" name="pk_endereco">
+      <state-number>602</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;funcionarios_enderecos_pk_endereco_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="125" parent="34" name="fk_funcionario">
+      <state-number>575</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="126" parent="34" name="logadouro">
+      <state-number>575</state-number>
+      <data-type>varchar(80)|0</data-type>
+    </column>
+    <column id="127" parent="34" name="bairro">
+      <state-number>575</state-number>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="128" parent="34" name="cidade">
+      <state-number>575</state-number>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="129" parent="34" name="estado">
+      <state-number>575</state-number>
+      <data-type>char(2)|0</data-type>
+    </column>
+    <column id="130" parent="34" name="pais">
+      <state-number>575</state-number>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="131" parent="34" name="cep">
+      <state-number>575</state-number>
+      <data-type>char(10)|0</data-type>
+    </column>
+    <index id="132" parent="34" name="funcionarios_enderecos_pkey">
+      <object-id>24692</object-id>
+      <columns>pk_endereco</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="133" parent="34" name="funcionarios_enderecos_pkey">
+      <object-id>24693</object-id>
+      <columns>pk_endereco</columns>
+      <underlying-index>funcionarios_enderecos_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="134" parent="34" name="func_ender">
+      <object-id>24741</object-id>
+      <columns>fk_funcionario</columns>
+      <ref-key>~.funcionarios.funcionarios_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="135" parent="35" name="pk_log">
+      <state-number>603</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;log_pk_log_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="136" parent="35" name="data">
+      <state-number>580</state-number>
+      <data-type>date|0</data-type>
+    </column>
+    <column id="137" parent="35" name="usuario">
+      <state-number>580</state-number>
+      <data-type>varchar(40)|0</data-type>
+    </column>
+    <column id="138" parent="35" name="descri">
+      <state-number>580</state-number>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <index id="139" parent="35" name="log_pkey">
+      <object-id>24696</object-id>
+      <columns>pk_log</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="140" parent="35" name="log_pkey">
+      <object-id>24697</object-id>
+      <columns>pk_log</columns>
+      <underlying-index>log_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="141" parent="36" name="pk_produto">
+      <state-number>604</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;produtos_pk_produto_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="142" parent="36" name="nome">
+      <state-number>583</state-number>
+      <mandatory>1</mandatory>
+      <data-type>varchar(80)|0</data-type>
+    </column>
+    <column id="143" parent="36" name="estoque_minimo">
+      <state-number>583</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="144" parent="36" name="qtd_estoque">
+      <state-number>583</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+    </column>
+    <index id="145" parent="36" name="produtos_pkey">
+      <object-id>24698</object-id>
+      <columns>pk_produto</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="146" parent="36" name="produtos_pkey">
+      <object-id>24699</object-id>
+      <columns>pk_produto</columns>
+      <underlying-index>produtos_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <column id="147" parent="37" name="pk_venda">
+      <state-number>605</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;vendas_pk_venda_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="148" parent="37" name="fk_cliente">
+      <state-number>586</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="149" parent="37" name="fk_vendedor">
+      <state-number>586</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="150" parent="37" name="numero">
+      <state-number>586</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="151" parent="37" name="datas">
+      <state-number>586</state-number>
+      <data-type>date|0</data-type>
+    </column>
+    <index id="152" parent="37" name="vendas_pkey">
+      <object-id>24702</object-id>
+      <columns>pk_venda</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="153" parent="37" name="vendas_pkey">
+      <object-id>24703</object-id>
+      <columns>pk_venda</columns>
+      <underlying-index>vendas_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="154" parent="37" name="venda_cliente">
+      <object-id>24756</object-id>
+      <columns>fk_cliente</columns>
+      <ref-key>~.clientes.clientes_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="155" parent="37" name="venda_funcionario">
+      <object-id>24761</object-id>
+      <columns>fk_vendedor</columns>
+      <ref-key>~.funcionarios.funcionarios_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="156" parent="38" name="pk_item">
+      <state-number>606</state-number>
+      <mandatory>1</mandatory>
+      <data-type>integer|0</data-type>
+      <default-expression>nextval(&apos;vendas_itens_pk_item_seq&apos;::regclass)</default-expression>
+    </column>
+    <column id="157" parent="38" name="fk_venda">
+      <state-number>587</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="158" parent="38" name="fk_produto">
+      <state-number>587</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="159" parent="38" name="qtd">
+      <state-number>587</state-number>
+      <data-type>integer|0</data-type>
+    </column>
+    <column id="160" parent="38" name="valor_unitario">
+      <state-number>587</state-number>
+      <data-type>numeric(10,2)|0</data-type>
+    </column>
+    <index id="161" parent="38" name="vendas_itens_pkey">
+      <object-id>24700</object-id>
+      <columns>pk_item</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="162" parent="38" name="vendas_itens_pkey">
+      <object-id>24701</object-id>
+      <columns>pk_item</columns>
+      <underlying-index>vendas_itens_pkey</underlying-index>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="163" parent="38" name="venda_venda_item">
+      <object-id>24766</object-id>
+      <columns>fk_venda</columns>
+      <ref-key>~.vendas.vendas_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="164" parent="38" name="produto_venda_item">
+      <object-id>24751</object-id>
+      <columns>fk_produto</columns>
+      <ref-key>~.produtos.produtos_pkey</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <argument id="165" parent="39">
+      <direction>RETURN</direction>
+      <data-type>trigger|0</data-type>
+    </argument>
+  </database-model>
+</dataSource>
