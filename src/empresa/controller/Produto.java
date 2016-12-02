@@ -4,8 +4,10 @@ package empresa.controller;
  * Created by Marcio on 01/12/2016.
  */
 public class Produto {
-    private int pk_produto;
+
     private String nome;
+
+    private int pk_produto;
     private int estoque_minimo;
     private int qtd_estoque;
 

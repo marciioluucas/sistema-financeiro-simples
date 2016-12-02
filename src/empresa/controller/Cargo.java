@@ -9,6 +9,21 @@ public class Cargo {
     private String descricao;
 
 
+    public Cargo() {
+
+    }
+
+    public Cargo(String nome, String descricao) {
+        this.nome = nome;
+        this.descricao = descricao;
+    }
+
+    public Cargo(int pk_cargo, String nome, String descricao) {
+        this.pk_cargo = pk_cargo;
+        this.nome = nome;
+        this.descricao = descricao;
+    }
+
     public int getPk_cargo() {
         return pk_cargo;
     }
