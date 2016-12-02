@@ -16,11 +16,15 @@ public class Funcionario {
     }
 
     public Funcionario(int pk_funcionario, int fk_cargo, String nome, String cpf) {
-
+        this.pk_funcionario = pk_funcionario;
+        this.fk_cargo = fk_cargo;
+        this.nome = nome;
+        this.cpf = cpf;
     }
 
-    public Funcionario(String nome, String cpf){
-
+    public Funcionario(String nome, String cpf) {
+        this.nome = nome;
+        this.cpf = cpf;
     }
 
     public int getPk_funcionario() {

@@ -10,6 +10,21 @@ public class Fornecedor {
 
     private int pk_fornecedor;
 
+    public Fornecedor() {
+
+    }
+
+    public Fornecedor(int pk_fornecedor, String nome, String cpf) {
+        this.pk_fornecedor = pk_fornecedor;
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
+    public Fornecedor(String nome, String cpf) {
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
     public int getPk_fornecedor() {
         return pk_fornecedor;
     }
