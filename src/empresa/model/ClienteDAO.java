@@ -121,5 +121,12 @@ public class ClienteDAO {
         return false;
     }
 
+    public boolean delete(Cliente c ) throws SQLException {
+        Statement stm = BancoDados.createConnection().createStatement();
+        String sql = "delete from clientes where pk_cliente ="+c.getPk_cliente();
+        stm.execute(sql);
+        return false;
+    }
+
 
 }
