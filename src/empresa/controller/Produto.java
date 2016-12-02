@@ -11,6 +11,19 @@ public class Produto {
     private int estoque_minimo;
     private int qtd_estoque;
 
+    public Produto(String nome, int estoque_minimo, int qtd_estoque){
+        this.nome = nome;
+        this.estoque_minimo = estoque_minimo;
+        this.qtd_estoque = qtd_estoque;
+    }
+
+    public Produto(int pk_produto, String nome, int estoque_minimo, int qtd_estoque){
+        this.pk_produto = pk_produto;
+        this.nome = nome;
+        this.estoque_minimo = estoque_minimo;
+        this.qtd_estoque = qtd_estoque;
+    }
+
     public int getPk_produto() {
         return pk_produto;
     }
