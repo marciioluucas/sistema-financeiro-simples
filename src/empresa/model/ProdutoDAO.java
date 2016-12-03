@@ -93,8 +93,13 @@ public class ProdutoDAO {
         } catch (SQLException ex) {
             Logger.getLogger(ProdutoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-
         return null;
+    }
+
+    public boolean delete(Produto p ) throws SQLException {
+        Statement stm = BancoDados.createConnection().createStatement();
+        String sql = "delete from produtos where pk_produto ="+p.getPk_produto();
+        stm.execute(sql);
+        return false;
     }
 }
