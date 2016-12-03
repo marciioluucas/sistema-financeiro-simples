@@ -22,6 +22,13 @@ public class Funcionario {
         this.cpf = cpf;
     }
 
+    public Funcionario(int fk_cargo, String nome, String cpf) {
+
+        this.fk_cargo = fk_cargo;
+        this.nome = nome;
+        this.cpf = cpf;
+    }
+
     public Funcionario(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;

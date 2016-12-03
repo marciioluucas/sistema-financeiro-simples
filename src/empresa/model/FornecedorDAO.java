@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 /**
  * Created by Marcio on 01/12/2016.
  */
-class FornecedorDAO {
+public class FornecedorDAO {
 
     public FornecedorDAO() {
 
