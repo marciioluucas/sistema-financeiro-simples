@@ -153,11 +153,11 @@ public class EnderecoDAO {
             //update ... set logradouro = 'Rua tal', bairo = 'kk'
             String sql = "update clientes_enderecos set " +
                     "logradouro = '" + e.getLogradouro() +
-                    "',bairro = '" + e.getBairro() +
-                    "',cidade = '" + e.getCidade() +
-                    "',estado = '" + e.getEstado() +
-                    "',pais = '" + e.getPais() +
-                    "',cep = '" + e.getCep() +
+                    "', bairro = '" + e.getBairro() +
+                    "', cidade = '" + e.getCidade() +
+                    "', estado = '" + e.getEstado() +
+                    "', pais = '" + e.getPais() +
+                    "', cep = '" + e.getCep() +
                     "' where pk_enderenco="
                     + e.getPk_endereco();
             System.out.println(sql);

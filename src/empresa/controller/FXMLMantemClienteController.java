@@ -157,4 +157,23 @@ public class FXMLMantemClienteController implements Initializable {
         limpaTela();
     }
 
+    public void apagar() {
+        c = new Cliente();
+        Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
+        try {
+            if(c.delete()){
+                dialogoInfo.setTitle("Sucesso!");
+                dialogoInfo.setHeaderText("Cliente excluido com sucesso!");
+                dialogoInfo.setContentText("ID do cliente excluido: " + c.getPk_cliente());
+                dialogoInfo.showAndWait();
+            }
+
+        } catch(Exception e){
+            dialogoInfo.setTitle("Erro");
+            dialogoInfo.setHeaderText("Um erro aconteceu");
+            dialogoInfo.setContentText(e.getMessage());
+            dialogoInfo.showAndWait();
+        }
+    }
+
 }

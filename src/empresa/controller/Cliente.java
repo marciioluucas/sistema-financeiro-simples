@@ -78,5 +78,9 @@ public class Cliente {
     public boolean update() throws SQLException {
        return ClienteDAO.update(this);
     }
+
+    public boolean delete() throws  SQLException {
+        return ClienteDAO.delete(this);
+    }
 }
 

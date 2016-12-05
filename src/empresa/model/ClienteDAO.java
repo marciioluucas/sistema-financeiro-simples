@@ -41,12 +41,13 @@ public class ClienteDAO {
             rs.next();
             int key = rs.getInt(1);
             c.setPk_cliente(key);
-            if (EnderecoDAO.create(c.getEndereco())) {
+            try {
+                EnderecoDAO.create(c.getEndereco());
                 return true;
-            } else {
-                throw new Exception("Erro ao criar endereço.");
-            }
 
+            } catch (Exception e) {
+                throw new Exception("Erro ao criar endereço. " + e.getMessage());
+            }
         } catch (SQLException ex) {
             throw new SQLException("Erro na query: " + ex.getMessage());
         } catch (Exception e) {
@@ -112,21 +113,21 @@ public class ClienteDAO {
             Statement stm = BancoDados.createConnection().createStatement();
             String sql = "update clientes set nome='" + c.getNome() + "'," +
                     "cpf ='" + c.getCpf() + "' where pk_cliente = " + c.getPk_cliente();
-            if (stm.execute(sql) && EnderecoDAO.update(c.getEndereco())) {
-                return true;
-            }
+            EnderecoDAO.update(c.getEndereco());
+            stm.execute(sql);
+            return true;
         } catch (SQLException e) {
             throw new SQLException("Erro ao executar query: ", e.getCause());
         }
-        return false;
-    }
-    public boolean delete(Cliente c ) throws SQLException {
-        Statement stm = BancoDados.createConnection().createStatement();
-        String sql = "delete from clientes where pk_cliente ="+c.getPk_cliente();
-        stm.execute(sql);
-        return false;
     }
 
+    public static boolean delete(Cliente c) throws SQLException {
+        Statement stm = BancoDados.createConnection().createStatement();
+        String sql = "delete from clientes where pk_cliente =" + c.getPk_cliente();
+        stm.execute(sql);
+        EnderecoDAO.delete(c.getEndereco());
+        return true;
+    }
 
 
 }
