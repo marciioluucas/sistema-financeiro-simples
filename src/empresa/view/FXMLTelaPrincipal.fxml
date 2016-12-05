@@ -28,7 +28,7 @@
                 <MenuItem onAction="#abraTelaMantemCliente" text="Clientes" />
                   <MenuItem text="Cargos" />
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem text="Produtos" />
+                  <MenuItem onAction="#abraTelaMantemProduto" text="Produtos" />
               </items>
             </Menu>
          </menus>

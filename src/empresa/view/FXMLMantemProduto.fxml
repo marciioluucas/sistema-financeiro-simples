@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="empresa.controller.FXMLMantemProdutoController">
+   <children>
+      <Button layoutX="458.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+      <Button layoutX="515.0" layoutY="345.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Button layoutX="395.0" layoutY="345.0" mnemonicParsing="false" onAction="#limpaTela" text="Limpar" />
+      <ComboBox fx:id="comboBoxProdutos" layoutX="14.0" layoutY="292.0" prefHeight="25.0" prefWidth="431.0" promptText="Produtos" />
+      <Button layoutX="448.0" layoutY="292.0" mnemonicParsing="false" onAction="#load" prefHeight="25.0" prefWidth="62.0" text="Carregar" />
+      <Button layoutX="515.0" layoutY="292.0" mnemonicParsing="false" onAction="#apagar" prefHeight="25.0" prefWidth="62.0" text="Apagar" textFill="#d72727" />
+      <Label layoutX="25.0" layoutY="14.0" text="Cadastro">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="95.0" layoutY="19.0" text="de produtos" />
+      <Label layoutX="31.0" layoutY="57.0" text="Nome:" />
+      <TextField layoutX="81.0" layoutY="53.0" />
+   </children>
+</AnchorPane>

@@ -1,6 +1,7 @@
 package empresa.controller;
 
 import empresa.model.DAO;
+import empresa.model.ProdutoDAO;
 
 import java.sql.SQLException;
 
@@ -64,7 +65,27 @@ public class Produto {
         this.qtd_estoque = qtd_estoque;
     }
 
+    @Override
+    public String toString() {
+        return nome;
+    }
+
     public int contar() throws SQLException {
         return DAO.contar("produtos","");
     }
+
+    public boolean save() throws SQLException {
+     return ProdutoDAO.create(this);
+    }
+
+    public boolean update() throws SQLException {
+        return ProdutoDAO.update(this);
+    }
+
+    public boolean delete() throws SQLException {
+
+        return ProdutoDAO.delete(this);
+    }
+
+
 }
