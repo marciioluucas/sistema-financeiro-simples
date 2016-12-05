@@ -107,7 +107,7 @@ public class ClienteDAO {
         return null;
     }
 
-    public boolean update(Cliente c) throws SQLException {
+    public static boolean update(Cliente c) throws SQLException {
         try {
             Statement stm = BancoDados.createConnection().createStatement();
             String sql = "update clientes set nome='" + c.getNome() + "'," +
@@ -120,13 +120,13 @@ public class ClienteDAO {
         }
         return false;
     }
-
     public boolean delete(Cliente c ) throws SQLException {
         Statement stm = BancoDados.createConnection().createStatement();
         String sql = "delete from clientes where pk_cliente ="+c.getPk_cliente();
         stm.execute(sql);
         return false;
     }
+
 
 
 }

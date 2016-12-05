@@ -1,5 +1,9 @@
 package empresa.controller;
 
+import empresa.model.EnderecoDAO;
+
+import java.sql.SQLException;
+
 public class Endereco {
     private String logradouro;    
     private String bairro;
@@ -11,7 +15,8 @@ public class Endereco {
     private int pk_endereco;
     private int fk_cliente;
 
-    public Endereco() {
+    Endereco() {
+
     }
 
     public Endereco(String logradouro, String bairro, String cidade, String estado, String pais, String cep) {
@@ -101,5 +106,9 @@ public class Endereco {
     @Override
     public String toString() {
         return "Endereco{" + "logradouro=" + logradouro + ", bairro=" + bairro + ", cidade=" + cidade + ", estado=" + estado + ", pais=" + pais + ", cep=" + cep + ", pk_endereco=" + pk_endereco + ", fk_cliente=" + fk_cliente + '}';
+    }
+
+    public boolean update() throws SQLException {
+        return EnderecoDAO.update(this);
     }
 }

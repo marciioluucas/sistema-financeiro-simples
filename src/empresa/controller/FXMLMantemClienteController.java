@@ -77,7 +77,6 @@ public class FXMLMantemClienteController implements Initializable {
 
     public void load() {
         c = comboBoxClientes.getValue();
-
         textFieldNome.setText(c.getNome());
         textFieldCPF.setText(c.getCpf());
         textFieldEndereco.setText(c.getEndereco().getLogradouro());
@@ -104,20 +103,18 @@ public class FXMLMantemClienteController implements Initializable {
 
         if (c == null) {
             c = new Cliente();
-            e = new Endereco();
             insert = true;
         }
 
-        e.setBairro(textFieldBairro.getText());
-        e.setCep(textFieldCEP.getText());
-        e.setCidade(textFieldCidade.getText());
-        e.setLogradouro(textFieldEndereco.getText());
-        e.setEstado(comboBoxEstado.getValue());
-        e.setPais(comboPais.getValue());
+        c.getEndereco().setBairro(textFieldBairro.getText());
+        c.getEndereco().setCep(textFieldCEP.getText());
+        c.getEndereco().setCidade(textFieldCidade.getText());
+        c.getEndereco().setLogradouro(textFieldEndereco.getText());
+        c.getEndereco().setEstado(comboBoxEstado.getValue());
+        c.getEndereco().setPais(comboPais.getValue());
 
         c.setNome(textFieldNome.getText());
         c.setCpf(textFieldCPF.getText());
-        c.setEndereco(e);
 
         if (insert) {
             try {
@@ -136,13 +133,27 @@ public class FXMLMantemClienteController implements Initializable {
                 dialogoInfo.showAndWait();
             }
         } else {
-            c.update();
+            try{
+
+               if(c.update()){
+                   Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
+                   dialogoInfo.setTitle("Sucesso!");
+                   dialogoInfo.setHeaderText("Cliente alterado com sucesso!");
+                   dialogoInfo.setContentText("ID do cliente alterado: " + c.getPk_cliente());
+                   dialogoInfo.showAndWait();
+               }
+            }catch (Exception e) {
+                Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
+                dialogoInfo.setTitle("Erro");
+                dialogoInfo.setHeaderText("Um erro aconteceu");
+                dialogoInfo.setContentText(e.getMessage());
+                dialogoInfo.showAndWait();
+            }
         }
         limpaTela();
     }
 
     public void cancelar() {
-
         limpaTela();
     }
 
