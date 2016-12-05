@@ -38,7 +38,7 @@ public class CargoDAO {
         Statement stm = BancoDados.createConnection().createStatement();
         try {
             String sql = "update cargos set nome='" + c.getNome() + "'," +
-                    "descricao=" + c.getDescricao() + " " +
+                    "descricao='" + c.getDescricao() + "' " +
                     "where pk_cargo=" + c.getPk_cargo();
 
             stm.execute(sql);
