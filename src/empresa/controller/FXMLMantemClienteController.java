@@ -7,12 +7,14 @@ package empresa.controller;
 
 import empresa.model.ClienteDAO;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
@@ -25,7 +27,7 @@ import javafx.scene.layout.AnchorPane;
  * @author L
  */
 public class FXMLMantemClienteController implements Initializable {
-    private Endereco e;
+
     private Cliente c;
     @FXML
     private AnchorPane anchorPane;
@@ -103,6 +105,7 @@ public class FXMLMantemClienteController implements Initializable {
 
         if (c == null) {
             c = new Cliente();
+            c.setEndereco(new Endereco());
             insert = true;
         }
 
@@ -124,6 +127,9 @@ public class FXMLMantemClienteController implements Initializable {
                     dialogoInfo.setHeaderText("Cliente cadastrado com sucesso!");
                     dialogoInfo.setContentText("ID do cliente cadastrado: " + c.getPk_cliente());
                     dialogoInfo.showAndWait();
+                    comboBoxClientes.getItems().clear();
+                    List<Cliente> l = ClienteDAO.retreaveAll();
+                    comboBoxClientes.getItems().addAll(l);
                 }
             } catch (Exception e) {
                 Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
@@ -141,6 +147,9 @@ public class FXMLMantemClienteController implements Initializable {
                    dialogoInfo.setHeaderText("Cliente alterado com sucesso!");
                    dialogoInfo.setContentText("ID do cliente alterado: " + c.getPk_cliente());
                    dialogoInfo.showAndWait();
+                   comboBoxClientes.getItems().clear();
+                   List<Cliente> l = ClienteDAO.retreaveAll();
+                   comboBoxClientes.getItems().addAll(l);
                }
             }catch (Exception e) {
                 Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
@@ -153,12 +162,13 @@ public class FXMLMantemClienteController implements Initializable {
         limpaTela();
     }
 
-    public void cancelar() {
-        limpaTela();
+    public void cancelar() throws IOException {
+        AnchorPane a = FXMLLoader.load(getClass().getResource("../view/FXMLDashboard.fxml"));
+        anchorPane.getChildren().setAll(a);
     }
 
     public void apagar() {
-        c = new Cliente();
+        c = comboBoxClientes.getValue();
         Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
         try {
             if(c.delete()){
@@ -166,6 +176,9 @@ public class FXMLMantemClienteController implements Initializable {
                 dialogoInfo.setHeaderText("Cliente excluido com sucesso!");
                 dialogoInfo.setContentText("ID do cliente excluido: " + c.getPk_cliente());
                 dialogoInfo.showAndWait();
+                comboBoxClientes.getItems().clear();
+                List<Cliente> l = ClienteDAO.retreaveAll();
+                comboBoxClientes.getItems().addAll(l);
             }
 
         } catch(Exception e){

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="empresa.controller.FXMLDashboardController">
+   <children>
+      <Label layoutX="75.0" layoutY="258.0" text="Selo de quialidade delicia" />
+      <ImageView fitHeight="195.0" fitWidth="200.0" layoutX="42.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/hm.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="contagemProdutos" layoutX="565.0" layoutY="181.0" style="-fx-font-weight: bolder;" text="0" textFill="#0f0e8c">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="181.0" style="-fx-font-weight: bolder;" text="Produtos cadastrados:">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="139.0" style="-fx-font-weight: bolder;" text="Fornecedores cadastrados: ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="contagemFornecedores" layoutX="565.0" layoutY="139.0" style="-fx-font-weight: bolder;" text="0" textFill="#0f0e8c">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="contagemClientes" layoutX="565.0" layoutY="101.0" style="-fx-font-weight: bolder;" text="0" textFill="#0f0e8c">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="300.0" layoutY="101.0" style="-fx-font-weight: bolder;" text="Clientes cadastrados: ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

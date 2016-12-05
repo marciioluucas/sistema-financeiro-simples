@@ -2,6 +2,7 @@
 package empresa.controller;
 
 import empresa.model.ClienteDAO;
+import empresa.model.DAO;
 
 import java.sql.SQLException;
 
@@ -81,6 +82,10 @@ public class Cliente {
 
     public boolean delete() throws  SQLException {
         return ClienteDAO.delete(this);
+    }
+
+    public int contar() throws SQLException {
+        return DAO.contar("clientes","");
     }
 }
 

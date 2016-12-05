@@ -1,5 +1,9 @@
 package empresa.controller;
 
+import empresa.model.DAO;
+
+import java.sql.SQLException;
+
 /**
  * Created by Marcio on 01/12/2016.
  */
@@ -47,5 +51,9 @@ public class Fornecedor {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public int contar() throws SQLException {
+        return DAO.contar("fornecedores", "");
     }
 }
