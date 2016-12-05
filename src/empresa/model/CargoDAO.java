@@ -21,16 +21,16 @@ public class CargoDAO {
         Statement stm = BancoDados.createConnection().createStatement();
         try {
             String sql = "insert into cargos (nome, descricao)" +
-                    "VALUES ('" + c.getNome() + "'," + c.getDescricao() + ")";
+                    "VALUES ('" + c.getNome() + "', '" + c.getDescricao() + "')";
+            stm.execute(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stm.getGeneratedKeys();
-            c.setPk_cargo(rs.getInt(1));
-            if (stm.execute(sql)) {
-                return true;
-            }
+            rs.next();
+            int key = rs.getInt(1);
+            return true;
+
         } catch (Exception e) {
             throw new Exception("Erro ao executar query: " + e.getMessage());
         }
-        return false;
     }
 
     public static boolean update(Cargo c) throws Exception {
@@ -41,11 +41,12 @@ public class CargoDAO {
                     "where pk_cargo=" + c.getPk_cargo();
 
             stm.execute(sql);
-        }catch(Exception e ){
-            throw new Exception("Erro ao executar query: "+ e.getMessage());
+        } catch (Exception e) {
+            throw new Exception("Erro ao executar query: " + e.getMessage());
         }
         return false;
     }
+
     public static Cargo retreave(int pk_cargo) {
         try {
             Statement stm =
@@ -92,9 +93,9 @@ public class CargoDAO {
         return null;
     }
 
-    public boolean delete(Cargo c ) throws SQLException {
+    public static boolean delete(Cargo c) throws SQLException {
         Statement stm = BancoDados.createConnection().createStatement();
-        String sql = "delete from cargos where pk_cargo ="+c.getPk_cargo();
+        String sql = "delete from cargos where pk_cargo =" + c.getPk_cargo();
         stm.execute(sql);
         return false;
     }

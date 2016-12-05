@@ -1,5 +1,7 @@
 package empresa.controller;
 
+import empresa.model.CargoDAO;
+
 /**
  * Created by Marcio on 01/12/2016.
  */
@@ -46,5 +48,17 @@ public class Cargo {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public boolean save() throws Exception {
+        return CargoDAO.create(this);
+    }
+
+    public boolean update() throws Exception {
+        return CargoDAO.update(this);
+    }
+
+    public boolean delete() throws Exception {
+        return CargoDAO.delete(this);
     }
 }

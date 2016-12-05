@@ -1,12 +1,12 @@
 package empresa.controller;
 
-import empresa.model.ClienteDAO;
-import empresa.model.ProdutoDAO;
+import empresa.model.CargoDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
@@ -19,67 +19,56 @@ import java.util.ResourceBundle;
 /**
  * Created by Marcio on 05/12/2016.
  */
-public class FXMLMantemProdutoController implements Initializable {
-
-    Produto p;
+public class FXMLMantemCargoController implements Initializable {
+    Cargo c;
 
     @FXML
     private AnchorPane anchorPane;
 
     @FXML
-    private ComboBox<Produto> comboBoxProdutos;
+    private ComboBox<Cargo> comboBoxCargos;
 
     @FXML
-    private TextField textFieldQtdMinima;
-
-
-    @FXML
-    private TextField textFieldQtdEstoque;
+    private TextArea textAreaDescricao;
 
     @FXML
     private TextField textFieldNome;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        List<Produto> l = ProdutoDAO.retreaveAll();
-      comboBoxProdutos.getItems().addAll(l);
+
     }
 
+
     public void load() {
-        p = comboBoxProdutos.getValue();
-        textFieldNome.setText(p.getNome());
-        textFieldQtdEstoque.setText(String.valueOf(p.getQtd_estoque()));
-        textFieldQtdMinima.setText(String.valueOf(p.getEstoque_minimo()));
-
-
+        c = comboBoxCargos.getValue();
+        textFieldNome.setText(c.getNome());
+        textAreaDescricao.setText(c.getDescricao());
     }
 
     public void limpaTela() {
         textFieldNome.clear();
-        textFieldQtdMinima.clear();
-        textFieldQtdEstoque.clear();
+        textAreaDescricao.clear();
     }
-
     public void salvar() throws SQLException {
         boolean insert = false;
 
-        if (p == null) {
-            p = new Produto(textFieldNome.getText(),
-                    Integer.parseInt(textFieldQtdMinima.getText()),
-                    Integer.parseInt(textFieldQtdEstoque.getText()));
+        if (c == null) {
+            c = new Cargo(textFieldNome.getText(),
+                    textAreaDescricao.getText());
             insert = true;
         }
         if (insert) {
             try {
-                if (p.save()) {
+                if (c.save()) {
                     Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
                     dialogoInfo.setTitle("Sucesso!");
-                    dialogoInfo.setHeaderText("Produto cadastrado com sucesso!");
-                    dialogoInfo.setContentText("ID do produto cadastrado: " + p.getPk_produto());
+                    dialogoInfo.setHeaderText("Cargo cadastrado com sucesso!");
+                    dialogoInfo.setContentText("ID do cargo cadastrado: " + c.getPk_cargo());
                     dialogoInfo.showAndWait();
-                    comboBoxProdutos.getItems().clear();
-                    List<Produto> l = ProdutoDAO.retreaveAll();
-                    comboBoxProdutos.getItems().addAll(l);
+                    comboBoxCargos.getItems().clear();
+                    List<Cargo> l = CargoDAO.retreaveAll();
+                    comboBoxCargos.getItems().addAll(l);
                 }
             } catch (Exception e) {
                 Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
@@ -90,18 +79,17 @@ public class FXMLMantemProdutoController implements Initializable {
             }
         } else {
             try{
-                p.setNome(textFieldNome.getText());
-                p.setEstoque_minimo(Integer.parseInt(textFieldQtdMinima.getText()));
-                p.setQtd_estoque(Integer.parseInt(textFieldQtdEstoque.getText()));
-                if(p.update()){
+                c.setNome(textFieldNome.getText());
+                c.setDescricao(textAreaDescricao.getText());
+                if(c.update()){
                     Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
                     dialogoInfo.setTitle("Sucesso!");
-                    dialogoInfo.setHeaderText("Produto alterado com sucesso!");
-                    dialogoInfo.setContentText("ID do produto alterado: " + p.getPk_produto());
+                    dialogoInfo.setHeaderText("Cargo alterado com sucesso!");
+                    dialogoInfo.setContentText("ID do cargo alterado: " + c.getPk_cargo());
                     dialogoInfo.showAndWait();
-                    comboBoxProdutos.getItems().clear();
-                    List<Produto> l = ProdutoDAO.retreaveAll();
-                    comboBoxProdutos.getItems().addAll(l);
+                    comboBoxCargos.getItems().clear();
+                    List<Cargo> l = CargoDAO.retreaveAll();
+                    comboBoxCargos.getItems().addAll(l);
                 }
             }catch (Exception e) {
                 Alert dialogoInfo = new Alert(Alert.AlertType.ERROR);
@@ -120,17 +108,17 @@ public class FXMLMantemProdutoController implements Initializable {
     }
 
     public void apagar() {
-        p = comboBoxProdutos.getValue();
+        c = comboBoxCargos.getValue();
         Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
         try {
-            if(p.delete()){
+            if(c.delete()){
                 dialogoInfo.setTitle("Sucesso!");
-                dialogoInfo.setHeaderText("Produto excluido com sucesso!");
-                dialogoInfo.setContentText("ID do produto excluido: " + p.getPk_produto());
+                dialogoInfo.setHeaderText("Cargo excluido com sucesso!");
+                dialogoInfo.setContentText("ID do cargo excluido: " + c.getPk_cargo());
                 dialogoInfo.showAndWait();
-                comboBoxProdutos.getItems().clear();
-                List<Produto> l = ProdutoDAO.retreaveAll();
-                comboBoxProdutos.getItems().addAll(l);
+                comboBoxCargos.getItems().clear();
+                List<Cargo> l = CargoDAO.retreaveAll();
+                comboBoxCargos.getItems().addAll(l);
             }
 
         } catch(Exception e){
