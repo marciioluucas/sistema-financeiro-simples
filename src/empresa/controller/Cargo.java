@@ -50,6 +50,11 @@ public class Cargo {
         this.descricao = descricao;
     }
 
+    @Override
+    public String toString() {
+        return nome;
+    }
+
     public boolean save() throws Exception {
         return CargoDAO.create(this);
     }

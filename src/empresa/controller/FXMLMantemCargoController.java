@@ -36,7 +36,8 @@ public class FXMLMantemCargoController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        List<Cargo> l = CargoDAO.retreaveAll();
+        comboBoxCargos.getItems().addAll(l);
     }
 
 
