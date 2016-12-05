@@ -15,13 +15,17 @@
       <ComboBox fx:id="comboBoxProdutos" layoutX="14.0" layoutY="292.0" prefHeight="25.0" prefWidth="431.0" promptText="Produtos" />
       <Button layoutX="448.0" layoutY="292.0" mnemonicParsing="false" onAction="#load" prefHeight="25.0" prefWidth="62.0" text="Carregar" />
       <Button layoutX="515.0" layoutY="292.0" mnemonicParsing="false" onAction="#apagar" prefHeight="25.0" prefWidth="62.0" text="Apagar" textFill="#d72727" />
-      <Label layoutX="25.0" layoutY="14.0" text="Cadastro">
+      <Label layoutX="25.0" layoutY="14.0" text="Módulo">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
       <Label layoutX="95.0" layoutY="19.0" text="de produtos" />
-      <Label layoutX="31.0" layoutY="57.0" text="Nome:" />
-      <TextField layoutX="81.0" layoutY="53.0" />
+      <Label layoutX="25.0" layoutY="59.0" text="Nome:" />
+      <TextField fx:id="textFieldNome" layoutX="75.0" layoutY="55.0" prefHeight="25.0" prefWidth="495.0" />
+      <Label layoutX="25.0" layoutY="101.0" text="Quantidade mínima: " />
+      <TextField fx:id="textFieldQtdMinima" layoutX="143.0" layoutY="97.0" prefHeight="25.0" prefWidth="138.0" />
+      <Label layoutX="293.0" layoutY="101.0" text="Quantidade em estoque" />
+      <TextField fx:id="textFieldQtdEstoque" layoutX="432.0" layoutY="97.0" prefHeight="25.0" prefWidth="138.0" />
    </children>
 </AnchorPane>

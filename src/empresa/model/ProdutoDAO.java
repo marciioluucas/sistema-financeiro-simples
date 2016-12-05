@@ -23,15 +23,15 @@ public class ProdutoDAO {
             String sql = "insert into produtos (nome, estoque_minimo, qtd_estoque)" +
                     "VALUES ('" + p.getNome() + "'," + p.getEstoque_minimo() + "," +
                     "" + p.getQtd_estoque() + ")";
+            stm.execute(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stm.getGeneratedKeys();
-            p.setPk_produto(rs.getInt(1));
-            if (stm.execute(sql)) {
-                return true;
-            }
+            rs.next();
+            int key = rs.getInt(1);
+            p.setPk_produto(key);
+            return true;
         } catch (Exception e) {
             throw new SQLException("Erro ao executar query: " + e.getMessage());
         }
-        return false;
     }
 
     public static boolean update(Produto p) throws SQLException {
@@ -43,10 +43,10 @@ public class ProdutoDAO {
                     "where pk_produto=" + p.getPk_produto();
 
             stm.execute(sql);
+            return true;
         }catch(Exception e ){
             throw new SQLException("Erro ao executar query: "+ e.getMessage());
         }
-        return false;
     }
     public static Produto retreave(int pk_produto) {
         try {
@@ -97,9 +97,15 @@ public class ProdutoDAO {
     }
 
     public static boolean delete(Produto p ) throws SQLException {
-        Statement stm = BancoDados.createConnection().createStatement();
-        String sql = "delete from produtos where pk_produto ="+p.getPk_produto();
-        stm.execute(sql);
-        return false;
+
+        try {
+            Statement stm = BancoDados.createConnection().createStatement();
+            String sql = "delete from produtos where pk_produto ="+p.getPk_produto();
+            stm.execute(sql);
+            return true;
+        }catch (SQLException ex) {
+            throw new SQLException("Erro na execução da query: "+ ex.getMessage());
+        }
+
     }
 }

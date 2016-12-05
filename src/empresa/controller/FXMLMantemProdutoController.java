@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -28,6 +29,15 @@ public class FXMLMantemProdutoController implements Initializable {
     @FXML
     private ComboBox<Produto> comboBoxProdutos;
 
+    @FXML
+    private TextField textFieldQtdMinima;
+
+
+    @FXML
+    private TextField textFieldQtdEstoque;
+
+    @FXML
+    private TextField textFieldNome;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -36,18 +46,18 @@ public class FXMLMantemProdutoController implements Initializable {
     }
 
     public void load() {
-//        p = comboBoxProdutos.getValue();
-//        textFieldNome.setText(p.getNome());
-//        textFieldCPF.setText(p.getCpf());
-//        textFieldEndereco.setText(p.getEndereco().getLogradouro());
-//        textFieldBairro.setText(p.getEndereco().getBairro());
-//        textFieldCEP.setText(p.getEndereco().getCep());
-//        textFieldCidade.setText(p.getEndereco().getCidade());
-//        comboBoxEstado.setValue(p.getEndereco().getEstado());
-//        comboPais.setValue(p.getEndereco().getPais());
+        p = comboBoxProdutos.getValue();
+        textFieldNome.setText(p.getNome());
+        textFieldQtdEstoque.setText(String.valueOf(p.getQtd_estoque()));
+        textFieldQtdMinima.setText(String.valueOf(p.getEstoque_minimo()));
+
+
     }
 
     public void limpaTela() {
+        textFieldNome.clear();
+        textFieldQtdMinima.clear();
+        textFieldQtdEstoque.clear();
 //        textFieldBairro.clear();
 //        textFieldCEP.clear();
 //        textFieldCPF.clear();
@@ -62,20 +72,11 @@ public class FXMLMantemProdutoController implements Initializable {
         boolean insert = false;
 
         if (p == null) {
-            p = new Produto();
+            p = new Produto(textFieldNome.getText(),
+                    Integer.parseInt(textFieldQtdMinima.getText()),
+                    Integer.parseInt(textFieldQtdEstoque.getText()));
             insert = true;
         }
-
-//        p.getEndereco().setBairro(textFieldBairro.getText());
-//        p.getEndereco().setCep(textFieldCEP.getText());
-//        p.getEndereco().setCidade(textFieldCidade.getText());
-//        p.getEndereco().setLogradouro(textFieldEndereco.getText());
-//        p.getEndereco().setEstado(comboBoxEstado.getValue());
-//        p.getEndereco().setPais(comboPais.getValue());
-//
-//        p.setNome(textFieldNome.getText());
-//        p.setCpf(textFieldCPF.getText());
-
         if (insert) {
             try {
                 if (p.save()) {
@@ -97,7 +98,9 @@ public class FXMLMantemProdutoController implements Initializable {
             }
         } else {
             try{
-
+                p.setNome(textFieldNome.getText());
+                p.setEstoque_minimo(Integer.parseInt(textFieldQtdMinima.getText()));
+                p.setQtd_estoque(Integer.parseInt(textFieldQtdEstoque.getText()));
                 if(p.update()){
                     Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
                     dialogoInfo.setTitle("Sucesso!");
