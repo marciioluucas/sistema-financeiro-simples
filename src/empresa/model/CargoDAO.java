@@ -26,6 +26,7 @@ public class CargoDAO {
             ResultSet rs = stm.getGeneratedKeys();
             rs.next();
             int key = rs.getInt(1);
+            c.setPk_cargo(key);
             return true;
 
         } catch (Exception e) {
