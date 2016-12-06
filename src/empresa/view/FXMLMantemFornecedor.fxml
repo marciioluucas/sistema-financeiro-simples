@@ -44,6 +44,6 @@
       <Label layoutX="12.0" layoutY="99.0" text="Nome:" />
       <TextField fx:id="textFieldNome" layoutX="76.0" layoutY="95.0" prefHeight="25.0" prefWidth="339.0" />
       <TextField fx:id="textFieldCPF" layoutX="477.0" layoutY="95.0" prefHeight="25.0" prefWidth="104.0" />
-      <Label layoutX="447.0" layoutY="99.0" text="CPF:" />
+      <Label layoutX="437.0" layoutY="99.0" text="CNPJ:" />
    </children>
 </AnchorPane>

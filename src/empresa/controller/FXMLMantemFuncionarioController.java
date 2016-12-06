@@ -1,5 +1,6 @@
 package empresa.controller;
 
+import empresa.model.CargoDAO;
 import empresa.model.FuncionarioDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -50,6 +51,9 @@ public class FXMLMantemFuncionarioController implements Initializable{
     @FXML
     private TextField textFieldCEP;
 
+    @FXML
+    private ComboBox<Cargo> comboBoxCargos;
+
     /**
      * Initializes the controller class.
      */
@@ -66,6 +70,8 @@ public class FXMLMantemFuncionarioController implements Initializable{
 
         List<Funcionario> l = FuncionarioDAO.retreaveAll();
         comboBoxFuncionarios.getItems().addAll(l);
+        List<Cargo> lc = CargoDAO.retreaveAll();
+        comboBoxCargos.getItems().addAll(lc);
     }
 
     public void load() {

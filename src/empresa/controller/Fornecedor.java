@@ -69,6 +69,10 @@ public class Fornecedor {
         return DAO.contar("fornecedores", "");
     }
 
+    @Override
+    public String toString() {
+        return nome;
+    }
 
     public boolean save() throws Exception {
         return FornecedorDAO.create(this);

@@ -14,7 +14,7 @@ public class Funcionario {
     private String cpf;
 
     private int pk_funcionario;
-    private int fk_cargo;
+    private Cargo cargo;
 
     private Endereco endereco;
 
@@ -22,16 +22,16 @@ public class Funcionario {
 
     }
 
-    public Funcionario(int pk_funcionario, int fk_cargo, String nome, String cpf) {
+    public Funcionario(int pk_funcionario, Cargo cargo, String nome, String cpf) {
         this.pk_funcionario = pk_funcionario;
-        this.fk_cargo = fk_cargo;
+        this.cargo = cargo;
         this.nome = nome;
         this.cpf = cpf;
     }
 
-    public Funcionario(int fk_cargo, String nome, String cpf, Endereco endereco) {
+    public Funcionario(Cargo cargo, String nome, String cpf, Endereco endereco) {
 
-        this.fk_cargo = fk_cargo;
+        this.cargo = cargo;
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
@@ -50,12 +50,12 @@ public class Funcionario {
         this.pk_funcionario = pk_funcionario;
     }
 
-    public int getFk_cargo() {
-        return fk_cargo;
+    public Cargo getCargo() {
+        return cargo;
     }
 
-    public void setFk_cargo(int fk_cargo) {
-        this.fk_cargo = fk_cargo;
+    public void setCargo(Cargo cargo) {
+        this.cargo = cargo;
     }
 
     public String getNome() {
@@ -84,6 +84,11 @@ public class Funcionario {
 
     public int contar() throws SQLException {
         return DAO.contar("funcionarios","");
+    }
+
+    @Override
+    public String toString() {
+        return nome;
     }
 
     public boolean save() throws SQLException {

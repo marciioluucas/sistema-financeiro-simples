@@ -41,9 +41,11 @@
       <Label layoutX="91.0" layoutY="19.0" text="de funcionários" />
       <Label layoutX="11.0" layoutY="142.0" text="Dados do endereço" />
       <Separator layoutX="117.0" layoutY="151.0" prefHeight="3.0" prefWidth="463.0" />
-      <Label layoutX="12.0" layoutY="99.0" text="Nome:" />
-      <TextField fx:id="textFieldNome" layoutX="76.0" layoutY="95.0" prefHeight="25.0" prefWidth="339.0" />
-      <TextField fx:id="textFieldCPF" layoutX="477.0" layoutY="95.0" prefHeight="25.0" prefWidth="104.0" />
-      <Label layoutX="447.0" layoutY="99.0" text="CPF:" />
+      <Label layoutX="16.0" layoutY="88.0" text="Nome:" />
+      <TextField fx:id="textFieldNome" layoutX="80.0" layoutY="84.0" prefHeight="25.0" prefWidth="339.0" />
+      <TextField fx:id="textFieldCPF" layoutX="481.0" layoutY="84.0" prefHeight="25.0" prefWidth="104.0" />
+      <Label layoutX="447.0" layoutY="88.0" text="CPF:" />
+      <Label layoutX="16.0" layoutY="119.0" text="Cargo:" />
+      <ComboBox fx:id="comboBoxCargos" layoutX="80.0" layoutY="115.0" prefWidth="150.0" promptText="Selecione" />
    </children>
 </AnchorPane>
