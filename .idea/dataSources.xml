@@ -7,17 +7,5 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/empresa</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="PostgreSQL - postgres@localhost" uuid="e7830aef-de59-429f-b38b-5da64dfa87d6">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
-    </data-source>
-    <data-source source="LOCAL" name="PostgreSQL - empresa@localhost [2]" uuid="086f7578-8a35-49f5-960d-e8b26cda0ec9">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/empresa</jdbc-url>
-    </data-source>
   </component>
 </project>

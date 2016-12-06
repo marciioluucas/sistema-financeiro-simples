@@ -25,7 +25,7 @@
       <TextField fx:id="textFieldNome" layoutX="75.0" layoutY="55.0" prefHeight="25.0" prefWidth="495.0" />
       <Label layoutX="25.0" layoutY="101.0" text="Quantidade mínima: " />
       <TextField fx:id="textFieldQtdMinima" layoutX="143.0" layoutY="97.0" prefHeight="25.0" prefWidth="138.0" />
-      <Label layoutX="293.0" layoutY="101.0" text="Quantidade em estoque" />
+      <Label layoutX="293.0" layoutY="101.0" text="Quantidade em estoque:" />
       <TextField fx:id="textFieldQtdEstoque" layoutX="432.0" layoutY="97.0" prefHeight="25.0" prefWidth="138.0" />
    </children>
 </AnchorPane>

@@ -22,12 +22,16 @@ public class FXMLDashboardController implements Initializable {
     @FXML
     private Label contagemFornecedores;
 
+    @FXML
+    private Label contagemFuncionarios;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         try {
             contagemClientes.setText(String.valueOf(new Cliente().contar()));
             contagemFornecedores.setText(String.valueOf(new Fornecedor().contar()));
             contagemProdutos.setText(String.valueOf(new Produto().contar()));
+            contagemFuncionarios.setText(String.valueOf(new Funcionario().contar()));
         } catch (SQLException e) {
             e.printStackTrace();
         }

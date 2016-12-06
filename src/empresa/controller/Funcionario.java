@@ -1,5 +1,10 @@
 package empresa.controller;
 
+import empresa.model.DAO;
+import empresa.model.FuncionarioDAO;
+
+import java.sql.SQLException;
+
 /**
  * Created by Marcio on 02/12/2016.
  */
@@ -64,5 +69,21 @@ public class Funcionario {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public int contar() throws SQLException {
+        return DAO.contar("funcionarios","");
+    }
+
+    public boolean save() throws SQLException {
+        return FuncionarioDAO.create(this);
+    }
+
+    public boolean update() throws SQLException {
+        return FuncionarioDAO.update(this);
+    }
+
+    public boolean delete() throws SQLException {
+        return FuncionarioDAO.delete(this);
     }
 }

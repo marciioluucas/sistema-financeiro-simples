@@ -14,7 +14,7 @@ import java.util.logging.Logger;
  */
 public class FuncionarioDAO {
 
-    public static boolean create(Funcionario f) throws Exception {
+    public static boolean create(Funcionario f) throws SQLException {
         Statement stm = BancoDados.createConnection().createStatement();
         try {
             String sql = "insert into funcionarios (fk_cargo, nome, cpf)" +
@@ -25,12 +25,12 @@ public class FuncionarioDAO {
                 return true;
             }
         } catch (Exception e) {
-            throw new Exception("Erro ao executar query: " + e.getMessage());
+            throw new SQLException("Erro ao executar query: " + e.getMessage());
         }
         return false;
     }
 
-    public static boolean update(Funcionario f) throws Exception {
+    public static boolean update(Funcionario f) throws SQLException {
         Statement stm = BancoDados.createConnection().createStatement();
         try {
             String sql = "update funcionarios set nome='" + f.getNome() + "', " +
@@ -39,7 +39,7 @@ public class FuncionarioDAO {
 
             stm.execute(sql);
         } catch (Exception e) {
-            throw new Exception("Erro ao executar query: " + e.getMessage());
+            throw new SQLException("Erro ao executar query: " + e.getMessage());
         }
         return false;
     }
@@ -92,7 +92,7 @@ public class FuncionarioDAO {
         return null;
     }
 
-    public boolean delete(Funcionario f) throws SQLException {
+    public static boolean delete(Funcionario f) throws SQLException {
         Statement stm = BancoDados.createConnection().createStatement();
         String sql = "delete from funcionarios where pk_funcionario =" + f.getPk_funcionario();
         stm.execute(sql);
