@@ -22,7 +22,7 @@ public class Funcionario {
 
     }
 
-    public Funcionario(int pk_funcionario, Cargo cargo, String nome, String cpf) {
+    public Funcionario(int pk_funcionario, String nome, String cpf) {
         this.pk_funcionario = pk_funcionario;
         this.cargo = cargo;
         this.nome = nome;

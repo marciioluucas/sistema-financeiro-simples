@@ -18,7 +18,7 @@ public class FuncionarioDAO {
         Statement stm = BancoDados.createConnection().createStatement();
         try {
             String sql = "insert into funcionarios (fk_cargo, nome, cpf)" +
-                    "VALUES (" + f.getFk_cargo() + ", '" + f.getNome() + "','" + f.getCpf() + "')";
+                    "VALUES (" + f.getCargo().getPk_cargo() + ", '" + f.getNome() + "','" + f.getCpf() + "')";
             ResultSet rs = stm.getGeneratedKeys();
             f.setPk_funcionario(rs.getInt(1));
             if (stm.execute(sql)) {
@@ -55,9 +55,9 @@ public class FuncionarioDAO {
             ResultSet rs = stm.executeQuery(sql);
             rs.next();
 
+            //TODO: fazer consulta do cargo aqui e fazer no cargo as parada de retreaveByFuncionario;
 
             return new Funcionario(pk_funcionario,
-                    rs.getInt("fk_cargo"),
                     rs.getString("nome"),
                     rs.getString("cpf"));
         } catch (SQLException ex) {
