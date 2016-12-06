@@ -27,6 +27,8 @@
               <items>
                 <MenuItem onAction="#abraTelaMantemCliente" text="Clientes" />
                   <MenuItem onAction="#abraTelaMantemCargo" text="Cargos" />
+                  <MenuItem mnemonicParsing="false" onAction="#abraTelaMantemFornecedor" text="Fornecedores" />
+                  <MenuItem mnemonicParsing="false" onAction="#abraTelaMantemFuncionario" text="Funcionários" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <MenuItem onAction="#abraTelaMantemProduto" text="Produtos" />
               </items>

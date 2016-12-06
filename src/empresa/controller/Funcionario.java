@@ -16,6 +16,8 @@ public class Funcionario {
     private int pk_funcionario;
     private int fk_cargo;
 
+    private Endereco endereco;
+
     public Funcionario() {
 
     }
@@ -27,11 +29,12 @@ public class Funcionario {
         this.cpf = cpf;
     }
 
-    public Funcionario(int fk_cargo, String nome, String cpf) {
+    public Funcionario(int fk_cargo, String nome, String cpf, Endereco endereco) {
 
         this.fk_cargo = fk_cargo;
         this.nome = nome;
         this.cpf = cpf;
+        this.endereco = endereco;
     }
 
     public Funcionario(String nome, String cpf) {
@@ -69,6 +72,14 @@ public class Funcionario {
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
 
     public int contar() throws SQLException {

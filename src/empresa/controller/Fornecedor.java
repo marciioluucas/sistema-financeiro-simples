@@ -1,6 +1,7 @@
 package empresa.controller;
 
 import empresa.model.DAO;
+import empresa.model.FornecedorDAO;
 
 import java.sql.SQLException;
 
@@ -14,6 +15,8 @@ public class Fornecedor {
 
     private int pk_fornecedor;
 
+    private Endereco endereco;
+
     public Fornecedor() {
 
     }
@@ -24,7 +27,8 @@ public class Fornecedor {
         this.cpf = cpf;
     }
 
-    public Fornecedor(String nome, String cpf) {
+    public Fornecedor(String nome, String cpf, Endereco endereco) {
+        this.endereco = endereco;
         this.nome = nome;
         this.cpf = cpf;
     }
@@ -53,7 +57,29 @@ public class Fornecedor {
         this.cpf = cpf;
     }
 
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
     public int contar() throws SQLException {
         return DAO.contar("fornecedores", "");
     }
+
+
+    public boolean save() throws Exception {
+        return FornecedorDAO.create(this);
+    }
+
+    public boolean update() throws Exception {
+        return FornecedorDAO.update(this);
+    }
+
+    public boolean delete() throws  SQLException {
+        return FornecedorDAO.delete(this);
+    }
+
 }

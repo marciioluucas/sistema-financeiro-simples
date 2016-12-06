@@ -95,7 +95,7 @@ public class FornecedorDAO {
         return null;
     }
 
-    public boolean delete(Fornecedor f) throws SQLException {
+    public static boolean delete(Fornecedor f) throws SQLException {
         Statement stm = BancoDados.createConnection().createStatement();
         String sql = "delete from fornecedores where pk_fornecedor =" + f.getPk_fornecedor();
         stm.execute(sql);
