@@ -84,6 +84,7 @@ public class FXMLMantemFuncionarioController implements Initializable{
         textFieldCidade.setText(f.getEndereco().getCidade());
         comboBoxEstado.setValue(f.getEndereco().getEstado());
         comboPais.setValue(f.getEndereco().getPais());
+        comboBoxCargos.setValue(f.getCargo());
     }
 
     public void limpaTela() {
@@ -95,6 +96,7 @@ public class FXMLMantemFuncionarioController implements Initializable{
         textFieldNome.clear();
         comboBoxEstado.getSelectionModel().clearSelection();
         comboPais.getSelectionModel().clearSelection();
+        comboBoxCargos.getSelectionModel().clearSelection();
     }
 
     public void salvar() throws SQLException {
@@ -115,6 +117,8 @@ public class FXMLMantemFuncionarioController implements Initializable{
 
         f.setNome(textFieldNome.getText());
         f.setCpf(textFieldCPF.getText());
+
+        f.setCargo(comboBoxCargos.getValue());
 
         if (insert) {
             try {
