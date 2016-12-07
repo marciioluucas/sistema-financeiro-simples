@@ -77,12 +77,12 @@ public class EnderecoDAO {
         return null;
     }
 
-    public static Endereco retreaveByCliente(int fkCliente) {
+    public static Endereco retreaveBy(String tabela, String foreignKey, int valorForeignKey) {
         try {
             Statement stm =
                     BancoDados.createConnection().
                             createStatement();
-            String sql = "Select * from clientes_enderecos where fk_cliente =" + fkCliente;
+            String sql = "Select * from "+tabela+" where "+foreignKey+" = " + valorForeignKey;
             ResultSet rs = stm.executeQuery(sql);
             if (rs.next()) {
 

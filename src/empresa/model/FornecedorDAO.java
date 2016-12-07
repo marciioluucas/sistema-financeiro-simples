@@ -1,5 +1,6 @@
 package empresa.model;
 
+import empresa.controller.Endereco;
 import empresa.controller.Fornecedor;
 
 import java.sql.ResultSet;
@@ -25,6 +26,7 @@ public class FornecedorDAO {
             String sql = "insert into fornecedores (nome, cpf)" +
                     "VALUES ('" + f.getNome() + "','" + f.getCpf() + "')";
             ResultSet rs = stm.getGeneratedKeys();
+            rs.next();
             f.setPk_fornecedor(rs.getInt(1));
             if (stm.execute(sql)) {
                 return true;
@@ -83,9 +85,8 @@ public class FornecedorDAO {
             ResultSet rs = stm.executeQuery(sql);
             ArrayList<Fornecedor> cs = new ArrayList<>();
             while (rs.next()) {
-                cs.add(new Fornecedor(rs.getInt("pk_fornecedor"),
-                        rs.getString("nome"),
-                        rs.getString("cpf")));
+                Endereco e = EnderecoDAO.retreaveBy("fornecedores_enderecos", "fk_fornecedor", rs.getInt("pk_fornecedor"));
+                cs.add(new Fornecedor(rs.getInt("pk_fornecedor"), rs.getString("nome"), rs.getString("cpf"), e));
             }
 
             return cs;

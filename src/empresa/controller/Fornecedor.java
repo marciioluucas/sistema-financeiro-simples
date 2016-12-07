@@ -27,7 +27,7 @@ public class Fornecedor {
         this.cpf = cpf;
     }
 
-    public Fornecedor(String nome, String cpf, Endereco endereco) {
+    public Fornecedor(int pk_fornecedor, String nome, String cpf, Endereco endereco) {
         this.endereco = endereco;
         this.nome = nome;
         this.cpf = cpf;

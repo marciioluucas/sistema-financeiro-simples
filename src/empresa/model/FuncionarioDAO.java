@@ -1,5 +1,7 @@
 package empresa.model;
 
+import empresa.controller.Cargo;
+import empresa.controller.Endereco;
 import empresa.controller.Funcionario;
 
 import java.sql.ResultSet;
@@ -79,10 +81,14 @@ public class FuncionarioDAO {
             ResultSet rs = stm.executeQuery(sql);
             ArrayList<Funcionario> cs = new ArrayList<>();
             while (rs.next()) {
-                cs.add(new Funcionario(rs.getInt("pk_funcionario"),
-                        rs.getInt("fk_cargo"),
+                Endereco e = EnderecoDAO.retreaveBy("funcionarios_enderecos","fk_funcionario",rs.getInt("pk_funcionario"));
+                Cargo c = CargoDAO.retreave(rs.getInt("fk_cargo"));
+                cs.add(new Funcionario(
+                        c,
+                        rs.getInt("pk_funcionario"),
                         rs.getString("nome"),
-                        rs.getString("cpf")));
+                        rs.getString("cpf"),
+                        e));
             }
 
             return cs;

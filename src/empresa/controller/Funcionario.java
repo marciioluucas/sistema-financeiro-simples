@@ -22,15 +22,15 @@ public class Funcionario {
 
     }
 
-    public Funcionario(int pk_funcionario, String nome, String cpf) {
+    public Funcionario(int pk_funcionario, String nome, String cpf, Endereco endereco) {
         this.pk_funcionario = pk_funcionario;
-        this.cargo = cargo;
         this.nome = nome;
         this.cpf = cpf;
+        this.endereco = endereco;
     }
 
-    public Funcionario(Cargo cargo, String nome, String cpf, Endereco endereco) {
-
+    public Funcionario(Cargo cargo, int pk_funcionario, String nome, String cpf, Endereco endereco) {
+        this.pk_funcionario = pk_funcionario;
         this.cargo = cargo;
         this.nome = nome;
         this.cpf = cpf;
@@ -40,6 +40,10 @@ public class Funcionario {
     public Funcionario(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
+    }
+
+    public Funcionario(int aInt, String string, String string0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public int getPk_funcionario() {

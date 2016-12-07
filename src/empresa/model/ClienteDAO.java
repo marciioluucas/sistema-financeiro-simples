@@ -67,7 +67,7 @@ public class ClienteDAO {
             ResultSet rs = stm.executeQuery(sql);
             rs.next();
 
-            Endereco e = EnderecoDAO.retreaveByCliente(pk_cliente);
+            Endereco e = EnderecoDAO.retreaveBy("clientes_enderecos","fk_cliente", pk_cliente);
             return new Cliente(pk_cliente,
                     rs.getString("nome"),
                     rs.getString("cpf"),
@@ -91,7 +91,7 @@ public class ClienteDAO {
             ResultSet rs = stm.executeQuery(sql);
             ArrayList<Cliente> cs = new ArrayList<>();
             while (rs.next()) {
-                Endereco e = EnderecoDAO.retreaveByCliente(rs.getInt("pk_cliente"));
+                Endereco e = EnderecoDAO.retreaveBy("clientes_enderecos","fk_cliente",rs.getInt("pk_cliente"));
                 cs.add(new Cliente(
                         rs.getInt("pk_cliente"),
                         rs.getString("nome"),
