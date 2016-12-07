@@ -13,7 +13,7 @@ public class Endereco {
     private String cep;
     
     private int pk_endereco;
-    private int fk_cliente;
+    private int fk;
 
     Endereco() {
 
@@ -28,7 +28,7 @@ public class Endereco {
         this.cep = cep;
     }
 
-    public Endereco(String logradouro, String bairro, String cidade, String estado, String pais, String cep, int pk_endereco, int fk_cliente) {
+    public Endereco(String logradouro, String bairro, String cidade, String estado, String pais, String cep, int pk_endereco, int fk) {
         this.logradouro = logradouro;
         this.bairro = bairro;
         this.cidade = cidade;
@@ -36,7 +36,7 @@ public class Endereco {
         this.pais = pais;
         this.cep = cep;
         this.pk_endereco = pk_endereco;
-        this.fk_cliente = fk_cliente;
+        this.fk = fk;
     }
 
     public String getLogradouro() {
@@ -96,19 +96,15 @@ public class Endereco {
     }
 
     public int getFk_cliente() {
-        return fk_cliente;
+        return fk;
     }
 
-    public void setFk_cliente(int fk_cliente) {
-        this.fk_cliente = fk_cliente;
+    public void setFk_cliente(int fk) {
+        this.fk = fk;
     }
 
     @Override
     public String toString() {
-        return "Endereco{" + "logradouro=" + logradouro + ", bairro=" + bairro + ", cidade=" + cidade + ", estado=" + estado + ", pais=" + pais + ", cep=" + cep + ", pk_endereco=" + pk_endereco + ", fk_cliente=" + fk_cliente + '}';
-    }
-
-    public boolean update() throws SQLException {
-        return EnderecoDAO.update(this);
+        return "Endereco{" + "logradouro=" + logradouro + ", bairro=" + bairro + ", cidade=" + cidade + ", estado=" + estado + ", pais=" + pais + ", cep=" + cep + ", pk_endereco=" + pk_endereco + ", fk=" + fk + '}';
     }
 }

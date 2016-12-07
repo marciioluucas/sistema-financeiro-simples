@@ -28,6 +28,7 @@ public class Fornecedor {
     }
 
     public Fornecedor(int pk_fornecedor, String nome, String cpf, Endereco endereco) {
+        this.pk_fornecedor = pk_fornecedor;
         this.endereco = endereco;
         this.nome = nome;
         this.cpf = cpf;

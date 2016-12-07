@@ -42,7 +42,7 @@ public class ClienteDAO {
             int key = rs.getInt(1);
             c.setPk_cliente(key);
             try {
-                EnderecoDAO.create(c.getEndereco());
+                EnderecoDAO.create(c.getEndereco(),"clientes_enderecos","fk_cliente", c.getPk_cliente());
                 return true;
 
             } catch (Exception e) {
@@ -113,7 +113,7 @@ public class ClienteDAO {
             Statement stm = BancoDados.createConnection().createStatement();
             String sql = "update clientes set nome='" + c.getNome() + "'," +
                     "cpf ='" + c.getCpf() + "' where pk_cliente = " + c.getPk_cliente();
-            EnderecoDAO.update(c.getEndereco());
+            EnderecoDAO.update(c.getEndereco(),"clientes_enderecos","pk_endereco");
             stm.execute(sql);
             return true;
         } catch (SQLException e) {
@@ -125,7 +125,7 @@ public class ClienteDAO {
         Statement stm = BancoDados.createConnection().createStatement();
         String sql = "delete from clientes where pk_cliente =" + c.getPk_cliente();
         stm.execute(sql);
-        EnderecoDAO.delete(c.getEndereco());
+        EnderecoDAO.delete(c.getEndereco(),"clientes_enderecos","pk_endereco");
         return true;
     }
 

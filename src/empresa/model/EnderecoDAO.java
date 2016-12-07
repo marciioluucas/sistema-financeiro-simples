@@ -19,31 +19,31 @@ import java.util.logging.Logger;
  */
 public class EnderecoDAO {
 
-    public static boolean create(Endereco e) {
+    public static boolean create(Endereco objetoEndereco, String tabela, String fk, int valorFk) {
         try {
             Statement stm =
                     BancoDados.createConnection().
                             createStatement();
             //INSERT INTO clientes_enderecos(
-            //pk_enderenco, fk_cliente, logradouro, bairro, cidade, estado, 
+            //pk_enderenco, fk_cliente, logradouro, bairro, cidade, estado,
             //pais, cep)VALUES (?, ?, ?, ?, ?, ?, ?, ?);
 
 
             String sql =
-                    "insert into clientes_enderecos (fk_cliente, logradouro, bairro, cidade, estado, pais, cep) values (" +
-                            e.getFk_cliente() + ",'" +
-                            e.getLogradouro() + "','" +
-                            e.getBairro() + "','" +
-                            e.getCidade() + "','" +
-                            e.getEstado() + "','" +
-                            e.getPais() + "','" +
-                            e.getCep() + "')";
+                    "insert into "+tabela+" ("+fk+", logradouro, bairro, cidade, estado, pais, cep) values (" +
+                            valorFk + ",'" +
+                            objetoEndereco.getLogradouro() + "','" +
+                            objetoEndereco.getBairro() + "','" +
+                            objetoEndereco.getCidade() + "','" +
+                            objetoEndereco.getEstado() + "','" +
+                            objetoEndereco.getPais() + "','" +
+                            objetoEndereco.getCep() + "')";
             System.out.println(sql);
             stm.execute(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stm.getGeneratedKeys();
             rs.next();
             int key = rs.getInt(1);
-            e.setPk_endereco(key);
+            objetoEndereco.setPk_endereco(key);
 
             return true;
         } catch (SQLException ex) {
@@ -57,7 +57,7 @@ public class EnderecoDAO {
             Statement stm =
                     BancoDados.createConnection().
                             createStatement();
-            String sql = "Select * from clientes_enderecos where pk_enderenco =" + pkEndereco;
+            String sql = "Select * from clientes_enderecos where pk_endereco =" + pkEndereco;
             ResultSet rs = stm.executeQuery(sql);
             rs.next();
 
@@ -93,8 +93,8 @@ public class EnderecoDAO {
                         rs.getString("estado"),
                         rs.getString("pais"),
                         rs.getString("cep"),
-                        rs.getInt("pk_enderenco"),
-                        rs.getInt("fk_cliente"));
+                        rs.getInt("pk_endereco"),
+                        rs.getInt(foreignKey));
             }
         } catch (SQLException ex) {
             Logger.getLogger(EnderecoDAO.class.getName()).log(Level.SEVERE, null, ex);
@@ -120,7 +120,7 @@ public class EnderecoDAO {
                         rs.getString("estado"),
                         rs.getString("pais"),
                         rs.getString("cep"),
-                        rs.getInt("pk_enderenco"),
+                        rs.getInt("pk_endereco"),
                         rs.getInt("fk_cliente")));
             }
             return e;
@@ -130,36 +130,36 @@ public class EnderecoDAO {
         return null;
     }
 
-    public static void delete(Endereco e) {
+    public static void delete(Endereco objetoEndereco, String tabela, String pk) {
 
         try {
             Statement stm =
                     BancoDados.createConnection().
                             createStatement();
 
-            String sql = "delete from clientes_enderecos where pk_enderenco="
-                    + e.getPk_endereco();
+            String sql = "delete from "+tabela+" where "+pk+"="
+                    + objetoEndereco.getPk_endereco();
             stm.execute(sql);
         } catch (SQLException ex) {
             Logger.getLogger(EnderecoDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public static boolean update(Endereco e) throws SQLException {
+    public static boolean update(Endereco objetoEndereco, String tabela, String pk) throws SQLException {
         try {
             Statement stm =
                     BancoDados.createConnection().
                             createStatement();
             //update ... set logradouro = 'Rua tal', bairo = 'kk'
-            String sql = "update clientes_enderecos set " +
-                    "logradouro = '" + e.getLogradouro() +
-                    "', bairro = '" + e.getBairro() +
-                    "', cidade = '" + e.getCidade() +
-                    "', estado = '" + e.getEstado() +
-                    "', pais = '" + e.getPais() +
-                    "', cep = '" + e.getCep() +
-                    "' where pk_enderenco="
-                    + e.getPk_endereco();
+            String sql = "update "+tabela+" set " +
+                    "logradouro = '" + objetoEndereco.getLogradouro() +
+                    "', bairro = '" + objetoEndereco.getBairro() +
+                    "', cidade = '" + objetoEndereco.getCidade() +
+                    "', estado = '" + objetoEndereco.getEstado() +
+                    "', pais = '" + objetoEndereco.getPais() +
+                    "', cep = '" + objetoEndereco.getCep() +
+                    "' where "+pk+"="
+                    + objetoEndereco.getPk_endereco();
             System.out.println(sql);
             if(stm.execute(sql)){
                 return true;

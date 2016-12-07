@@ -21,13 +21,21 @@ public class FuncionarioDAO {
         try {
             String sql = "insert into funcionarios (fk_cargo, nome, cpf)" +
                     "VALUES (" + f.getCargo().getPk_cargo() + ", '" + f.getNome() + "','" + f.getCpf() + "')";
+            stm.execute(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stm.getGeneratedKeys();
-            f.setPk_funcionario(rs.getInt(1));
-            if (stm.execute(sql)) {
+            rs.next();
+            int key = rs.getInt(1);
+            f.setPk_funcionario(key);
+            try {
+                EnderecoDAO.create(f.getEndereco(), "funcionarios_enderecos", "fk_funcionario", f.getPk_funcionario());
                 return true;
+            } catch (Exception e) {
+                throw new Exception("Erro ao criar endereço. " + e.getMessage());
             }
+        } catch (SQLException ex) {
+            throw new SQLException("Erro na query: " + ex.getMessage());
         } catch (Exception e) {
-            throw new SQLException("Erro ao executar query: " + e.getMessage());
+            e.printStackTrace();
         }
         return false;
     }
@@ -38,12 +46,12 @@ public class FuncionarioDAO {
             String sql = "update funcionarios set nome='" + f.getNome() + "', " +
                     "cpf='" + f.getCpf() + "'" +
                     "where pk_funcionario=" + f.getPk_funcionario();
-
             stm.execute(sql);
+            return true;
         } catch (Exception e) {
             throw new SQLException("Erro ao executar query: " + e.getMessage());
         }
-        return false;
+
     }
 
     public static Funcionario retreave(int pk_funcionario) {
@@ -81,7 +89,7 @@ public class FuncionarioDAO {
             ResultSet rs = stm.executeQuery(sql);
             ArrayList<Funcionario> cs = new ArrayList<>();
             while (rs.next()) {
-                Endereco e = EnderecoDAO.retreaveBy("funcionarios_enderecos","fk_funcionario",rs.getInt("pk_funcionario"));
+                Endereco e = EnderecoDAO.retreaveBy("funcionarios_enderecos", "fk_funcionario", rs.getInt("pk_funcionario"));
                 Cargo c = CargoDAO.retreave(rs.getInt("fk_cargo"));
                 cs.add(new Funcionario(
                         c,
@@ -101,7 +109,11 @@ public class FuncionarioDAO {
     public static boolean delete(Funcionario f) throws SQLException {
         Statement stm = BancoDados.createConnection().createStatement();
         String sql = "delete from funcionarios where pk_funcionario =" + f.getPk_funcionario();
-        stm.execute(sql);
-        return false;
+        try {
+            stm.execute(sql);
+            return true;
+        } catch (SQLException e) {
+            throw new SQLException("Erro no delete, birl: " + e.getMessage());
+        }
     }
 }

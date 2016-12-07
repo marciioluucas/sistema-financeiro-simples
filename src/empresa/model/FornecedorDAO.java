@@ -25,14 +25,21 @@ public class FornecedorDAO {
         try {
             String sql = "insert into fornecedores (nome, cpf)" +
                     "VALUES ('" + f.getNome() + "','" + f.getCpf() + "')";
+            stm.execute(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stm.getGeneratedKeys();
             rs.next();
-            f.setPk_fornecedor(rs.getInt(1));
-            if (stm.execute(sql)) {
+            int key = rs.getInt(1);
+            f.setPk_fornecedor(key);
+            try {
+                EnderecoDAO.create(f.getEndereco(), "fornecedores_enderecos", "fk_fornecedor", f.getPk_fornecedor());
                 return true;
+            } catch (Exception e) {
+                throw new Exception("Erro ao criar endereço. " + e.getMessage());
             }
+        } catch (SQLException ex) {
+            throw new SQLException("Erro na query: " + ex.getMessage());
         } catch (Exception e) {
-            throw new Exception("Erro ao executar query: " + e.getMessage());
+            e.printStackTrace();
         }
         return false;
     }
@@ -41,9 +48,9 @@ public class FornecedorDAO {
         Statement stm = BancoDados.createConnection().createStatement();
         try {
             String sql = "update fornecedores set nome='" + f.getNome() + "', " +
-                    "cpf='" + f.getCpf() + "'" +
+                    "cpf='" + f.getCpf() + "' " +
                     "where pk_fornecedor=" + f.getPk_fornecedor();
-
+            EnderecoDAO.update(f.getEndereco(),"fornecedores_enderecos","pk_endereco");
             stm.execute(sql);
         } catch (Exception e) {
             throw new Exception("Erro ao executar query: " + e.getMessage());
@@ -99,7 +106,11 @@ public class FornecedorDAO {
     public static boolean delete(Fornecedor f) throws SQLException {
         Statement stm = BancoDados.createConnection().createStatement();
         String sql = "delete from fornecedores where pk_fornecedor =" + f.getPk_fornecedor();
-        stm.execute(sql);
-        return false;
+        try {
+            stm.execute(sql);
+            return true;
+        }catch(SQLException ex) {
+            throw new SQLException("Erro no FuncionarioDAO: " + ex.getMessage());
+        }
     }
 }
