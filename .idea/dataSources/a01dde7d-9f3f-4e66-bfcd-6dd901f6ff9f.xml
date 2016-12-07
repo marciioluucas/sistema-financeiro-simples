@@ -1,773 +1,843 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="PostgreSQL - empresa@localhost">
-  <database-model serializer="dbm" rdbms="POSTGRES" format-version="2.6">
-    <database id="1" name="empresa">
-      <object-id>24576</object-id>
-      <visible>1</visible>
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.0">
+    <root id="1"/>
+    <database id="2" parent="1" name="empresa">
+      <ObjectId>16384</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
     </database>
-    <database id="2" name="postgres">
-      <object-id>12401</object-id>
-    </database>
-    <schema id="3" parent="1" name="public">
-      <object-id>2200</object-id>
-      <visible>1</visible>
-      <introspection-state-number>780</introspection-state-number>
-      <introspection-timestamp>2016-12-07.14:41:55.322</introspection-timestamp>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2016-12-07.20:55:16.068</IntrospectionTimestamp>
+      <IntrospectionStateNumber>729</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
     </schema>
-    <schema id="4" parent="1" name="pg_catalog">
-      <object-id>11</object-id>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
     </schema>
-    <schema id="5" parent="1" name="pg_toast">
-      <object-id>99</object-id>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
     </schema>
-    <schema id="6" parent="1" name="pg_temp_1">
-      <object-id>11848</object-id>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
     </schema>
-    <schema id="7" parent="1" name="pg_toast_temp_1">
-      <object-id>11849</object-id>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
     </schema>
-    <schema id="8" parent="1" name="information_schema">
-      <object-id>12113</object-id>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>12113</ObjectId>
     </schema>
     <sequence id="9" parent="3" name="cargos_pk_cargo_seq">
-      <object-id>24581</object-id>
-      <state-number>548</state-number>
+      <ObjectId>16389</ObjectId>
+      <StateNumber>547</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="10" parent="3" name="clientes_enderecos_pk_enderenco_seq">
-      <object-id>24589</object-id>
-      <state-number>552</state-number>
+      <ObjectId>16397</ObjectId>
+      <StateNumber>554</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="11" parent="3" name="clientes_pk_cliente_seq">
-      <object-id>24591</object-id>
-      <state-number>554</state-number>
+      <ObjectId>16399</ObjectId>
+      <StateNumber>557</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="12" parent="3" name="compras_itens_pk_item_seq">
-      <object-id>24599</object-id>
-      <state-number>558</state-number>
+      <ObjectId>16407</ObjectId>
+      <StateNumber>564</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="13" parent="3" name="compras_pk_compra_seq">
-      <object-id>24601</object-id>
-      <state-number>560</state-number>
+      <ObjectId>16409</ObjectId>
+      <StateNumber>567</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="14" parent="3" name="financeiros_entradas_pk_financeiro_seq">
-      <object-id>24606</object-id>
-      <state-number>563</state-number>
+      <ObjectId>16414</ObjectId>
+      <StateNumber>572</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="15" parent="3" name="financeiros_saidas_pk_financeiro_seq">
-      <object-id>24611</object-id>
-      <state-number>566</state-number>
+      <ObjectId>16419</ObjectId>
+      <StateNumber>577</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="16" parent="3" name="fornecedores_enderecos_pk_endereco_seq">
-      <object-id>24619</object-id>
-      <state-number>570</state-number>
+      <ObjectId>16427</ObjectId>
+      <StateNumber>584</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="17" parent="3" name="fornecedores_pk_fornecedor_seq">
-      <object-id>24621</object-id>
-      <state-number>572</state-number>
+      <ObjectId>16429</ObjectId>
+      <StateNumber>587</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="18" parent="3" name="funcionarios_enderecos_pk_endereco_seq">
-      <object-id>24629</object-id>
-      <state-number>576</state-number>
+      <ObjectId>16437</ObjectId>
+      <StateNumber>594</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="19" parent="3" name="funcionarios_pk_funcionario_seq">
-      <object-id>24631</object-id>
-      <state-number>578</state-number>
+      <ObjectId>16439</ObjectId>
+      <StateNumber>597</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="20" parent="3" name="produtos_pk_produto_seq">
-      <object-id>24641</object-id>
-      <state-number>584</state-number>
+      <ObjectId>16449</ObjectId>
+      <StateNumber>607</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="21" parent="3" name="vendas_itens_pk_item_seq">
-      <object-id>24649</object-id>
-      <state-number>588</state-number>
+      <ObjectId>16457</ObjectId>
+      <StateNumber>614</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <sequence id="22" parent="3" name="vendas_pk_venda_seq">
-      <object-id>24651</object-id>
-      <state-number>590</state-number>
+      <ObjectId>16459</ObjectId>
+      <StateNumber>617</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
     </sequence>
     <table id="23" parent="3" name="cargos">
-      <object-id>24578</object-id>
-      <state-number>651</state-number>
+      <ObjectId>16386</ObjectId>
+      <StateNumber>679</StateNumber>
     </table>
     <table id="24" parent="3" name="clientes">
-      <object-id>24583</object-id>
-      <state-number>661</state-number>
+      <ObjectId>16391</ObjectId>
+      <StateNumber>689</StateNumber>
     </table>
     <table id="25" parent="3" name="clientes_enderecos">
-      <object-id>24586</object-id>
-      <state-number>652</state-number>
+      <ObjectId>16394</ObjectId>
+      <StateNumber>680</StateNumber>
     </table>
     <table id="26" parent="3" name="compras">
-      <object-id>24593</object-id>
-      <state-number>656</state-number>
+      <ObjectId>16401</ObjectId>
+      <StateNumber>684</StateNumber>
     </table>
     <table id="27" parent="3" name="compras_itens">
-      <object-id>24596</object-id>
-      <state-number>659</state-number>
+      <ObjectId>16404</ObjectId>
+      <StateNumber>687</StateNumber>
     </table>
     <table id="28" parent="3" name="financeiros_entradas">
-      <object-id>24603</object-id>
-      <state-number>655</state-number>
+      <ObjectId>16411</ObjectId>
+      <StateNumber>683</StateNumber>
     </table>
     <table id="29" parent="3" name="financeiros_saidas">
-      <object-id>24608</object-id>
-      <state-number>656</state-number>
+      <ObjectId>16416</ObjectId>
+      <StateNumber>684</StateNumber>
     </table>
     <table id="30" parent="3" name="fornecedores">
-      <object-id>24613</object-id>
-      <state-number>657</state-number>
+      <ObjectId>16421</ObjectId>
+      <StateNumber>685</StateNumber>
     </table>
     <table id="31" parent="3" name="fornecedores_enderecos">
-      <object-id>24616</object-id>
-      <state-number>657</state-number>
+      <ObjectId>16424</ObjectId>
+      <StateNumber>685</StateNumber>
     </table>
     <table id="32" parent="3" name="funcionarios">
-      <object-id>24623</object-id>
-      <state-number>662</state-number>
+      <ObjectId>16431</ObjectId>
+      <StateNumber>690</StateNumber>
     </table>
     <table id="33" parent="3" name="funcionarios_enderecos">
-      <object-id>24626</object-id>
-      <state-number>658</state-number>
+      <ObjectId>16434</ObjectId>
+      <StateNumber>686</StateNumber>
     </table>
     <table id="34" parent="3" name="produtos">
-      <object-id>24638</object-id>
-      <state-number>660</state-number>
+      <ObjectId>16446</ObjectId>
+      <StateNumber>688</StateNumber>
     </table>
     <table id="35" parent="3" name="vendas">
-      <object-id>24643</object-id>
-      <state-number>663</state-number>
+      <ObjectId>16451</ObjectId>
+      <StateNumber>691</StateNumber>
     </table>
     <table id="36" parent="3" name="vendas_itens">
-      <object-id>24646</object-id>
-      <state-number>663</state-number>
+      <ObjectId>16454</ObjectId>
+      <StateNumber>691</StateNumber>
     </table>
     <routine id="37" parent="3" name="grava_log">
-      <object-id>24577</object-id>
-      <state-number>546</state-number>
-      <routine-kind>FUNCTION</routine-kind>
+      <ObjectId>16385</ObjectId>
+      <StateNumber>544</StateNumber>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
     </routine>
     <column id="38" parent="23" name="pk_cargo">
-      <state-number>592</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;cargos_pk_cargo_seq&apos;::regclass)</default-expression>
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>620</StateNumber>
+      <DefaultExpression>nextval(&apos;cargos_pk_cargo_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="39" parent="23" name="nome">
-      <state-number>547</state-number>
-      <mandatory>1</mandatory>
-      <data-type>varchar(100)|0</data-type>
+      <Position>2</Position>
+      <DataType>varchar(100)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>545</StateNumber>
     </column>
     <column id="40" parent="23" name="descricao">
-      <state-number>547</state-number>
-      <mandatory>1</mandatory>
-      <data-type>varchar(80)|0</data-type>
+      <Position>3</Position>
+      <DataType>varchar(80)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>545</StateNumber>
     </column>
     <index id="41" parent="23" name="cargos_pkey">
-      <object-id>24668</object-id>
-      <columns>pk_cargo</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16476</ObjectId>
+      <ColNames>pk_cargo</ColNames>
+      <Unique>1</Unique>
     </index>
     <key id="42" parent="23" name="cargos_pkey">
-      <object-id>24669</object-id>
-      <columns>pk_cargo</columns>
-      <underlying-index>cargos_pkey</underlying-index>
-      <primary>1</primary>
+      <ObjectId>16477</ObjectId>
+      <ColNames>pk_cargo</ColNames>
+      <UnderlyingIndexName>cargos_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
     </key>
     <column id="43" parent="24" name="pk_cliente">
-      <state-number>593</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;clientes_pk_cliente_seq&apos;::regclass)</default-expression>
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>621</StateNumber>
+      <DefaultExpression>nextval(&apos;clientes_pk_cliente_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="44" parent="24" name="nome">
-      <state-number>550</state-number>
-      <mandatory>1</mandatory>
-      <data-type>varchar(80)|0</data-type>
+      <Position>2</Position>
+      <DataType>varchar(80)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>550</StateNumber>
     </column>
     <column id="45" parent="24" name="cpf">
-      <state-number>550</state-number>
-      <data-type>char(11)|0</data-type>
+      <Position>3</Position>
+      <DataType>char(11)|0</DataType>
+      <StateNumber>550</StateNumber>
     </column>
     <index id="46" parent="24" name="clientes_pkey">
-      <object-id>24674</object-id>
-      <columns>pk_cliente</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16482</ObjectId>
+      <ColNames>pk_cliente</ColNames>
+      <Unique>1</Unique>
     </index>
     <index id="47" parent="24" name="clientes_cpf_key">
-      <object-id>24670</object-id>
-      <columns>cpf</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16478</ObjectId>
+      <ColNames>cpf</ColNames>
+      <Unique>1</Unique>
     </index>
     <key id="48" parent="24" name="clientes_pkey">
-      <object-id>24675</object-id>
-      <columns>pk_cliente</columns>
-      <underlying-index>clientes_pkey</underlying-index>
-      <primary>1</primary>
+      <ObjectId>16483</ObjectId>
+      <ColNames>pk_cliente</ColNames>
+      <UnderlyingIndexName>clientes_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
     </key>
     <key id="49" parent="24" name="clientes_cpf_key">
-      <object-id>24671</object-id>
-      <columns>cpf</columns>
-      <underlying-index>clientes_cpf_key</underlying-index>
+      <ObjectId>16479</ObjectId>
+      <ColNames>cpf</ColNames>
+      <UnderlyingIndexName>clientes_cpf_key</UnderlyingIndexName>
     </key>
     <column id="50" parent="25" name="pk_endereco">
-      <state-number>774</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;clientes_enderecos_pk_enderenco_seq&apos;::regclass)</default-expression>
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>728</StateNumber>
+      <DefaultExpression>nextval(&apos;clientes_enderecos_pk_enderenco_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="51" parent="25" name="fk_cliente">
-      <state-number>551</state-number>
-      <data-type>integer|0</data-type>
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>552</StateNumber>
     </column>
     <column id="52" parent="25" name="logradouro">
-      <state-number>551</state-number>
-      <data-type>varchar(50)|0</data-type>
+      <Position>3</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>552</StateNumber>
     </column>
     <column id="53" parent="25" name="bairro">
-      <state-number>551</state-number>
-      <data-type>varchar(20)|0</data-type>
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+      <StateNumber>552</StateNumber>
     </column>
     <column id="54" parent="25" name="cidade">
-      <state-number>551</state-number>
-      <data-type>varchar(20)|0</data-type>
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+      <StateNumber>552</StateNumber>
     </column>
     <column id="55" parent="25" name="estado">
-      <state-number>551</state-number>
-      <data-type>char(2)|0</data-type>
+      <Position>6</Position>
+      <DataType>char(2)|0</DataType>
+      <StateNumber>552</StateNumber>
     </column>
     <column id="56" parent="25" name="pais">
-      <state-number>551</state-number>
-      <data-type>varchar(20)|0</data-type>
+      <Position>7</Position>
+      <DataType>varchar(20)|0</DataType>
+      <StateNumber>552</StateNumber>
     </column>
     <column id="57" parent="25" name="cep">
-      <state-number>551</state-number>
-      <data-type>char(8)|0</data-type>
+      <Position>8</Position>
+      <DataType>char(8)|0</DataType>
+      <StateNumber>552</StateNumber>
     </column>
     <index id="58" parent="25" name="clientes_enderecos_pkey">
-      <object-id>24672</object-id>
-      <columns>pk_endereco</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16480</ObjectId>
+      <ColNames>pk_endereco</ColNames>
+      <Unique>1</Unique>
     </index>
     <key id="59" parent="25" name="clientes_enderecos_pkey">
-      <object-id>24673</object-id>
-      <columns>pk_endereco</columns>
-      <underlying-index>clientes_enderecos_pkey</underlying-index>
-      <primary>1</primary>
+      <ObjectId>16481</ObjectId>
+      <ColNames>pk_endereco</ColNames>
+      <UnderlyingIndexName>clientes_enderecos_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
     </key>
     <foreign-key id="60" parent="25" name="clie_ender">
-      <object-id>24711</object-id>
-      <columns>fk_cliente</columns>
-      <ref-key>~.clientes.clientes_pkey</ref-key>
-      <cascade-update-rule>restrict</cascade-update-rule>
-      <cascade-delete-rule>restrict</cascade-delete-rule>
+      <ObjectId>16519</ObjectId>
+      <ColNames>fk_cliente</ColNames>
+      <RefTableName>clientes</RefTableName>
+      <RefKeyName>clientes_pkey</RefKeyName>
+      <RefColNames>pk_cliente</RefColNames>
     </foreign-key>
     <column id="61" parent="26" name="pk_compra">
-      <state-number>595</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;compras_pk_compra_seq&apos;::regclass)</default-expression>
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>623</StateNumber>
+      <DefaultExpression>nextval(&apos;compras_pk_compra_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="62" parent="26" name="fk_fornecedor">
-      <state-number>556</state-number>
-      <data-type>integer|0</data-type>
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>560</StateNumber>
     </column>
     <column id="63" parent="26" name="numero">
-      <state-number>556</state-number>
-      <data-type>integer|0</data-type>
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>560</StateNumber>
     </column>
     <column id="64" parent="26" name="datas">
-      <state-number>556</state-number>
-      <data-type>date|0</data-type>
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <StateNumber>560</StateNumber>
     </column>
     <index id="65" parent="26" name="compras_pkey">
-      <object-id>24678</object-id>
-      <columns>pk_compra</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16486</ObjectId>
+      <ColNames>pk_compra</ColNames>
+      <Unique>1</Unique>
     </index>
     <key id="66" parent="26" name="compras_pkey">
-      <object-id>24679</object-id>
-      <columns>pk_compra</columns>
-      <underlying-index>compras_pkey</underlying-index>
-      <primary>1</primary>
+      <ObjectId>16487</ObjectId>
+      <ColNames>pk_compra</ColNames>
+      <UnderlyingIndexName>compras_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
     </key>
     <foreign-key id="67" parent="26" name="compra_fornecedor">
-      <object-id>24721</object-id>
-      <columns>fk_fornecedor</columns>
-      <ref-key>~.fornecedores.fornecedores_pkey</ref-key>
-      <cascade-update-rule>restrict</cascade-update-rule>
-      <cascade-delete-rule>restrict</cascade-delete-rule>
+      <ObjectId>16529</ObjectId>
+      <ColNames>fk_fornecedor</ColNames>
+      <RefTableName>fornecedores</RefTableName>
+      <RefKeyName>fornecedores_pkey</RefKeyName>
+      <RefColNames>pk_fornecedor</RefColNames>
     </foreign-key>
     <column id="68" parent="27" name="pk_item">
-      <state-number>596</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;compras_itens_pk_item_seq&apos;::regclass)</default-expression>
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>624</StateNumber>
+      <DefaultExpression>nextval(&apos;compras_itens_pk_item_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="69" parent="27" name="fk_compra">
-      <state-number>557</state-number>
-      <data-type>integer|0</data-type>
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>562</StateNumber>
     </column>
     <column id="70" parent="27" name="fk_produto">
-      <state-number>557</state-number>
-      <data-type>integer|0</data-type>
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>562</StateNumber>
     </column>
     <column id="71" parent="27" name="qtd">
-      <state-number>557</state-number>
-      <data-type>integer|0</data-type>
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>562</StateNumber>
     </column>
     <column id="72" parent="27" name="valor_unitario">
-      <state-number>557</state-number>
-      <data-type>numeric(10,2)|0</data-type>
+      <Position>5</Position>
+      <DataType>numeric(10,2)|0</DataType>
+      <StateNumber>562</StateNumber>
     </column>
     <index id="73" parent="27" name="compras_itens_pkey">
-      <object-id>24676</object-id>
-      <columns>pk_item</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16484</ObjectId>
+      <ColNames>pk_item</ColNames>
+      <Unique>1</Unique>
     </index>
     <key id="74" parent="27" name="compras_itens_pkey">
-      <object-id>24677</object-id>
-      <columns>pk_item</columns>
-      <underlying-index>compras_itens_pkey</underlying-index>
-      <primary>1</primary>
+      <ObjectId>16485</ObjectId>
+      <ColNames>pk_item</ColNames>
+      <UnderlyingIndexName>compras_itens_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
     </key>
     <foreign-key id="75" parent="27" name="compra_compras_itens">
-      <object-id>24716</object-id>
-      <columns>fk_compra</columns>
-      <ref-key>~.compras.compras_pkey</ref-key>
-      <cascade-update-rule>restrict</cascade-update-rule>
-      <cascade-delete-rule>restrict</cascade-delete-rule>
+      <ObjectId>16524</ObjectId>
+      <ColNames>fk_compra</ColNames>
+      <RefTableName>compras</RefTableName>
+      <RefKeyName>compras_pkey</RefKeyName>
+      <RefColNames>pk_compra</RefColNames>
     </foreign-key>
     <foreign-key id="76" parent="27" name="produto_compras_itens">
-      <object-id>24746</object-id>
-      <columns>fk_produto</columns>
-      <ref-key>~.produtos.produtos_pkey</ref-key>
-      <cascade-update-rule>restrict</cascade-update-rule>
-      <cascade-delete-rule>restrict</cascade-delete-rule>
+      <ObjectId>16554</ObjectId>
+      <ColNames>fk_produto</ColNames>
+      <RefTableName>produtos</RefTableName>
+      <RefKeyName>produtos_pkey</RefKeyName>
+      <RefColNames>pk_produto</RefColNames>
     </foreign-key>
     <column id="77" parent="28" name="pk_financeiro">
-      <state-number>597</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;financeiros_entradas_pk_financeiro_seq&apos;::regclass)</default-expression>
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>625</StateNumber>
+      <DefaultExpression>nextval(&apos;financeiros_entradas_pk_financeiro_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="78" parent="28" name="fk_venda">
-      <state-number>562</state-number>
-      <data-type>integer|0</data-type>
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>570</StateNumber>
     </column>
     <column id="79" parent="28" name="data_emissao">
-      <state-number>562</state-number>
-      <data-type>date|0</data-type>
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+      <StateNumber>570</StateNumber>
     </column>
     <column id="80" parent="28" name="data_vencimento">
-      <state-number>562</state-number>
-      <data-type>date|0</data-type>
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <StateNumber>570</StateNumber>
     </column>
     <column id="81" parent="28" name="data_baixa">
-      <state-number>562</state-number>
-      <data-type>date|0</data-type>
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+      <StateNumber>570</StateNumber>
     </column>
     <column id="82" parent="28" name="valor">
-      <state-number>562</state-number>
-      <data-type>numeric(10,2)|0</data-type>
+      <Position>6</Position>
+      <DataType>numeric(10,2)|0</DataType>
+      <StateNumber>570</StateNumber>
     </column>
     <index id="83" parent="28" name="financeiros_entradas_pkey">
-      <object-id>24680</object-id>
-      <columns>pk_financeiro</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16488</ObjectId>
+      <ColNames>pk_financeiro</ColNames>
+      <Unique>1</Unique>
     </index>
     <key id="84" parent="28" name="financeiros_entradas_pkey">
-      <object-id>24681</object-id>
-      <columns>pk_financeiro</columns>
-      <underlying-index>financeiros_entradas_pkey</underlying-index>
-      <primary>1</primary>
+      <ObjectId>16489</ObjectId>
+      <ColNames>pk_financeiro</ColNames>
+      <UnderlyingIndexName>financeiros_entradas_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
     </key>
     <foreign-key id="85" parent="28" name="finacei_entradas_vendas">
-      <object-id>24726</object-id>
-      <columns>fk_venda</columns>
-      <ref-key>~.vendas.vendas_pkey</ref-key>
-      <cascade-update-rule>restrict</cascade-update-rule>
-      <cascade-delete-rule>restrict</cascade-delete-rule>
+      <ObjectId>16534</ObjectId>
+      <ColNames>fk_venda</ColNames>
+      <RefTableName>vendas</RefTableName>
+      <RefKeyName>vendas_pkey</RefKeyName>
+      <RefColNames>pk_venda</RefColNames>
     </foreign-key>
     <column id="86" parent="29" name="pk_financeiro">
-      <state-number>598</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;financeiros_saidas_pk_financeiro_seq&apos;::regclass)</default-expression>
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>626</StateNumber>
+      <DefaultExpression>nextval(&apos;financeiros_saidas_pk_financeiro_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="87" parent="29" name="fk_compra">
-      <state-number>565</state-number>
-      <data-type>integer|0</data-type>
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>575</StateNumber>
     </column>
     <column id="88" parent="29" name="data_emissao">
-      <state-number>565</state-number>
-      <mandatory>1</mandatory>
-      <data-type>date|0</data-type>
+      <Position>3</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>575</StateNumber>
     </column>
     <column id="89" parent="29" name="data_vencimento">
-      <state-number>565</state-number>
-      <mandatory>1</mandatory>
-      <data-type>date|0</data-type>
+      <Position>4</Position>
+      <DataType>date|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>575</StateNumber>
     </column>
     <column id="90" parent="29" name="data_baixa">
-      <state-number>565</state-number>
-      <data-type>date|0</data-type>
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+      <StateNumber>575</StateNumber>
     </column>
     <column id="91" parent="29" name="valor">
-      <state-number>565</state-number>
-      <data-type>numeric(10,2)|0</data-type>
+      <Position>6</Position>
+      <DataType>numeric(10,2)|0</DataType>
+      <StateNumber>575</StateNumber>
     </column>
     <index id="92" parent="29" name="financeiros_saidas_pkey">
-      <object-id>24682</object-id>
-      <columns>pk_financeiro</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16490</ObjectId>
+      <ColNames>pk_financeiro</ColNames>
+      <Unique>1</Unique>
     </index>
     <key id="93" parent="29" name="financeiros_saidas_pkey">
-      <object-id>24683</object-id>
-      <columns>pk_financeiro</columns>
-      <underlying-index>financeiros_saidas_pkey</underlying-index>
-      <primary>1</primary>
+      <ObjectId>16491</ObjectId>
+      <ColNames>pk_financeiro</ColNames>
+      <UnderlyingIndexName>financeiros_saidas_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
     </key>
     <foreign-key id="94" parent="29" name="finacei_saidas_compras">
-      <object-id>24731</object-id>
-      <columns>fk_compra</columns>
-      <ref-key>~.compras.compras_pkey</ref-key>
-      <cascade-update-rule>restrict</cascade-update-rule>
-      <cascade-delete-rule>restrict</cascade-delete-rule>
+      <ObjectId>16539</ObjectId>
+      <ColNames>fk_compra</ColNames>
+      <RefTableName>compras</RefTableName>
+      <RefKeyName>compras_pkey</RefKeyName>
+      <RefColNames>pk_compra</RefColNames>
     </foreign-key>
     <column id="95" parent="30" name="pk_fornecedor">
-      <state-number>599</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;fornecedores_pk_fornecedor_seq&apos;::regclass)</default-expression>
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>627</StateNumber>
+      <DefaultExpression>nextval(&apos;fornecedores_pk_fornecedor_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="96" parent="30" name="nome">
-      <state-number>568</state-number>
-      <data-type>varchar(80)|0</data-type>
+      <Position>2</Position>
+      <DataType>varchar(80)|0</DataType>
+      <StateNumber>580</StateNumber>
     </column>
     <column id="97" parent="30" name="cpf">
-      <state-number>568</state-number>
-      <mandatory>1</mandatory>
-      <data-type>char(11)|0</data-type>
+      <Position>3</Position>
+      <DataType>char(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>580</StateNumber>
     </column>
     <index id="98" parent="30" name="fornecedores_pkey">
-      <object-id>24688</object-id>
-      <columns>pk_fornecedor</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16496</ObjectId>
+      <ColNames>pk_fornecedor</ColNames>
+      <Unique>1</Unique>
     </index>
     <index id="99" parent="30" name="fornecedores_cpf_key">
-      <object-id>24684</object-id>
-      <columns>cpf</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16492</ObjectId>
+      <ColNames>cpf</ColNames>
+      <Unique>1</Unique>
     </index>
     <key id="100" parent="30" name="fornecedores_pkey">
-      <object-id>24689</object-id>
-      <columns>pk_fornecedor</columns>
-      <underlying-index>fornecedores_pkey</underlying-index>
-      <primary>1</primary>
+      <ObjectId>16497</ObjectId>
+      <ColNames>pk_fornecedor</ColNames>
+      <UnderlyingIndexName>fornecedores_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
     </key>
     <key id="101" parent="30" name="fornecedores_cpf_key">
-      <object-id>24685</object-id>
-      <columns>cpf</columns>
-      <underlying-index>fornecedores_cpf_key</underlying-index>
+      <ObjectId>16493</ObjectId>
+      <ColNames>cpf</ColNames>
+      <UnderlyingIndexName>fornecedores_cpf_key</UnderlyingIndexName>
     </key>
     <column id="102" parent="31" name="pk_endereco">
-      <state-number>600</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;fornecedores_enderecos_pk_endereco_seq&apos;::regclass)</default-expression>
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>628</StateNumber>
+      <DefaultExpression>nextval(&apos;fornecedores_enderecos_pk_endereco_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="103" parent="31" name="fk_fornecedor">
-      <state-number>569</state-number>
-      <data-type>integer|0</data-type>
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>582</StateNumber>
     </column>
     <column id="104" parent="31" name="logradouro">
-      <state-number>569</state-number>
-      <data-type>varchar(80)|0</data-type>
+      <Position>3</Position>
+      <DataType>varchar(80)|0</DataType>
+      <StateNumber>582</StateNumber>
     </column>
     <column id="105" parent="31" name="bairro">
-      <state-number>569</state-number>
-      <data-type>varchar(50)|0</data-type>
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+      <StateNumber>582</StateNumber>
     </column>
     <column id="106" parent="31" name="cidade">
-      <state-number>569</state-number>
-      <data-type>varchar(30)|0</data-type>
+      <Position>5</Position>
+      <DataType>varchar(30)|0</DataType>
+      <StateNumber>582</StateNumber>
     </column>
     <column id="107" parent="31" name="estado">
-      <state-number>569</state-number>
-      <data-type>char(2)|0</data-type>
+      <Position>6</Position>
+      <DataType>char(2)|0</DataType>
+      <StateNumber>582</StateNumber>
     </column>
     <column id="108" parent="31" name="pais">
-      <state-number>569</state-number>
-      <data-type>varchar(20)|0</data-type>
+      <Position>7</Position>
+      <DataType>varchar(20)|0</DataType>
+      <StateNumber>582</StateNumber>
     </column>
     <column id="109" parent="31" name="cep">
-      <state-number>569</state-number>
-      <data-type>char(11)|0</data-type>
+      <Position>8</Position>
+      <DataType>char(11)|0</DataType>
+      <StateNumber>582</StateNumber>
     </column>
     <index id="110" parent="31" name="fornecedores_enderecos_pkey">
-      <object-id>24686</object-id>
-      <columns>pk_endereco</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16494</ObjectId>
+      <ColNames>pk_endereco</ColNames>
+      <Unique>1</Unique>
     </index>
     <key id="111" parent="31" name="fornecedores_enderecos_pkey">
-      <object-id>24687</object-id>
-      <columns>pk_endereco</columns>
-      <underlying-index>fornecedores_enderecos_pkey</underlying-index>
-      <primary>1</primary>
+      <ObjectId>16495</ObjectId>
+      <ColNames>pk_endereco</ColNames>
+      <UnderlyingIndexName>fornecedores_enderecos_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
     </key>
     <foreign-key id="112" parent="31" name="forne_ender_fornece">
-      <object-id>24736</object-id>
-      <columns>fk_fornecedor</columns>
-      <ref-key>~.fornecedores.fornecedores_pkey</ref-key>
-      <cascade-update-rule>restrict</cascade-update-rule>
-      <cascade-delete-rule>restrict</cascade-delete-rule>
+      <ObjectId>16544</ObjectId>
+      <ColNames>fk_fornecedor</ColNames>
+      <RefTableName>fornecedores</RefTableName>
+      <RefKeyName>fornecedores_pkey</RefKeyName>
+      <RefColNames>pk_fornecedor</RefColNames>
     </foreign-key>
     <column id="113" parent="32" name="pk_funcionario">
-      <state-number>601</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;funcionarios_pk_funcionario_seq&apos;::regclass)</default-expression>
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>629</StateNumber>
+      <DefaultExpression>nextval(&apos;funcionarios_pk_funcionario_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="114" parent="32" name="fk_cargo">
-      <state-number>574</state-number>
-      <data-type>integer|0</data-type>
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>590</StateNumber>
     </column>
     <column id="115" parent="32" name="nome">
-      <state-number>574</state-number>
-      <mandatory>1</mandatory>
-      <data-type>varchar(80)|0</data-type>
+      <Position>3</Position>
+      <DataType>varchar(80)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>590</StateNumber>
     </column>
     <column id="116" parent="32" name="cpf">
-      <state-number>574</state-number>
-      <mandatory>1</mandatory>
-      <data-type>char(11)|0</data-type>
+      <Position>4</Position>
+      <DataType>char(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>590</StateNumber>
     </column>
     <index id="117" parent="32" name="funcionarios_pkey">
-      <object-id>24694</object-id>
-      <columns>pk_funcionario</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16502</ObjectId>
+      <ColNames>pk_funcionario</ColNames>
+      <Unique>1</Unique>
     </index>
     <index id="118" parent="32" name="funcionarios_cpf_key">
-      <object-id>24690</object-id>
-      <columns>cpf</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16498</ObjectId>
+      <ColNames>cpf</ColNames>
+      <Unique>1</Unique>
     </index>
     <key id="119" parent="32" name="funcionarios_pkey">
-      <object-id>24695</object-id>
-      <columns>pk_funcionario</columns>
-      <underlying-index>funcionarios_pkey</underlying-index>
-      <primary>1</primary>
+      <ObjectId>16503</ObjectId>
+      <ColNames>pk_funcionario</ColNames>
+      <UnderlyingIndexName>funcionarios_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
     </key>
     <key id="120" parent="32" name="funcionarios_cpf_key">
-      <object-id>24691</object-id>
-      <columns>cpf</columns>
-      <underlying-index>funcionarios_cpf_key</underlying-index>
+      <ObjectId>16499</ObjectId>
+      <ColNames>cpf</ColNames>
+      <UnderlyingIndexName>funcionarios_cpf_key</UnderlyingIndexName>
     </key>
     <foreign-key id="121" parent="32" name="carg_fun">
-      <object-id>24706</object-id>
-      <columns>fk_cargo</columns>
-      <ref-key>~.cargos.cargos_pkey</ref-key>
-      <cascade-update-rule>restrict</cascade-update-rule>
-      <cascade-delete-rule>restrict</cascade-delete-rule>
+      <ObjectId>16514</ObjectId>
+      <ColNames>fk_cargo</ColNames>
+      <RefTableName>cargos</RefTableName>
+      <RefKeyName>cargos_pkey</RefKeyName>
+      <RefColNames>pk_cargo</RefColNames>
     </foreign-key>
     <column id="122" parent="33" name="pk_endereco">
-      <state-number>602</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;funcionarios_enderecos_pk_endereco_seq&apos;::regclass)</default-expression>
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>630</StateNumber>
+      <DefaultExpression>nextval(&apos;funcionarios_enderecos_pk_endereco_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="123" parent="33" name="fk_funcionario">
-      <state-number>575</state-number>
-      <data-type>integer|0</data-type>
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>592</StateNumber>
     </column>
     <column id="124" parent="33" name="logradouro">
-      <state-number>780</state-number>
-      <data-type>varchar(80)|0</data-type>
+      <Position>3</Position>
+      <DataType>varchar(80)|0</DataType>
+      <StateNumber>729</StateNumber>
     </column>
     <column id="125" parent="33" name="bairro">
-      <state-number>575</state-number>
-      <data-type>varchar(30)|0</data-type>
+      <Position>4</Position>
+      <DataType>varchar(30)|0</DataType>
+      <StateNumber>592</StateNumber>
     </column>
     <column id="126" parent="33" name="cidade">
-      <state-number>575</state-number>
-      <data-type>varchar(20)|0</data-type>
+      <Position>5</Position>
+      <DataType>varchar(20)|0</DataType>
+      <StateNumber>592</StateNumber>
     </column>
     <column id="127" parent="33" name="estado">
-      <state-number>575</state-number>
-      <data-type>char(2)|0</data-type>
+      <Position>6</Position>
+      <DataType>char(2)|0</DataType>
+      <StateNumber>592</StateNumber>
     </column>
     <column id="128" parent="33" name="pais">
-      <state-number>575</state-number>
-      <data-type>varchar(20)|0</data-type>
+      <Position>7</Position>
+      <DataType>varchar(20)|0</DataType>
+      <StateNumber>592</StateNumber>
     </column>
     <column id="129" parent="33" name="cep">
-      <state-number>575</state-number>
-      <data-type>char(10)|0</data-type>
+      <Position>8</Position>
+      <DataType>char(10)|0</DataType>
+      <StateNumber>592</StateNumber>
     </column>
     <index id="130" parent="33" name="funcionarios_enderecos_pkey">
-      <object-id>24692</object-id>
-      <columns>pk_endereco</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16500</ObjectId>
+      <ColNames>pk_endereco</ColNames>
+      <Unique>1</Unique>
     </index>
     <key id="131" parent="33" name="funcionarios_enderecos_pkey">
-      <object-id>24693</object-id>
-      <columns>pk_endereco</columns>
-      <underlying-index>funcionarios_enderecos_pkey</underlying-index>
-      <primary>1</primary>
+      <ObjectId>16501</ObjectId>
+      <ColNames>pk_endereco</ColNames>
+      <UnderlyingIndexName>funcionarios_enderecos_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
     </key>
     <foreign-key id="132" parent="33" name="func_ender">
-      <object-id>24741</object-id>
-      <columns>fk_funcionario</columns>
-      <ref-key>~.funcionarios.funcionarios_pkey</ref-key>
-      <cascade-update-rule>restrict</cascade-update-rule>
-      <cascade-delete-rule>restrict</cascade-delete-rule>
+      <ObjectId>16549</ObjectId>
+      <ColNames>fk_funcionario</ColNames>
+      <RefTableName>funcionarios</RefTableName>
+      <RefKeyName>funcionarios_pkey</RefKeyName>
+      <RefColNames>pk_funcionario</RefColNames>
     </foreign-key>
     <column id="133" parent="34" name="pk_produto">
-      <state-number>604</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;produtos_pk_produto_seq&apos;::regclass)</default-expression>
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>632</StateNumber>
+      <DefaultExpression>nextval(&apos;produtos_pk_produto_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="134" parent="34" name="nome">
-      <state-number>583</state-number>
-      <mandatory>1</mandatory>
-      <data-type>varchar(80)|0</data-type>
+      <Position>2</Position>
+      <DataType>varchar(80)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>605</StateNumber>
     </column>
     <column id="135" parent="34" name="estoque_minimo">
-      <state-number>583</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>605</StateNumber>
     </column>
     <column id="136" parent="34" name="qtd_estoque">
-      <state-number>583</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>605</StateNumber>
     </column>
     <index id="137" parent="34" name="produtos_pkey">
-      <object-id>24698</object-id>
-      <columns>pk_produto</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16506</ObjectId>
+      <ColNames>pk_produto</ColNames>
+      <Unique>1</Unique>
     </index>
     <key id="138" parent="34" name="produtos_pkey">
-      <object-id>24699</object-id>
-      <columns>pk_produto</columns>
-      <underlying-index>produtos_pkey</underlying-index>
-      <primary>1</primary>
+      <ObjectId>16507</ObjectId>
+      <ColNames>pk_produto</ColNames>
+      <UnderlyingIndexName>produtos_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
     </key>
     <column id="139" parent="35" name="pk_venda">
-      <state-number>605</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;vendas_pk_venda_seq&apos;::regclass)</default-expression>
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>633</StateNumber>
+      <DefaultExpression>nextval(&apos;vendas_pk_venda_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="140" parent="35" name="fk_cliente">
-      <state-number>586</state-number>
-      <data-type>integer|0</data-type>
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>610</StateNumber>
     </column>
     <column id="141" parent="35" name="fk_vendedor">
-      <state-number>586</state-number>
-      <data-type>integer|0</data-type>
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>610</StateNumber>
     </column>
     <column id="142" parent="35" name="numero">
-      <state-number>586</state-number>
-      <data-type>integer|0</data-type>
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>610</StateNumber>
     </column>
     <column id="143" parent="35" name="datas">
-      <state-number>586</state-number>
-      <data-type>date|0</data-type>
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+      <StateNumber>610</StateNumber>
     </column>
     <index id="144" parent="35" name="vendas_pkey">
-      <object-id>24702</object-id>
-      <columns>pk_venda</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16510</ObjectId>
+      <ColNames>pk_venda</ColNames>
+      <Unique>1</Unique>
     </index>
     <key id="145" parent="35" name="vendas_pkey">
-      <object-id>24703</object-id>
-      <columns>pk_venda</columns>
-      <underlying-index>vendas_pkey</underlying-index>
-      <primary>1</primary>
+      <ObjectId>16511</ObjectId>
+      <ColNames>pk_venda</ColNames>
+      <UnderlyingIndexName>vendas_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
     </key>
     <foreign-key id="146" parent="35" name="venda_cliente">
-      <object-id>24756</object-id>
-      <columns>fk_cliente</columns>
-      <ref-key>~.clientes.clientes_pkey</ref-key>
-      <cascade-update-rule>restrict</cascade-update-rule>
-      <cascade-delete-rule>restrict</cascade-delete-rule>
+      <ObjectId>16564</ObjectId>
+      <ColNames>fk_cliente</ColNames>
+      <RefTableName>clientes</RefTableName>
+      <RefKeyName>clientes_pkey</RefKeyName>
+      <RefColNames>pk_cliente</RefColNames>
     </foreign-key>
     <foreign-key id="147" parent="35" name="venda_funcionario">
-      <object-id>24761</object-id>
-      <columns>fk_vendedor</columns>
-      <ref-key>~.funcionarios.funcionarios_pkey</ref-key>
-      <cascade-update-rule>restrict</cascade-update-rule>
-      <cascade-delete-rule>restrict</cascade-delete-rule>
+      <ObjectId>16569</ObjectId>
+      <ColNames>fk_vendedor</ColNames>
+      <RefTableName>funcionarios</RefTableName>
+      <RefKeyName>funcionarios_pkey</RefKeyName>
+      <RefColNames>pk_funcionario</RefColNames>
     </foreign-key>
     <column id="148" parent="36" name="pk_item">
-      <state-number>606</state-number>
-      <mandatory>1</mandatory>
-      <data-type>integer|0</data-type>
-      <default-expression>nextval(&apos;vendas_itens_pk_item_seq&apos;::regclass)</default-expression>
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>634</StateNumber>
+      <DefaultExpression>nextval(&apos;vendas_itens_pk_item_seq&apos;::regclass)</DefaultExpression>
     </column>
     <column id="149" parent="36" name="fk_venda">
-      <state-number>587</state-number>
-      <data-type>integer|0</data-type>
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>612</StateNumber>
     </column>
     <column id="150" parent="36" name="fk_produto">
-      <state-number>587</state-number>
-      <data-type>integer|0</data-type>
+      <Position>3</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>612</StateNumber>
     </column>
     <column id="151" parent="36" name="qtd">
-      <state-number>587</state-number>
-      <data-type>integer|0</data-type>
+      <Position>4</Position>
+      <DataType>integer|0</DataType>
+      <StateNumber>612</StateNumber>
     </column>
     <column id="152" parent="36" name="valor_unitario">
-      <state-number>587</state-number>
-      <data-type>numeric(10,2)|0</data-type>
+      <Position>5</Position>
+      <DataType>numeric(10,2)|0</DataType>
+      <StateNumber>612</StateNumber>
     </column>
     <index id="153" parent="36" name="vendas_itens_pkey">
-      <object-id>24700</object-id>
-      <columns>pk_item</columns>
-      <desc-columns></desc-columns>
-      <unique>1</unique>
+      <ObjectId>16508</ObjectId>
+      <ColNames>pk_item</ColNames>
+      <Unique>1</Unique>
     </index>
     <key id="154" parent="36" name="vendas_itens_pkey">
-      <object-id>24701</object-id>
-      <columns>pk_item</columns>
-      <underlying-index>vendas_itens_pkey</underlying-index>
-      <primary>1</primary>
+      <ObjectId>16509</ObjectId>
+      <ColNames>pk_item</ColNames>
+      <UnderlyingIndexName>vendas_itens_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
     </key>
     <foreign-key id="155" parent="36" name="venda_venda_item">
-      <object-id>24766</object-id>
-      <columns>fk_venda</columns>
-      <ref-key>~.vendas.vendas_pkey</ref-key>
-      <cascade-update-rule>restrict</cascade-update-rule>
-      <cascade-delete-rule>restrict</cascade-delete-rule>
+      <ObjectId>16574</ObjectId>
+      <ColNames>fk_venda</ColNames>
+      <RefTableName>vendas</RefTableName>
+      <RefKeyName>vendas_pkey</RefKeyName>
+      <RefColNames>pk_venda</RefColNames>
     </foreign-key>
     <foreign-key id="156" parent="36" name="produto_venda_item">
-      <object-id>24751</object-id>
-      <columns>fk_produto</columns>
-      <ref-key>~.produtos.produtos_pkey</ref-key>
-      <cascade-update-rule>restrict</cascade-update-rule>
-      <cascade-delete-rule>restrict</cascade-delete-rule>
+      <ObjectId>16559</ObjectId>
+      <ColNames>fk_produto</ColNames>
+      <RefTableName>produtos</RefTableName>
+      <RefKeyName>produtos_pkey</RefKeyName>
+      <RefColNames>pk_produto</RefColNames>
     </foreign-key>
     <argument id="157" parent="37">
-      <direction>RETURN</direction>
-      <data-type>trigger|0</data-type>
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>trigger|0</DataType>
     </argument>
   </database-model>
 </dataSource>
