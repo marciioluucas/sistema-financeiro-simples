@@ -39,7 +39,8 @@ public class VendaDAO {
             ResultSet rs = stm.getGeneratedKeys();
             rs.next();
             int key = rs.getInt(1);
-            c.setPk_cliente(key);
+
+            v.setPk_venda(key);
             try {
                 EnderecoDAO.create(c.getEndereco(),"clientes_enderecos","fk_cliente", c.getPk_cliente());
                 return true;
