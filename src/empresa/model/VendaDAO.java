@@ -2,6 +2,7 @@ package empresa.model;
 
 import empresa.controller.Cliente;
 import empresa.controller.Endereco;
+import empresa.controller.Item;
 import empresa.controller.Venda;
 import empresa.util.Datas;
 
@@ -42,7 +43,10 @@ public class VendaDAO {
 
             v.setPk_venda(key);
             try {
-                EnderecoDAO.create(c.getEndereco(),"clientes_enderecos","fk_cliente", c.getPk_cliente());
+                ArrayList<Item> items = v.getItens();
+                for (Item item: items) {
+                    ItemDAO.create(item,"vendas_itens","venda");
+                }
                 return true;
 
             } catch (Exception e) {

@@ -12,7 +12,7 @@ public class Venda {
     private Date data;
     private Cliente cliente;
     private Funcionario vendedor;
-    private ArrayList<VendaItem> itens;
+    private ArrayList<Item> itens;
 
     private int pk_venda;
 
@@ -28,7 +28,15 @@ public class Venda {
         this.vendedor = vendedor;
     }
 
-    public Venda(int numero, Date data, Cliente cliente, Funcionario vendedor, ArrayList<VendaItem> itens) {
+    public Venda(int pk_venda, int numero, Date data, Cliente cliente, Funcionario vendedor) {
+        this.pk_venda = pk_venda;
+        this.numero = numero;
+        this.data = data;
+        this.cliente = cliente;
+        this.vendedor = vendedor;
+    }
+
+    public Venda(int numero, Date data, Cliente cliente, Funcionario vendedor, ArrayList<Item> itens) {
         this.numero = numero;
         this.data = data;
         this.cliente = cliente;
@@ -36,7 +44,7 @@ public class Venda {
         this.itens = itens;
     }
 
-    public Venda(int numero, Date data, Cliente cliente, Funcionario vendedor, ArrayList<VendaItem> itens, int pk_venda) {
+    public Venda(int numero, Date data, Cliente cliente, Funcionario vendedor, ArrayList<Item> itens, int pk_venda) {
         this.numero = numero;
         this.data = data;
         this.cliente = cliente;
@@ -82,11 +90,11 @@ public class Venda {
         this.vendedor = vendedor;
     }
 
-    public ArrayList<VendaItem> getItens() {
+    public ArrayList<Item> getItens() {
         return itens;
     }
 
-    public void setItens(ArrayList<VendaItem> itens) {
+    public void setItens(ArrayList<Item> itens) {
         this.itens = itens;
     }
 
@@ -100,7 +108,7 @@ public class Venda {
 
 
 
-    public void addItem(VendaItem vi){
+    public void addItem(Item vi){
         if(itens==null){
             itens = new ArrayList<>();
         }
