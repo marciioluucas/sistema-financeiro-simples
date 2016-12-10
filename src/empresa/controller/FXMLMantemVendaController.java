@@ -1,13 +1,14 @@
 package empresa.controller;
 
 import empresa.model.ProdutoDAO;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-
-import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.net.URL;
 import java.util.*;
 
@@ -16,26 +17,21 @@ import java.util.*;
  */
 public class FXMLMantemVendaController implements Initializable {
 
-    Venda v;
+    private Venda v = new Venda();
+    private Produto p;
+    private Item i;
 
     @FXML
     private AnchorPane anchorPane;
-
-
-    @FXML
-    private Button btnCancelaUltimo;
 
     @FXML
     private ComboBox<Produto> comboBoxProdutos;
 
     @FXML
-    private Button btnAdicionar;
+    private TextField textFieldQuantidade;
 
     @FXML
-    private TextField texFieldQuantidade;
-
-    @FXML
-    private TextArea textAreaNF;
+    private TextArea textAreaNf;
 
     @FXML
     private TextField textFieldCodigo;
@@ -53,7 +49,6 @@ public class FXMLMantemVendaController implements Initializable {
     private Label txtPrecoTotal;
 
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         java.util.List<Produto> l = ProdutoDAO.retreaveAll();
@@ -61,32 +56,48 @@ public class FXMLMantemVendaController implements Initializable {
     }
 
     @FXML
-    void apagar(ActionEvent event) {
+    public void apagar(ActionEvent event) {
 
     }
 
     @FXML
-    void cancelar(ActionEvent event) {
+    public void cancelar(ActionEvent event) {
 
     }
 
     @FXML
-    void adicionarProduto(ActionEvent event) {
+    public void adicionarProduto(ActionEvent event) {
+        p = comboBoxProdutos.getValue();
+        i = new Item();
+        i.setProduto(p);
+        i.setQtd(Integer.parseInt(textFieldQuantidade.getText()));
+        i.setValorUnitario(Double.parseDouble(textFieldPrecoUnitario.getText()));
+        v.addItem(i);
+        escreveNF();
+    }
+
+    @FXML
+    public void limpaTela(ActionEvent event) {
 
     }
 
     @FXML
-    void limpaTela(ActionEvent event) {
+    public void load(ActionEvent event) {
 
     }
 
     @FXML
-    void load(ActionEvent event) {
+    public void salvar(ActionEvent event) {
 
     }
 
     @FXML
-    void salvar(ActionEvent event) {
+    private void escreveNF() {
+      if(textAreaNf.getText().equals("")){
+          textAreaNf.setText("--- NOTINHA FISCAL DO FERA ---\n");
+      }
 
+        String strToConcaten = "Prod: "+p.getNome()+" Qtd: "+i.getQtd()+"x\n";
+        textAreaNf.setText(textAreaNf.getText()+strToConcaten);
     }
 }
