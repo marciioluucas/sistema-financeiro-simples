@@ -20,17 +20,37 @@ public class FXMLMantemVendaController implements Initializable {
     @FXML
     private AnchorPane anchorPane;
 
-    @FXML
-    private ComboBox<Produto> comboBoxProdutos;
 
     @FXML
-    private TextField textFieldNome;
+    private Button btnCancelaUltimo;
 
     @FXML
-    private TextField textFieldQtdMinima;
+    private ComboBox<?> comboBoxProdutos;
 
     @FXML
-    private TextField textFieldQtdEstoque;
+    private Button btnAdicionar;
+
+    @FXML
+    private TextField texFieldQuantidade;
+
+    @FXML
+    private TextArea textAreaNF;
+
+    @FXML
+    private TextField textFieldCodigo;
+
+    @FXML
+    private TextField textFieldPrecoUnitario;
+
+    @FXML
+    private TextField textFieldSubtotal;
+
+    @FXML
+    private ComboBox<?> comboBoxMetodoPagamento;
+
+    @FXML
+    private Label txtPrecoTotal;
+
 
 
     @Override
@@ -45,6 +65,11 @@ public class FXMLMantemVendaController implements Initializable {
 
     @FXML
     void cancelar(ActionEvent event) {
+
+    }
+
+    @FXML
+    void adicionarProduto(ActionEvent event) {
 
     }
 
