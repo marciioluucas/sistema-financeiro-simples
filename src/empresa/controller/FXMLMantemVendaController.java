@@ -1,5 +1,6 @@
 package empresa.controller;
 
+import empresa.model.ProdutoDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
@@ -8,7 +9,7 @@ import javafx.scene.layout.AnchorPane;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.net.URL;
-import java.util.ResourceBundle;
+import java.util.*;
 
 /**
  * Created by marcio on 09/12/2016.
@@ -25,7 +26,7 @@ public class FXMLMantemVendaController implements Initializable {
     private Button btnCancelaUltimo;
 
     @FXML
-    private ComboBox<?> comboBoxProdutos;
+    private ComboBox<Produto> comboBoxProdutos;
 
     @FXML
     private Button btnAdicionar;
@@ -55,7 +56,8 @@ public class FXMLMantemVendaController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        java.util.List<Produto> l = ProdutoDAO.retreaveAll();
+        comboBoxProdutos.getItems().addAll(l);
     }
 
     @FXML
