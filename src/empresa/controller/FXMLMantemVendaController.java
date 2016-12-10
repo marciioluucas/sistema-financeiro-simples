@@ -2,6 +2,7 @@ package empresa.controller;
 
 import empresa.model.ProdutoDAO;
 import empresa.util.Datas;
+import empresa.util.MaskFieldUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -63,6 +64,10 @@ public class FXMLMantemVendaController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         java.util.List<Produto> l = ProdutoDAO.retreaveAll();
         comboBoxProdutos.getItems().addAll(l);
+
+        MaskFieldUtil.monetaryField(textFieldDinheiro);
+        MaskFieldUtil.monetaryField(textFieldCartao);
+        MaskFieldUtil.monetaryField(textFieldPrecoUnitario);
     }
 
     @FXML

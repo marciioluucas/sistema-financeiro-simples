@@ -120,7 +120,11 @@ public class Venda {
     }
 
     public double voltaTroco(double somaValoresMetodoPagamento, double somaValorTotal){
-        return somaValorTotal - somaValoresMetodoPagamento;
+
+        if((somaValoresMetodoPagamento - somaValorTotal)> 0){
+            return (somaValoresMetodoPagamento - somaValorTotal);
+        }
+        return 0.00;
     }
 
     public double somaValorTotal() {
