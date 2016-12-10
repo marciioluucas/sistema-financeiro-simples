@@ -1,7 +1,8 @@
 package empresa.model;
 
+
 import empresa.controller.Cliente;
-import empresa.controller.Endereco;
+import empresa.controller.Funcionario;
 import empresa.controller.Item;
 import empresa.controller.Venda;
 import empresa.util.Datas;
@@ -10,9 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -33,8 +32,8 @@ public class VendaDAO {
 
 
             String sql =
-                    "insert into vendas (fk_cliente, fk_vendedor, numero, datas) values ("+v.getCliente().getPk_cliente()+"," +
-                            v.getVendedor().getPk_funcionario() + ","+retreaveLastSell()+", '"+ Datas.retornaData(new Date())+"')";
+                    "insert into vendas (fk_cliente, fk_vendedor, numero, datas) values (" + v.getCliente().getPk_cliente() + "," +
+                            v.getVendedor().getPk_funcionario() + "," + retreaveLastSell() + ", '" + Datas.retornaData(new Date()) + "')";
 
             stm.execute(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stm.getGeneratedKeys();
@@ -44,8 +43,8 @@ public class VendaDAO {
             v.setPk_venda(key);
             try {
                 ArrayList<Item> items = v.getItens();
-                for (Item item: items) {
-                    ItemDAO.create(item,"vendas_itens","venda");
+                for (Item item : items) {
+                    ItemDAO.create(item, "vendas_itens", "venda");
                 }
                 return true;
 
@@ -60,7 +59,7 @@ public class VendaDAO {
         return false;
     }
 
-    public static Cliente retreave(int pk_cliente) {
+    public static Venda retreave(int pk_cliente) {
         try {
             Statement stm =
                     BancoDados.createConnection().
@@ -71,20 +70,24 @@ public class VendaDAO {
             ResultSet rs = stm.executeQuery(sql);
             rs.next();
 
-            Endereco e = EnderecoDAO.retreaveBy("clientes_enderecos","fk_cliente", pk_cliente);
-            return new Cliente(pk_cliente,
-                    rs.getString("nome"),
-                    rs.getString("cpf"),
-                    e);
+            ArrayList<Item> i = ItemDAO.retreaveBy("vendas_itens", "venda",
+                    "fk_venda = " + rs.getInt("pk_venda"));
+
+            Cliente c = ClienteDAO.retreave(rs.getInt("fk_cliente"));
+
+            Funcionario f = FuncionarioDAO.retreave(rs.getInt("fk_vendedor"));
+
+            return new Venda(rs.getInt("pk_venda"), rs.getInt("numero"),
+                    Datas.retornaDataTipoDateByString(rs.getString("datas")), c, f, i);
         } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VendaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
 
         return null;
     }
 
-    public static ArrayList<Cliente> retreaveAll() {
+    public static ArrayList<Venda> retreaveAll() {
         try {
             Statement stm =
                     BancoDados.createConnection().
@@ -93,49 +96,52 @@ public class VendaDAO {
             String sql = "SELECT * FROM clientes";
 
             ResultSet rs = stm.executeQuery(sql);
-            ArrayList<Cliente> cs = new ArrayList<>();
+            ArrayList<Venda> cs = new ArrayList<>();
             while (rs.next()) {
-                Endereco e = EnderecoDAO.retreaveBy("clientes_enderecos","fk_cliente",rs.getInt("pk_cliente"));
-                cs.add(new Cliente(
-                        rs.getInt("pk_cliente"),
-                        rs.getString("nome"),
-                        rs.getString("cpf"),
-                        e));
+                ArrayList<Item> i = ItemDAO.retreaveBy("vendas_itens", "venda",
+                        "fk_venda = " + rs.getInt("pk_venda"));
+
+                Cliente c = ClienteDAO.retreave(rs.getInt("fk_cliente"));
+
+                Funcionario f = FuncionarioDAO.retreave(rs.getInt("fk_vendedor"));
+
+                cs.add(new Venda(rs.getInt("pk_venda"), rs.getInt("numero"),
+                        Datas.retornaDataTipoDateByString(rs.getString("datas")), c, f, i));
             }
 
             return cs;
         } catch (SQLException ex) {
-            Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(VendaDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
 
 
         return null;
     }
 
-    public static boolean update(Venda v) throws SQLException {
-        try {
-            Statement stm = BancoDados.createConnection().createStatement();
-            String sql = "update clientes set nome='" + c.getNome() + "'," +
-                    "cpf ='" + c.getCpf() + "' where pk_cliente = " + c.getPk_cliente();
-            EnderecoDAO.update(c.getEndereco(),"clientes_enderecos","pk_endereco");
-            stm.execute(sql);
-            return true;
-        } catch (SQLException e) {
-            throw new SQLException("Erro ao executar query: ", e.getCause());
-        }
-    }
-
-    public static boolean delete(Venda v) throws SQLException {
-        Statement stm = BancoDados.createConnection().createStatement();
-        String sql = "delete from clientes where pk_cliente =" + c.getPk_cliente();
-        stm.execute(sql);
-        EnderecoDAO.delete(c.getEndereco(),"clientes_enderecos","pk_endereco");
-        return true;
-    }
+//    public static boolean update(Venda v) throws SQLException {
+//        try {
+//            Statement stm = BancoDados.createConnection().createStatement();
+//            String sql = "update clientes set nome='" + c.getNome() + "'," +
+//                    "cpf ='" + c.getCpf() + "' where pk_cliente = " + c.getPk_cliente();
+//            EnderecoDAO.update(c.getEndereco(), "clientes_enderecos", "pk_endereco");
+//            stm.execute(sql);
+//            return true;
+//        } catch (SQLException e) {
+//            throw new SQLException("Erro ao executar query: ", e.getCause());
+//        }
+//    }
+//
+//    public static boolean delete(Venda v) throws SQLException {
+//        Statement stm = BancoDados.createConnection().createStatement();
+//        String sql = "delete from clientes where pk_cliente =" + c.getPk_cliente();
+//        stm.execute(sql);
+//        EnderecoDAO.delete(c.getEndereco(), "clientes_enderecos", "pk_endereco");
+//        return true;
+//    }
 
     public static int retreaveLastSell() throws SQLException {
         Statement stm = BancoDados.createConnection().createStatement();
-        String sql = "select * from vendas order by numero desc limit 1";
+        String sql = "SELECT * FROM vendas ORDER BY numero DESC LIMIT 1";
 
         ResultSet rs = stm.executeQuery(sql);
         rs.next();

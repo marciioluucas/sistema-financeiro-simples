@@ -44,7 +44,7 @@ public class Venda {
         this.itens = itens;
     }
 
-    public Venda(int numero, Date data, Cliente cliente, Funcionario vendedor, ArrayList<Item> itens, int pk_venda) {
+    public Venda(int pk_venda, int numero, Date data, Cliente cliente, Funcionario vendedor, ArrayList<Item> itens) {
         this.numero = numero;
         this.data = data;
         this.cliente = cliente;

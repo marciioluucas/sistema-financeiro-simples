@@ -34,7 +34,7 @@ public class ItemDAO {
     }
 
 
-    public static Item retreave(String origem, int valor_pk, String tabela) {
+    public static Item retreaveByPk(String origem, int valor_pk, String tabela) {
         try {
             Statement stm =
                     BancoDados.createConnection().
@@ -53,6 +53,28 @@ public class ItemDAO {
         }
 
 
+        return null;
+    }
+
+    public static ArrayList<Item> retreaveBy(String tabela, String origem, String condicao) {
+        try {
+            Statement stm =
+                    BancoDados.createConnection().
+                            createStatement();
+
+            String sql = "SELECT * FROM "+tabela+" WHERE "+condicao;
+
+            ResultSet rs = stm.executeQuery(sql);
+            ArrayList<Item> cs = new ArrayList<>();
+            while (rs.next()) {
+                cs.add(new Item(rs.getInt("pk_"+origem), rs.getInt("qtd"), rs.getDouble("valor_unitario"),
+                        ProdutoDAO.retreave(rs.getInt("fk_produto")), rs.getInt("fk_" + origem)));
+            }
+
+            return cs;
+        } catch (SQLException ex) {
+            Logger.getLogger(ItemDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
         return null;
     }
 
