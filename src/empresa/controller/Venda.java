@@ -115,4 +115,20 @@ public class Venda {
         itens.add(vi);
     }
 
+    public double somaValoresMetodosPagamento(double valorDinheiro, double valorCartao) {
+        return valorDinheiro + valorCartao;
+    }
+
+    public double voltaTroco(double somaValoresMetodoPagamento, double somaValorTotal){
+        return somaValorTotal - somaValoresMetodoPagamento;
+    }
+
+    public double somaValorTotal() {
+        double retorno = 0.00;
+        for(Item item: itens){
+           retorno += item.getValorUnitario() * item.getQtd();
+        }
+        return retorno;
+    }
+
 }

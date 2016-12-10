@@ -10,6 +10,15 @@
 
 <AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="empresa.controller.FXMLMantemVendaController">
    <children>
+      <ComboBox fx:id="comboBoxProdutos" layoutX="84.0" layoutY="55.0" prefHeight="25.0" prefWidth="165.0" promptText="Selecione" />
+      <TextField fx:id="textFieldQuantidade" layoutX="364.0" layoutY="55.0" prefHeight="25.0" prefWidth="118.0" />
+      <Button layoutX="503.0" layoutY="55.0" mnemonicParsing="false" onAction="#adicionarProduto" prefHeight="25.0" prefWidth="74.0" text="Adicionar" />
+      <TextArea fx:id="textAreaNf" editable="false" layoutX="22.0" layoutY="100.0" prefHeight="251.0" prefWidth="300.0" />
+      <TextField fx:id="textFieldCodigo" layoutX="466.0" layoutY="101.0" prefHeight="25.0" prefWidth="118.0" />
+      <TextField fx:id="textFieldPrecoUnitario" layoutX="466.0" layoutY="133.0" prefHeight="25.0" prefWidth="118.0" />
+      <TextField fx:id="textFieldSubtotal" editable="false" layoutX="466.0" layoutY="165.0" prefHeight="25.0" prefWidth="118.0" />
+      <TextField fx:id="textFieldDinheiro" layoutX="466.0" layoutY="197.0" onKeyReleased="#somaMetodosPagamento" prefHeight="25.0" prefWidth="118.0" />
+      <TextField fx:id="textFieldCartao" layoutX="466.0" layoutY="229.0" onKeyReleased="#somaMetodosPagamento" prefHeight="25.0" prefWidth="118.0" />
       <Button layoutX="224.0" layoutY="358.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Salvar" />
       <Button layoutX="123.0" layoutY="358.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Cancelar" />
       <Button layoutX="22.0" layoutY="358.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Cancelar último" />
@@ -20,12 +29,8 @@
       </Label>
       <Label layoutX="95.0" layoutY="19.0" text="de vendas" />
       <Label layoutX="25.0" layoutY="59.0" text="Produto:" />
-      <ComboBox fx:id="comboBoxProdutos" layoutX="84.0" layoutY="55.0" prefHeight="25.0" prefWidth="165.0" promptText="Selecione" />
-      <Button layoutX="503.0" layoutY="55.0" mnemonicParsing="false" onAction="#adicionarProduto" prefHeight="25.0" prefWidth="74.0" text="Adicionar" />
-      <TextField fx:id="textFieldQuantidade" layoutX="364.0" layoutY="55.0" prefHeight="25.0" prefWidth="118.0" />
       <Label layoutX="286.0" layoutY="59.0" text="Quantidade:" />
-      <TextArea fx:id="textAreaNf" editable="false" layoutX="22.0" layoutY="100.0" prefHeight="251.0" prefWidth="300.0" />
-      <Label layoutX="390.0" layoutY="100.0" style="-fx-font-weight: bolder;" text="Código: " textFill="#1049a4">
+      <Label layoutX="389.0" layoutY="100.0" style="-fx-font-weight: bolder;" text="Código: " textFill="#1049a4">
          <font>
             <Font size="18.0" />
          </font>
@@ -40,29 +45,45 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="337.0" layoutY="337.0" style="-fx-font-weight: bolder;" text="TOTAL:" textFill="#da2f2f">
+      <Label layoutX="369.0" layoutY="297.0" style="-fx-font-weight: bolder;" text="TOTAL:" textFill="#da2f2f">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="466.0" layoutY="101.0" prefHeight="25.0" prefWidth="118.0" />
-      <TextField editable="false" layoutX="466.0" layoutY="165.0" prefHeight="25.0" prefWidth="118.0" />
-      <ComboBox fx:id="comboBoxMetodoPagamento" layoutX="466.0" layoutY="199.0" prefHeight="25.0" prefWidth="118.0" promptText="Selecione" />
-      <Label layoutX="344.0" layoutY="198.0" prefHeight="27.0" prefWidth="110.0" style="-fx-font-weight: bolder;" text="Método pag:" textFill="#1049a4">
+      <Label layoutX="375.0" layoutY="194.0" prefHeight="27.0" prefWidth="110.0" style="-fx-font-weight: bolder;" text="Dinheiro:" textFill="#1049a4">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="453.0" layoutY="329.0" style="-fx-font-weight: bolder; -fx-font-size: 29px;" text="0.00" textFill="#da2f2f">
+      <Label fx:id="labelPrecoTotal" layoutX="483.0" layoutY="289.0" style="-fx-font-weight: bolder; -fx-font-size: 29px;" text="0.00" textFill="#da2f2f">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="405.0" layoutY="329.0" style="-fx-font-weight: bolder; -fx-font-size: 29px;" text="R$" textFill="#da2f2f">
+      <Label layoutX="435.0" layoutY="289.0" style="-fx-font-weight: bolder; -fx-font-size: 29px;" text="R$" textFill="#da2f2f">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="textFieldPrecoUnitario" layoutX="466.0" layoutY="133.0" prefHeight="25.0" prefWidth="118.0" />
+      <Label layoutX="391.0" layoutY="226.0" prefHeight="27.0" prefWidth="65.0" style="-fx-font-weight: bolder;" text="Cartão:" textFill="#1049a4">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="367.0" layoutY="342.0" style="-fx-font-weight: bolder;" text="TROCO:" textFill="#da2f2f">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelTroco" layoutX="483.0" layoutY="334.0" style="-fx-font-weight: bolder; -fx-font-size: 29px;" text="0.00" textFill="#da2f2f">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="435.0" layoutY="334.0" style="-fx-font-weight: bolder; -fx-font-size: 29px;" text="R$" textFill="#da2f2f">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

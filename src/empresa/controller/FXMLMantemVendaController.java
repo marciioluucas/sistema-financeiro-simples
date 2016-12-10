@@ -1,6 +1,7 @@
 package empresa.controller;
 
 import empresa.model.ProdutoDAO;
+import empresa.util.Datas;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -9,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+
 import java.net.URL;
 import java.util.*;
 
@@ -31,6 +33,12 @@ public class FXMLMantemVendaController implements Initializable {
     private TextField textFieldQuantidade;
 
     @FXML
+    private TextField textFieldDinheiro;
+
+    @FXML
+    private TextField textFieldCartao;
+
+    @FXML
     private TextArea textAreaNf;
 
     @FXML
@@ -46,7 +54,9 @@ public class FXMLMantemVendaController implements Initializable {
     private ComboBox<?> comboBoxMetodoPagamento;
 
     @FXML
-    private Label txtPrecoTotal;
+    private Label labelPrecoTotal;
+    @FXML
+    private Label labelTroco;
 
 
     @Override
@@ -73,6 +83,9 @@ public class FXMLMantemVendaController implements Initializable {
         i.setQtd(Integer.parseInt(textFieldQuantidade.getText()));
         i.setValorUnitario(Double.parseDouble(textFieldPrecoUnitario.getText()));
         v.addItem(i);
+        textFieldCodigo.setText(String.valueOf(p.getPk_produto()));
+        textFieldSubtotal.setText(String.valueOf(i.getValorUnitario()));
+        labelPrecoTotal.setText(String.valueOf(v.somaValorTotal()));
         escreveNF();
     }
 
@@ -93,11 +106,35 @@ public class FXMLMantemVendaController implements Initializable {
 
     @FXML
     private void escreveNF() {
-      if(textAreaNf.getText().equals("")){
-          textAreaNf.setText("--- NOTINHA FISCAL DO FERA ---\n");
-      }
+        if (textAreaNf.getText().equals("")) {
+            textAreaNf.setText(
+                    "           *** SUPERMERCADO DO XIBIMBA ***\n" +
+                    "              Sistema do Marcinho Bioca\n" +
+                    "            IF Goiano - Campus Morrinhos\n" +
+                    " CNPJ: 05.055.202/0007-03\n" +
+                    " IE: 10.436.561-7\n" +
+                    " --------------------------------------------------------\n" +
+                    " " + Datas.retornaData(new Date()) + "                 CCF: 050719    COO:071734\n" +
+                    "                     CUPOM FISCAL\n" +
+                    " ITEM  CODIGO   DESCRIÇÃO     QTD   VL ITEM( R$)\n" +
+                    " --------------------------------------------------------\n");
+        }
 
-        String strToConcaten = "Prod: "+p.getNome()+" Qtd: "+i.getQtd()+"x\n";
-        textAreaNf.setText(textAreaNf.getText()+strToConcaten);
+        String strToConcaten = v.getItens().size() + " " + p.getPk_produto() + " " + p.getNome() + "   " + i.getQtd() + "       " + i.getValorUnitario() + "\n";
+        textAreaNf.setText(textAreaNf.getText() + strToConcaten);
+    }
+
+    @FXML
+    public void somaMetodosPagamento() {
+        if(textFieldDinheiro.getText().equals("")){
+            textFieldDinheiro.setText("0.00");
+        }
+        if(textFieldCartao.getText().equals("")) {
+            textFieldCartao.setText("0.00");
+        }
+        labelTroco.setText(
+         String.valueOf(
+                 v.voltaTroco(v.somaValoresMetodosPagamento(Double.parseDouble(textFieldDinheiro.getText()),
+                Double.parseDouble(textFieldCartao.getText())),v.somaValorTotal())));
     }
 }
