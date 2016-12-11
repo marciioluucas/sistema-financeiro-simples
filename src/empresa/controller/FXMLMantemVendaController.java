@@ -62,6 +62,9 @@ public class FXMLMantemVendaController implements Initializable {
     @FXML
     private Button btnCancelaItem;
 
+    @FXML
+    private Button btnFinalizarVenda;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         java.util.List<Produto> l = ProdutoDAO.retreaveAll();
@@ -73,6 +76,7 @@ public class FXMLMantemVendaController implements Initializable {
 
         btnCancelaItem.setDisable(true);
         btnCancelaVenda.setDisable(true);
+        btnFinalizarVenda.setDisable(true);
     }
 
     @FXML
@@ -100,9 +104,11 @@ public class FXMLMantemVendaController implements Initializable {
         if (v.getItens().size() > 0) {
             btnCancelaItem.setDisable(false);
             btnCancelaVenda.setDisable(false);
+            btnFinalizarVenda.setDisable(false);
         } else {
             btnCancelaItem.setDisable(true);
             btnCancelaVenda.setDisable(true);
+            btnFinalizarVenda.setDisable(true);
         }
     }
 
@@ -137,10 +143,25 @@ public class FXMLMantemVendaController implements Initializable {
                             " --------------------------------------------------------\n");
         }
         String strToConcaten = "";
-
-            for(Item item: v.getItens()) {
-                strToConcaten = v.getItens().size() + " " + item.getProduto().getPk_produto() + " " + item.getProduto().getNome() + "   " + item.getQtd() + "       " + item.getValorUnitario() + "\n";
+            if(addItem){
+                strToConcaten = v.getItens().size() + " " + i.getProduto().getPk_produto() + " " + i.getProduto().getNome() + "   " + i.getQtd() + "       " + i.getValorUnitario() + "\n";
                 textAreaNf.setText(textAreaNf.getText() + strToConcaten);
+            }else{
+                textAreaNf.setText(
+                        "           *** SUPERMERCADO DO XIBIMBA ***\n" +
+                                "              Sistema do Marcinho Bioca\n" +
+                                "            IF Goiano - Campus Morrinhos\n" +
+                                " CNPJ: 05.055.202/0007-03\n" +
+                                " IE: 10.436.561-7\n" +
+                                " --------------------------------------------------------\n" +
+                                " " + Datas.retornaData(new Date()) + "                 CCF: 050719    COO:071734\n" +
+                                "                     CUPOM FISCAL\n" +
+                                " ITEM  CODIGO   DESCRIÇÃO     QTD   VL ITEM( R$)\n" +
+                                " --------------------------------------------------------\n");
+                for(Item item: v.getItens()) {
+                    strToConcaten = (v.getItens().indexOf(item)+1)+ " " + item.getProduto().getPk_produto() + " " + item.getProduto().getNome() + "   " + item.getQtd() + "       " + item.getValorUnitario() + "\n";
+                    textAreaNf.setText(textAreaNf.getText() + strToConcaten);
+                }
             }
 
 
@@ -164,13 +185,17 @@ public class FXMLMantemVendaController implements Initializable {
     @FXML
     public void removerUltimoItem() {
         if (v.getItens().size() != 0) {
+            v.removerUltimoItem();
             btnCancelaItem.setDisable(false);
             btnCancelaVenda.setDisable(false);
-            v.removerUltimoItem();
+            btnFinalizarVenda.setDisable(false);
         } else {
             btnCancelaItem.setDisable(true);
             btnCancelaVenda.setDisable(true);
+            btnFinalizarVenda.setDisable(true);
         }
         escreveNF(false);
     }
+
+
 }
