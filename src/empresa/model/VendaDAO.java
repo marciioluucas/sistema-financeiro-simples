@@ -148,4 +148,15 @@ public class VendaDAO {
         return rs.getInt("numero");
     }
 
+    public static boolean delete(Venda v) throws SQLException {
+        try {
+            Statement stm = BancoDados.createConnection().createStatement();
+            String sql = "delete from vendas where pk_venda = " + v.getPk_venda();
+            stm.execute(sql);
+            return true;
+        } catch (SQLException ex) {
+            throw new SQLException("Erro na query: " + ex.getMessage());
+        }
+    }
+
 }

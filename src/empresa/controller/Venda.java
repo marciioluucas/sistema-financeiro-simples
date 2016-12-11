@@ -1,5 +1,8 @@
 package empresa.controller;
 
+import empresa.model.VendaDAO;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -106,6 +109,10 @@ public class Venda {
         this.pk_venda = pk_venda;
     }
 
+
+    public boolean delete() throws SQLException {
+        return VendaDAO.delete(this);
+    }
 
 
     public void addItem(Item vi){

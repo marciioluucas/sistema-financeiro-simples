@@ -195,6 +195,7 @@ public class FXMLMantemVendaController implements Initializable {
             btnFinalizarVenda.setDisable(true);
         }
         escreveNF(false);
+        labelPrecoTotal.setText(String.valueOf(v.somaValorTotal()));
     }
 
 
