@@ -135,4 +135,8 @@ public class Venda {
         return retorno;
     }
 
+    public void removerUltimoItem() {
+        itens.remove(itens.size()-1);
+    }
+
 }

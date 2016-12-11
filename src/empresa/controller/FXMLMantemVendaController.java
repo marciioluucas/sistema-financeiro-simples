@@ -6,10 +6,7 @@ import empresa.util.MaskFieldUtil;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 
 import java.net.URL;
@@ -59,6 +56,11 @@ public class FXMLMantemVendaController implements Initializable {
     @FXML
     private Label labelTroco;
 
+    @FXML
+    private Button btnCancelaVenda;
+
+    @FXML
+    private Button btnCancelaItem;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -68,6 +70,9 @@ public class FXMLMantemVendaController implements Initializable {
         MaskFieldUtil.monetaryField(textFieldDinheiro);
         MaskFieldUtil.monetaryField(textFieldCartao);
         MaskFieldUtil.monetaryField(textFieldPrecoUnitario);
+
+        btnCancelaItem.setDisable(true);
+        btnCancelaVenda.setDisable(true);
     }
 
     @FXML
@@ -91,7 +96,14 @@ public class FXMLMantemVendaController implements Initializable {
         textFieldCodigo.setText(String.valueOf(p.getPk_produto()));
         textFieldSubtotal.setText(String.valueOf(i.getValorUnitario()));
         labelPrecoTotal.setText(String.valueOf(v.somaValorTotal()));
-        escreveNF();
+        escreveNF(true);
+        if (v.getItens().size() > 0) {
+            btnCancelaItem.setDisable(false);
+            btnCancelaVenda.setDisable(false);
+        } else {
+            btnCancelaItem.setDisable(true);
+            btnCancelaVenda.setDisable(true);
+        }
     }
 
     @FXML
@@ -110,36 +122,55 @@ public class FXMLMantemVendaController implements Initializable {
     }
 
     @FXML
-    private void escreveNF() {
+    private void escreveNF(boolean addItem) {
         if (textAreaNf.getText().equals("")) {
             textAreaNf.setText(
                     "           *** SUPERMERCADO DO XIBIMBA ***\n" +
-                    "              Sistema do Marcinho Bioca\n" +
-                    "            IF Goiano - Campus Morrinhos\n" +
-                    " CNPJ: 05.055.202/0007-03\n" +
-                    " IE: 10.436.561-7\n" +
-                    " --------------------------------------------------------\n" +
-                    " " + Datas.retornaData(new Date()) + "                 CCF: 050719    COO:071734\n" +
-                    "                     CUPOM FISCAL\n" +
-                    " ITEM  CODIGO   DESCRIÇÃO     QTD   VL ITEM( R$)\n" +
-                    " --------------------------------------------------------\n");
+                            "              Sistema do Marcinho Bioca\n" +
+                            "            IF Goiano - Campus Morrinhos\n" +
+                            " CNPJ: 05.055.202/0007-03\n" +
+                            " IE: 10.436.561-7\n" +
+                            " --------------------------------------------------------\n" +
+                            " " + Datas.retornaData(new Date()) + "                 CCF: 050719    COO:071734\n" +
+                            "                     CUPOM FISCAL\n" +
+                            " ITEM  CODIGO   DESCRIÇÃO     QTD   VL ITEM( R$)\n" +
+                            " --------------------------------------------------------\n");
         }
+        String strToConcaten = "";
 
-        String strToConcaten = v.getItens().size() + " " + p.getPk_produto() + " " + p.getNome() + "   " + i.getQtd() + "       " + i.getValorUnitario() + "\n";
-        textAreaNf.setText(textAreaNf.getText() + strToConcaten);
+            for(Item item: v.getItens()) {
+                strToConcaten = v.getItens().size() + " " + item.getProduto().getPk_produto() + " " + item.getProduto().getNome() + "   " + item.getQtd() + "       " + item.getValorUnitario() + "\n";
+                textAreaNf.setText(textAreaNf.getText() + strToConcaten);
+            }
+
+
     }
 
     @FXML
     public void somaMetodosPagamento() {
-        if(textFieldDinheiro.getText().equals("")){
+        if (textFieldDinheiro.getText().equals("")) {
             textFieldDinheiro.setText("0.00");
         }
-        if(textFieldCartao.getText().equals("")) {
+        if (textFieldCartao.getText().equals("")) {
             textFieldCartao.setText("0.00");
         }
         labelTroco.setText(
-         String.valueOf(
-                 v.voltaTroco(v.somaValoresMetodosPagamento(Double.parseDouble(textFieldDinheiro.getText()),
-                Double.parseDouble(textFieldCartao.getText())),v.somaValorTotal())));
+                String.valueOf(
+                        v.voltaTroco(v.somaValoresMetodosPagamento(Double.parseDouble(textFieldDinheiro.getText()),
+                                Double.parseDouble(textFieldCartao.getText())), v.somaValorTotal())));
+    }
+
+
+    @FXML
+    public void removerUltimoItem() {
+        if (v.getItens().size() != 0) {
+            btnCancelaItem.setDisable(false);
+            btnCancelaVenda.setDisable(false);
+            v.removerUltimoItem();
+        } else {
+            btnCancelaItem.setDisable(true);
+            btnCancelaVenda.setDisable(true);
+        }
+        escreveNF(false);
     }
 }
