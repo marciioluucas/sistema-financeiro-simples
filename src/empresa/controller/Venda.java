@@ -23,7 +23,6 @@ public class Venda {
     }
 
 
-
     public Venda(int numero, Date data, Cliente cliente, Funcionario vendedor) {
         this.numero = numero;
         this.data = data;
@@ -47,6 +46,12 @@ public class Venda {
         this.itens = itens;
     }
 
+    public Venda(Cliente cliente, Funcionario vendedor, ArrayList<Item> itens) {
+        this.cliente = cliente;
+        this.vendedor = vendedor;
+        this.itens = itens;
+    }
+
     public Venda(int pk_venda, int numero, Date data, Cliente cliente, Funcionario vendedor, ArrayList<Item> itens) {
         this.numero = numero;
         this.data = data;
@@ -58,7 +63,7 @@ public class Venda {
 
     @Override
     public String toString() {
-        return "Venda{" + "numero=" + numero + ", data=" + data + ", cliente=" + cliente + ", vendedor=" + vendedor + ", itens=" + itens + ", pk_venda=" + pk_venda + '}';
+        return numero + " | " + data + " | " + cliente;
     }
 
     public int getNumero() {
@@ -110,13 +115,17 @@ public class Venda {
     }
 
 
+    public boolean create() throws Exception {
+        return VendaDAO.create(this);
+    }
+
     public boolean delete() throws SQLException {
         return VendaDAO.delete(this);
     }
 
 
-    public void addItem(Item vi){
-        if(itens==null){
+    public void addItem(Item vi) {
+        if (itens == null) {
             itens = new ArrayList<>();
         }
         itens.add(vi);
@@ -126,9 +135,9 @@ public class Venda {
         return valorDinheiro + valorCartao;
     }
 
-    public double voltaTroco(double somaValoresMetodoPagamento, double somaValorTotal){
+    public double voltaTroco(double somaValoresMetodoPagamento, double somaValorTotal) {
 
-        if((somaValoresMetodoPagamento - somaValorTotal)> 0){
+        if ((somaValoresMetodoPagamento - somaValorTotal) > 0) {
             return (somaValoresMetodoPagamento - somaValorTotal);
         }
         return 0.00;
@@ -136,14 +145,14 @@ public class Venda {
 
     public double somaValorTotal() {
         double retorno = 0.00;
-        for(Item item: itens){
-           retorno += item.getValorUnitario() * item.getQtd();
+        for (Item item : itens) {
+            retorno += item.getValorUnitario() * item.getQtd();
         }
         return retorno;
     }
 
     public void removerUltimoItem() {
-        itens.remove(itens.size()-1);
+        itens.remove(itens.size() - 1);
     }
 
 }

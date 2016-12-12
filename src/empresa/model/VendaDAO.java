@@ -23,49 +23,38 @@ public class VendaDAO {
 
     }
 
-    public static boolean create(Venda v) throws SQLException {
+    public static boolean create(Venda v) throws Exception {
+        Statement stm =  BancoDados.createConnection().createStatement();
 
-        try {
-            Statement stm =
-                    BancoDados.createConnection().
-                            createStatement();
-
-
-            String sql =
-                    "insert into vendas (fk_cliente, fk_vendedor, numero, datas) values (" + v.getCliente().getPk_cliente() + "," +
-                            v.getVendedor().getPk_funcionario() + "," + retreaveLastSell() + ", '" + Datas.retornaData(new Date()) + "')";
-
-            stm.execute(sql, Statement.RETURN_GENERATED_KEYS);
-            ResultSet rs = stm.getGeneratedKeys();
-            rs.next();
-            int key = rs.getInt(1);
-
+            String sql = "INSERT INTO vendas (fk_cliente, fk_vendedor, numero, datas) VALUES ("+v.getCliente().getPk_cliente()+", " +
+                    v.getVendedor().getPk_funcionario()+", "+(retreaveLastSell()+1)+", '"+Datas.retornaData(new Date())+"')";
+            System.out.printf(sql);
+        stm.execute(sql, Statement.RETURN_GENERATED_KEYS);
+        ResultSet rs = stm.getGeneratedKeys();
+        rs.next();
+        int key = rs.getInt(1);
             v.setPk_venda(key);
+
             try {
                 ArrayList<Item> items = v.getItens();
                 for (Item item : items) {
+                    item.setFk_origem(key);
                     ItemDAO.create(item, "vendas_itens", "venda");
                 }
                 return true;
 
             } catch (Exception e) {
-                throw new Exception("Erro ao criar endereço. " + e.getMessage());
+                throw new Exception("Erro ao criar itens. " + e.getMessage());
             }
-        } catch (SQLException ex) {
-            throw new SQLException("Erro na query: " + ex.getMessage());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
     }
 
-    public static Venda retreave(int pk_cliente) {
+    public static Venda retreave(int pk_venda) {
         try {
             Statement stm =
                     BancoDados.createConnection().
                             createStatement();
 
-            String sql = "select * from clientes where pk_cliente =" + pk_cliente;
+            String sql = "select * from vendas where pk_venda =" + pk_venda;
 
             ResultSet rs = stm.executeQuery(sql);
             rs.next();
@@ -93,7 +82,7 @@ public class VendaDAO {
                     BancoDados.createConnection().
                             createStatement();
 
-            String sql = "SELECT * FROM clientes";
+            String sql = "SELECT * FROM vendas";
 
             ResultSet rs = stm.executeQuery(sql);
             ArrayList<Venda> cs = new ArrayList<>();
@@ -144,8 +133,12 @@ public class VendaDAO {
         String sql = "SELECT * FROM vendas ORDER BY numero DESC LIMIT 1";
 
         ResultSet rs = stm.executeQuery(sql);
-        rs.next();
-        return rs.getInt("numero");
+        if(rs.next()){
+
+            return rs.getInt("numero");
+        }else{
+            return 0;
+        }
     }
 
     public static boolean delete(Venda v) throws SQLException {

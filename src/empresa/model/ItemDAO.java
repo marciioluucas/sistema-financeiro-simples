@@ -21,11 +21,8 @@ public class ItemDAO {
         try {
             String sql = "insert into " + tabela + " (fk_" + origem + ", fk_produto, qtd, valor_unitario)" +
                     "VALUES (" + i.getFk_origem() + ", " + i.getProduto().getPk_produto() + ", " + i.getQtd() + ", " + i.getValorUnitario() + ")";
-            stm.execute(sql, Statement.RETURN_GENERATED_KEYS);
-            ResultSet rs = stm.getGeneratedKeys();
-            rs.next();
-            int key = rs.getInt(1);
-            i.setPk_item(key);
+            stm.execute(sql);
+
             return true;
 
         } catch (Exception e) {

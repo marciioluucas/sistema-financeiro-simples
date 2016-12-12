@@ -27,6 +27,7 @@
                   <MenuItem onAction="#abraTelaMantemProduto" text="Produtos" />
                   <MenuItem mnemonicParsing="false" text="Compras" />
                   <MenuItem mnemonicParsing="false" onAction="#abraTelaMantemVenda" text="Vendas" />
+                  <MenuItem mnemonicParsing="false" onAction="#abraTelaMantemVendaAdmin" text="Admin de vendas" />
               </items>
             </Menu>
          </menus>
