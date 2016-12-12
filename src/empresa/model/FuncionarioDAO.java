@@ -66,10 +66,14 @@ public class FuncionarioDAO {
             rs.next();
 
             //TODO: fazer consulta do cargo aqui e fazer no cargo as parada de retreaveByFuncionario;
-
-            return new Funcionario(pk_funcionario,
+            Endereco e = EnderecoDAO.retreaveBy("funcionarios_enderecos", "fk_funcionario", rs.getInt("pk_funcionario"));
+            Cargo c = CargoDAO.retreave(rs.getInt("fk_cargo"));
+            return new Funcionario(
+                    c,
+                    rs.getInt("pk_funcionario"),
                     rs.getString("nome"),
-                    rs.getString("cpf"));
+                    rs.getString("cpf"),
+                    e);
         } catch (SQLException ex) {
             Logger.getLogger(FuncionarioDAO.class.getName()).log(Level.SEVERE, null, ex);
         }

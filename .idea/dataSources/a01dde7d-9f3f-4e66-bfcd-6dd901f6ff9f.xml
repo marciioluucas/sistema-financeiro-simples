@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2016-12-12.02:47:26.027</IntrospectionTimestamp>
-      <IntrospectionStateNumber>797</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2016-12-12.02:50:24.489</IntrospectionTimestamp>
+      <IntrospectionStateNumber>804</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -169,7 +169,7 @@
     </routine>
     <routine id="39" parent="3" name="controlaestoqueprodutovenda">
       <ObjectId>16605</ObjectId>
-      <StateNumber>797</StateNumber>
+      <StateNumber>804</StateNumber>
       <LanguageName>plpgsql</LanguageName>
       <RoutineKind>function</RoutineKind>
     </routine>

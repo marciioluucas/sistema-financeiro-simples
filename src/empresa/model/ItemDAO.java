@@ -64,7 +64,7 @@ public class ItemDAO {
             ResultSet rs = stm.executeQuery(sql);
             ArrayList<Item> cs = new ArrayList<>();
             while (rs.next()) {
-                cs.add(new Item(rs.getInt("pk_"+origem), rs.getInt("qtd"), rs.getDouble("valor_unitario"),
+                cs.add(new Item(rs.getInt("fk_"+origem), rs.getInt("qtd"), rs.getDouble("valor_unitario"),
                         ProdutoDAO.retreave(rs.getInt("fk_produto")), rs.getInt("fk_" + origem)));
             }
 
