@@ -9,7 +9,7 @@
 
 <AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="empresa.controller.FXMLDashboardController">
    <children>
-      <Label fx:id="contagemProdutos" layoutX="565.0" layoutY="181.0" style="-fx-font-weight: bolder;" text="0" textFill="#0f0e8c">
+      <Label fx:id="contagemProdutos" layoutX="565.0" layoutY="181.0" style="-fx-font-weight: bolder;" text="0" textFill="#f09c30">
          <font>
             <Font size="19.0" />
          </font>
@@ -24,12 +24,12 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <Label fx:id="contagemFornecedores" layoutX="565.0" layoutY="139.0" style="-fx-font-weight: bolder;" text="0" textFill="#0f0e8c">
+      <Label fx:id="contagemFornecedores" layoutX="565.0" layoutY="139.0" style="-fx-font-weight: bolder;" text="0" textFill="#f09c30">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <Label fx:id="contagemClientes" layoutX="565.0" layoutY="101.0" style="-fx-font-weight: bolder;" text="0" textFill="#0f0e8c">
+      <Label fx:id="contagemClientes" layoutX="565.0" layoutY="101.0" style="-fx-font-weight: bolder;" text="0" textFill="#f09c30">
          <font>
             <Font size="19.0" />
          </font>
@@ -44,14 +44,14 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <Label fx:id="contagemFuncionarios" layoutX="565.0" layoutY="223.0" style="-fx-font-weight: bolder;" text="0" textFill="#0f0e8c">
+      <Label fx:id="contagemFuncionarios" layoutX="565.0" layoutY="223.0" style="-fx-font-weight: bolder;" text="0" textFill="#f09c30">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
       <Separator layoutY="352.0" prefHeight="17.0" prefWidth="600.0" />
       <Label layoutX="287.0" layoutY="369.0" prefHeight="17.0" prefWidth="269.0" text="Feito com &lt;3 por Luke Idea - www.lukeidea.com" />
-      <ImageView fitHeight="403.0" fitWidth="252.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="429.0" fitWidth="269.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/superfox-logo.png" />
          </image>

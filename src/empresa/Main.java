@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 
 /**
@@ -21,6 +22,9 @@ public class Main extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
+        stage.setWidth(600.0);
+        stage.setHeight(450.0);
+        stage.setResizable(false);
         Parent root = FXMLLoader.load(getClass().getResource("view/FXMLTelaPrincipal.fxml"));
         
         Scene scene = new Scene(root);

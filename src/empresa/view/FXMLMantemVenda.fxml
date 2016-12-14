@@ -5,15 +5,22 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="empresa.controller.FXMLMantemVendaController">
    <children>
-      <ComboBox fx:id="comboBoxProdutos" layoutX="74.0" layoutY="55.0" prefHeight="25.0" prefWidth="110.0" promptText="Selecione" />
-      <TextField fx:id="textFieldQuantidade" layoutX="222.0" layoutY="55.0" prefHeight="25.0" prefWidth="54.0" />
-      <ComboBox fx:id="comboBoxClientes" layoutX="289.0" layoutY="55.0" prefHeight="25.0" prefWidth="118.0" promptText="Cliente" />
-      <Button fx:id="btnAddItem" layoutX="554.0" layoutY="55.0" mnemonicParsing="false" onAction="#adicionarProduto" prefHeight="25.0" prefWidth="29.0" text="+" />
+      <ImageView fitHeight="54.0" fitWidth="600.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/header.png" />
+         </image>
+      </ImageView>
+      <ComboBox fx:id="comboBoxProdutos" layoutX="74.0" layoutY="63.0" prefHeight="25.0" prefWidth="110.0" promptText="Selecione" />
+      <TextField fx:id="textFieldQuantidade" layoutX="222.0" layoutY="63.0" prefHeight="25.0" prefWidth="54.0" />
+      <ComboBox fx:id="comboBoxClientes" layoutX="289.0" layoutY="63.0" prefHeight="25.0" prefWidth="118.0" promptText="Cliente" />
+      <Button fx:id="btnAddItem" layoutX="554.0" layoutY="63.0" mnemonicParsing="false" onAction="#adicionarProduto" prefHeight="25.0" prefWidth="29.0" text="+" />
       <TextArea fx:id="textAreaNf" editable="false" layoutX="22.0" layoutY="100.0" prefHeight="251.0" prefWidth="300.0">
          <font>
             <Font name="Consolas" size="12.0" />
@@ -26,69 +33,69 @@
       <Button fx:id="btnFinalizarVenda" layoutX="224.0" layoutY="358.0" mnemonicParsing="false" onAction="#salvar" prefHeight="25.0" prefWidth="99.0" text="Finalizar Venda" />
       <Button fx:id="btnCancelaVenda" layoutX="123.0" layoutY="358.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="99.0" text="Cancelar Venda" />
       <Button fx:id="btnCancelaItem" layoutX="22.0" layoutY="358.0" mnemonicParsing="false" onAction="#removerUltimoItem" prefHeight="25.0" prefWidth="99.0" text="Cancelar Item" />
-      <Label layoutX="25.0" layoutY="14.0" text="Módulo">
+      <Label layoutX="25.0" layoutY="14.0" text="Módulo" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="95.0" layoutY="19.0" text="de vendas" />
-      <Label layoutX="25.0" layoutY="59.0" text="Produto:" />
-      <Label layoutX="197.0" layoutY="59.0" text="Qnt:" />
-      <Label layoutX="389.0" layoutY="100.0" style="-fx-font-weight: bolder;" text="Código: " textFill="#1049a4">
+      <Label layoutX="95.0" layoutY="19.0" text="de vendas" textFill="WHITE" />
+      <Label layoutX="25.0" layoutY="67.0" text="Produto:" />
+      <Label layoutX="197.0" layoutY="67.0" text="Qnt:" />
+      <Label layoutX="389.0" layoutY="100.0" style="-fx-font-weight: bolder;" text="Código: " textFill="#2980b9">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="327.0" layoutY="132.0" style="-fx-font-weight: bolder;" text="Preço Unitário: " textFill="#1049a4">
+      <Label layoutX="327.0" layoutY="132.0" style="-fx-font-weight: bolder;" text="Preço Unitário: " textFill="#2980b9">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="377.0" layoutY="164.0" style="-fx-font-weight: bolder;" text="Subtotal:" textFill="#1049a4">
+      <Label layoutX="377.0" layoutY="164.0" style="-fx-font-weight: bolder;" text="Subtotal:" textFill="#2980b9">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="390.0" layoutY="274.0" style="-fx-font-weight: bolder;" text="TOTAL:" textFill="#da2f2f">
+      <Label layoutX="390.0" layoutY="274.0" style="-fx-font-weight: bolder;" text="TOTAL:" textFill="#c0392b">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="375.0" layoutY="194.0" prefHeight="27.0" prefWidth="110.0" style="-fx-font-weight: bolder;" text="Dinheiro:" textFill="#1049a4">
+      <Label layoutX="375.0" layoutY="194.0" prefHeight="27.0" prefWidth="110.0" style="-fx-font-weight: bolder;" text="Dinheiro:" textFill="#2980b9">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="labelPrecoTotal" layoutX="512.0" layoutY="266.0" style="-fx-font-weight: bolder; -fx-font-size: 29px;" text="0.00" textFill="#da2f2f">
+      <Label fx:id="labelPrecoTotal" layoutX="512.0" layoutY="266.0" style="-fx-font-weight: bolder; -fx-font-size: 29px;" text="0.00" textFill="#c0392b">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="464.0" layoutY="266.0" style="-fx-font-weight: bolder; -fx-font-size: 29px;" text="R$" textFill="#da2f2f">
+      <Label layoutX="464.0" layoutY="266.0" style="-fx-font-weight: bolder; -fx-font-size: 29px;" text="R$" textFill="#c0392b">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="392.0" layoutY="226.0" prefHeight="27.0" prefWidth="65.0" style="-fx-font-weight: bolder;" text="Cartão:" textFill="#1049a4">
+      <Label layoutX="392.0" layoutY="226.0" prefHeight="27.0" prefWidth="65.0" style="-fx-font-weight: bolder;" text="Cartão:" textFill="#2980b9">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="388.0" layoutY="319.0" style="-fx-font-weight: bolder;" text="TROCO:" textFill="#da2f2f">
+      <Label layoutX="388.0" layoutY="319.0" style="-fx-font-weight: bolder;" text="TROCO:" textFill="#c0392b">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="labelTroco" layoutX="512.0" layoutY="311.0" style="-fx-font-weight: bolder; -fx-font-size: 29px;" text="0.00" textFill="#da2f2f">
+      <Label fx:id="labelTroco" layoutX="512.0" layoutY="311.0" style="-fx-font-weight: bolder; -fx-font-size: 29px;" text="0.00" textFill="#c0392b">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="464.0" layoutY="311.0" style="-fx-font-weight: bolder; -fx-font-size: 29px;" text="R$" textFill="#da2f2f">
+      <Label layoutX="464.0" layoutY="311.0" style="-fx-font-weight: bolder; -fx-font-size: 29px;" text="R$" textFill="#c0392b">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ComboBox fx:id="comboBoxVendedores" layoutX="422.0" layoutY="55.0" prefHeight="25.0" prefWidth="118.0" promptText="Vendedor" />
+      <ComboBox fx:id="comboBoxVendedores" layoutX="422.0" layoutY="63.0" prefHeight="25.0" prefWidth="118.0" promptText="Vendedor" />
    </children>
 </AnchorPane>

@@ -5,30 +5,37 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="empresa.controller.FXMLMantemProdutoController">
    <children>
+      <ImageView fitHeight="54.0" fitWidth="600.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/header.png" />
+         </image>
+      </ImageView>
       <Button layoutX="457.0" layoutY="360.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
       <Button layoutX="514.0" layoutY="360.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
       <Button layoutX="395.0" layoutY="360.0" mnemonicParsing="false" onAction="#limpaTela" text="Limpar" />
       <ComboBox fx:id="comboBoxProdutos" layoutX="14.0" layoutY="292.0" prefHeight="25.0" prefWidth="431.0" promptText="Produtos" />
       <Button layoutX="448.0" layoutY="292.0" mnemonicParsing="false" onAction="#load" prefHeight="25.0" prefWidth="62.0" text="Carregar" />
       <Button layoutX="515.0" layoutY="292.0" mnemonicParsing="false" onAction="#apagar" prefHeight="25.0" prefWidth="62.0" text="Apagar" textFill="#d72727" />
-      <Label layoutX="25.0" layoutY="14.0" text="Módulo">
+      <Label layoutX="25.0" layoutY="14.0" text="Módulo" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Label>
-      <Label layoutX="95.0" layoutY="19.0" text="de produtos" />
-      <Label layoutX="14.0" layoutY="94.0" text="Nome:" />
-      <TextField fx:id="textFieldNome" layoutX="75.0" layoutY="90.0" prefHeight="25.0" prefWidth="495.0" />
-      <Label layoutX="14.0" layoutY="136.0" text="Quantidade mínima: " />
-      <TextField fx:id="textFieldQtdMinima" layoutX="131.0" layoutY="132.0" prefHeight="25.0" prefWidth="148.0" />
+      <Label layoutX="95.0" layoutY="19.0" text="de produtos" textFill="WHITE" />
+      <Label layoutX="14.0" layoutY="87.0" text="Nome:" />
+      <TextField fx:id="textFieldNome" layoutX="75.0" layoutY="83.0" prefHeight="25.0" prefWidth="507.0" />
+      <Label layoutX="14.0" layoutY="129.0" text="Quantidade mínima: " />
+      <TextField fx:id="textFieldQtdMinima" layoutX="131.0" layoutY="125.0" prefHeight="25.0" prefWidth="150.0" />
       <Label layoutX="291.0" layoutY="136.0" text="Quantidade em estoque:" />
-      <TextField fx:id="textFieldQtdEstoque" layoutX="432.0" layoutY="132.0" prefHeight="25.0" prefWidth="138.0" />
-      <Separator layoutX="98.0" layoutY="77.0" prefHeight="3.0" prefWidth="483.0" />
-      <Label layoutX="14.0" layoutY="68.0" text="Dados pessoais" />
+      <TextField fx:id="textFieldQtdEstoque" layoutX="432.0" layoutY="125.0" prefHeight="25.0" prefWidth="150.0" />
+      <Separator layoutX="98.0" layoutY="68.0" prefHeight="3.0" prefWidth="483.0" />
+      <Label layoutX="14.0" layoutY="58.0" text="Dados pessoais" />
    </children>
 </AnchorPane>
