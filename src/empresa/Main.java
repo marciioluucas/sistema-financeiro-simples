@@ -28,7 +28,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
         
-        stage.setTitle("SUPERFOX v1.0");
+        stage.setTitle("SUPERFOX v1.0 Pré Alpha");
         Image icone = new Image(
                 getClass().
                    getResourceAsStream(

@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="empresa.controller.FXMLMantemFuncionarioController">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="empresa.controller.FXMLMantemFuncionarioController">
    <children>
-      <Button layoutX="458.0" layoutY="345.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
-      <Button layoutX="515.0" layoutY="345.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
-      <Button layoutX="395.0" layoutY="345.0" mnemonicParsing="false" onAction="#limpaTela" text="Limpar" />
+      <Button layoutX="457.0" layoutY="360.0" mnemonicParsing="false" onAction="#salvar" text="Salvar" />
+      <Button layoutX="514.0" layoutY="360.0" mnemonicParsing="false" onAction="#cancelar" text="Cancelar" />
+      <Button layoutX="395.0" layoutY="360.0" mnemonicParsing="false" onAction="#limpaTela" text="Limpar" />
       <ComboBox fx:id="comboBoxFuncionarios" layoutX="14.0" layoutY="292.0" prefHeight="25.0" prefWidth="431.0" promptText="Funcionarios" />
       <Button layoutX="448.0" layoutY="292.0" mnemonicParsing="false" onAction="#load" prefHeight="25.0" prefWidth="62.0" text="Carregar" />
       <Button layoutX="515.0" layoutY="292.0" mnemonicParsing="false" onAction="#apagar" prefHeight="25.0" prefWidth="62.0" text="Apagar" textFill="#d72727" />
@@ -26,9 +28,9 @@
       <ComboBox fx:id="comboPais" layoutX="79.0" layoutY="204.0" prefHeight="25.0" prefWidth="114.0" promptText="Selecione" />
       <TextField fx:id="textFieldCEP" layoutX="452.0" layoutY="237.0" prefHeight="25.0" prefWidth="128.0" />
       <Label layoutX="420.0" layoutY="241.0" text="CEP:" />
-      <Label layoutX="13.0" layoutY="241.0" text="Bairro:" />
-      <Label layoutX="11.0" layoutY="175.0" text="Endereço:" />
-      <Label layoutX="12.0" layoutY="208.0" text="País:" />
+      <Label layoutX="14.0" layoutY="241.0" text="Bairro:" />
+      <Label layoutX="14.0" layoutY="175.0" text="Endereço:" />
+      <Label layoutX="14.0" layoutY="208.0" text="País:" />
       <Label layoutX="226.0" layoutY="208.0" text="UF:" />
       <Label layoutX="381.0" layoutY="208.0" text="Cidade:" />
       <Separator layoutX="97.0" layoutY="67.0" prefHeight="3.0" prefWidth="483.0" />
@@ -39,13 +41,13 @@
          </font>
       </Label>
       <Label layoutX="91.0" layoutY="19.0" text="de funcionários" />
-      <Label layoutX="11.0" layoutY="142.0" text="Dados do endereço" />
-      <Separator layoutX="117.0" layoutY="151.0" prefHeight="3.0" prefWidth="463.0" />
-      <Label layoutX="16.0" layoutY="88.0" text="Nome:" />
+      <Label layoutX="14.0" layoutY="147.0" text="Dados do endereço" />
+      <Separator layoutX="119.0" layoutY="156.0" prefHeight="3.0" prefWidth="461.0" />
+      <Label layoutX="14.0" layoutY="88.0" text="Nome:" />
       <TextField fx:id="textFieldNome" layoutX="80.0" layoutY="84.0" prefHeight="25.0" prefWidth="339.0" />
-      <TextField fx:id="textFieldCPF" layoutX="481.0" layoutY="84.0" prefHeight="25.0" prefWidth="104.0" />
+      <TextField fx:id="textFieldCPF" layoutX="477.0" layoutY="84.0" prefHeight="25.0" prefWidth="104.0" />
       <Label layoutX="447.0" layoutY="88.0" text="CPF:" />
-      <Label layoutX="16.0" layoutY="119.0" text="Cargo:" />
-      <ComboBox fx:id="comboBoxCargos" layoutX="80.0" layoutY="115.0" prefWidth="150.0" promptText="Selecione" />
+      <Label layoutX="14.0" layoutY="121.0" text="Cargo:" />
+      <ComboBox fx:id="comboBoxCargos" layoutX="80.0" layoutY="117.0" prefWidth="150.0" promptText="Selecione" />
    </children>
 </AnchorPane>

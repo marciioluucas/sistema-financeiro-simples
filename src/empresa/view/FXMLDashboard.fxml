@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="empresa.controller.FXMLDashboardController">
+<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="empresa.controller.FXMLDashboardController">
    <children>
-      <Label layoutX="76.0" layoutY="258.0" text="Selo de qualidade delicia" />
-      <ImageView fitHeight="195.0" fitWidth="200.0" layoutX="42.0" layoutY="101.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../resources/hm.jpg" />
-         </image>
-      </ImageView>
       <Label fx:id="contagemProdutos" layoutX="565.0" layoutY="181.0" style="-fx-font-weight: bolder;" text="0" textFill="#0f0e8c">
          <font>
             <Font size="19.0" />
@@ -57,6 +50,11 @@
          </font>
       </Label>
       <Separator layoutY="352.0" prefHeight="17.0" prefWidth="600.0" />
-      <Label layoutX="69.0" layoutY="369.0" text="Feito com &lt;3 por Luke Idea - www.lukeidea.com + Xibimba LABS - www.xibimbinha.org" />
+      <Label layoutX="287.0" layoutY="369.0" prefHeight="17.0" prefWidth="269.0" text="Feito com &lt;3 por Luke Idea - www.lukeidea.com" />
+      <ImageView fitHeight="403.0" fitWidth="252.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/superfox-logo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
