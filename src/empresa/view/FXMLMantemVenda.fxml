@@ -13,8 +13,11 @@
       <ComboBox fx:id="comboBoxProdutos" layoutX="74.0" layoutY="55.0" prefHeight="25.0" prefWidth="110.0" promptText="Selecione" />
       <TextField fx:id="textFieldQuantidade" layoutX="222.0" layoutY="55.0" prefHeight="25.0" prefWidth="54.0" />
       <ComboBox fx:id="comboBoxClientes" layoutX="289.0" layoutY="55.0" prefHeight="25.0" prefWidth="118.0" promptText="Cliente" />
-      <Button layoutX="554.0" layoutY="55.0" mnemonicParsing="false" onAction="#adicionarProduto" prefHeight="25.0" prefWidth="29.0" text="+" />
-      <TextArea fx:id="textAreaNf" editable="false" layoutX="22.0" layoutY="100.0" prefHeight="251.0" prefWidth="300.0" />
+      <Button fx:id="btnAddItem" layoutX="554.0" layoutY="55.0" mnemonicParsing="false" onAction="#adicionarProduto" prefHeight="25.0" prefWidth="29.0" text="+" />
+      <TextArea fx:id="textAreaNf" editable="false" layoutX="22.0" layoutY="100.0" prefHeight="251.0" prefWidth="300.0">
+         <font>
+            <Font name="Consolas" size="12.0" />
+         </font></TextArea>
       <TextField fx:id="textFieldCodigo" layoutX="466.0" layoutY="101.0" prefHeight="25.0" prefWidth="118.0" />
       <TextField fx:id="textFieldPrecoUnitario" layoutX="466.0" layoutY="133.0" prefHeight="25.0" prefWidth="118.0" />
       <TextField fx:id="textFieldSubtotal" editable="false" layoutX="466.0" layoutY="165.0" prefHeight="25.0" prefWidth="118.0" />

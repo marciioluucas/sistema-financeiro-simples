@@ -123,10 +123,18 @@ public class ClienteDAO {
 
     public static boolean delete(Cliente c) throws SQLException {
         Statement stm = BancoDados.createConnection().createStatement();
+        try {
         String sql = "delete from clientes where pk_cliente =" + c.getPk_cliente();
         stm.execute(sql);
-        EnderecoDAO.delete(c.getEndereco(),"clientes_enderecos","pk_endereco");
+        try{
+            EnderecoDAO.delete(c.getEndereco(),"clientes_enderecos","pk_endereco");
+        } catch (Exception e) {
+            throw new SQLException("Erro ao tentar excluir o endereço do cliente: ", e.getMessage());
+        }
         return true;
+    } catch (SQLException e) {
+        throw new SQLException("Erro ao executar query: ", e.getCause());
+    }
     }
 
 

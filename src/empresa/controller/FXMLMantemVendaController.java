@@ -72,6 +72,8 @@ public class FXMLMantemVendaController implements Initializable {
 
     @FXML
     private Button btnFinalizarVenda;
+    @FXML
+    private Button btnAddItem;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -143,11 +145,12 @@ public class FXMLMantemVendaController implements Initializable {
         if (v.create()) {
             Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
             dialogoInfo.setTitle("Sucesso!");
-            dialogoInfo.setHeaderText("Cargo cadastrado com sucesso!");
+            dialogoInfo.setHeaderText("Venda cadastrada com sucesso!");
             dialogoInfo.setContentText("ID da venda cadastrada: " + v.getPk_venda());
             dialogoInfo.showAndWait();
 
         }
+        addRodapeNF();
         limpaTela();
     }
 
@@ -155,35 +158,35 @@ public class FXMLMantemVendaController implements Initializable {
     private void escreveNF(boolean addItem) {
         if (textAreaNf.getText().equals("")) {
             textAreaNf.setText(
-                    "           *** SUPERMERCADO DO XIBIMBA ***\n" +
-                            "              Sistema do Marcinho Bioca\n" +
-                            "            IF Goiano - Campus Morrinhos\n" +
+                    "     *** SUPERMERCADO DO XIBIMBA ***     \n" +
+                            "        Sistema do Marcinho Bioca        \n" +
+                            "      IF Goiano - Campus Morrinhos       \n" +
                             " CNPJ: 05.055.202/0007-03\n" +
                             " IE: 10.436.561-7\n" +
-                            " --------------------------------------------------------\n" +
-                            " " + Datas.retornaData(new Date()) + "                 CCF: 050719    COO:071734\n" +
-                            "                     CUPOM FISCAL\n" +
-                            " ITEM  CODIGO   DESCRIÇÃO     QTD   VL ITEM( R$)\n" +
-                            " --------------------------------------------------------\n");
+                            " ________________________________________\n"  +
+                            " " + Datas.retornaData(new Date()) + "  CCF: 050719    COO:071734\n" +
+                            "               CUPOM FISCAL              \n" +
+                            " ITEM CODIGO DESCRIÇÃO   QTD VL ITEM( R$)\n" +
+                            " ________________________________________\n" );
         }
         String strToConcaten = "";
         if (addItem) {
-            strToConcaten = v.getItens().size() + " " + i.getProduto().getPk_produto() + " " + i.getProduto().getNome() + "   " + i.getQtd() + "       " + i.getValorUnitario() + "\n";
+            strToConcaten = " " + v.getItens().size() + " " + i.getProduto().getPk_produto() + " " + i.getProduto().getNome() + "   " + i.getQtd() + "   x   " + i.getValorUnitario() + "\n";
             textAreaNf.setText(textAreaNf.getText() + strToConcaten);
         } else {
             textAreaNf.setText(
-                    "           *** SUPERMERCADO DO XIBIMBA ***\n" +
-                            "              Sistema do Marcinho Bioca\n" +
-                            "            IF Goiano - Campus Morrinhos\n" +
+                    "     *** SUPERMERCADO DO XIBIMBA ***     \n" +
+                            "        Sistema do Marcinho Bioca        \n" +
+                            "      IF Goiano - Campus Morrinhos       \n" +
                             " CNPJ: 05.055.202/0007-03\n" +
                             " IE: 10.436.561-7\n" +
-                            " --------------------------------------------------------\n" +
-                            " " + Datas.retornaData(new Date()) + "                 CCF: 050719    COO:071734\n" +
-                            "                     CUPOM FISCAL\n" +
-                            " ITEM  CODIGO   DESCRIÇÃO     QTD   VL ITEM( R$)\n" +
-                            " --------------------------------------------------------\n");
+                            " ________________________________________\n" +
+                            " " + Datas.retornaData(new Date()) + "  CCF: 050719    COO:071734\n" +
+                            "               CUPOM FISCAL              \n" +
+                            " ITEM CODIGO DESCRIÇÃO   QTD VL ITEM( R$)\n" +
+                            " ________________________________________\n");
             for (Item item : v.getItens()) {
-                strToConcaten = (v.getItens().indexOf(item) + 1) + " " + item.getProduto().getPk_produto() + " " + item.getProduto().getNome() + "   " + item.getQtd() + "       " + item.getValorUnitario() + "\n";
+                strToConcaten = (" " + v.getItens().indexOf(item) + 1) + " " + item.getProduto().getPk_produto() + " " + item.getProduto().getNome() + "   " + item.getQtd() + "   x   " + item.getValorUnitario() + "\n";
                 textAreaNf.setText(textAreaNf.getText() + strToConcaten);
             }
         }
@@ -194,10 +197,10 @@ public class FXMLMantemVendaController implements Initializable {
     @FXML
     public void somaMetodosPagamento() {
         if (textFieldDinheiro.getText().equals("")) {
-            textFieldDinheiro.setText("0.00");
+            textFieldDinheiro.setText("0");
         }
         if (textFieldCartao.getText().equals("")) {
-            textFieldCartao.setText("0.00");
+            textFieldCartao.setText("0");
         }
         labelTroco.setText(
                 String.valueOf(
@@ -223,4 +226,23 @@ public class FXMLMantemVendaController implements Initializable {
     }
 
 
+    private void addRodapeNF() {
+        String condicaoDinheiro =
+                !textFieldDinheiro.getText().equals("0") ?
+                        "Dinheiro:   R$" + textFieldDinheiro.getText() + "\n" : "";
+        String condicaoCartao =
+                !textFieldCartao.getText().equals("0") ?
+                        "Cartão:     R$" + textFieldCartao.getText() + "\n" : "";
+
+        String condicaoTroco  =
+                !textFieldCartao.getText().equals("0") ?
+                        "Troco:      R$" + labelTroco.getText() + "\n" : "";
+        textAreaNf.setText(textAreaNf.getText() +
+                "                        _________________\n" +
+                "TOTAL       R$                " + labelPrecoTotal.getText() +"\n"+
+                condicaoDinheiro+condicaoCartao+condicaoTroco+
+                " ________________________________________\n"+
+                " NOTA DE ZUEIRA, NÃO VALIDA: FEITA POR:  \n"+
+                "      MÁRCIO LUCAS R OLIVEIRA -> <3");
+    }
 }

@@ -15,7 +15,7 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author L
+ * @author Marcinho
  */
 public class Main extends Application {
     
@@ -28,7 +28,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
         
-        stage.setTitle("Gerenciamento de empresa v1.0");
+        stage.setTitle("SUPERFOX v1.0");
         Image icone = new Image(
                 getClass().
                    getResourceAsStream(
