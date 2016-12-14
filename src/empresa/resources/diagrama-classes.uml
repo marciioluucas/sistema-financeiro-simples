@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>empresa</OriginalElement>
+  <nodes>
+    <node x="158.0" y="148.0">empresa.view</node>
+    <node x="0.0" y="74.0">empresa.resources</node>
+    <node x="0.0" y="148.0">empresa.model</node>
+    <node x="141.0" y="222.0">empresa.Main</node>
+    <node x="0.0" y="0.0">empresa.controller</node>
+    <node x="0.0" y="222.0">empresa.util</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="130.5" y="125.5" />
+  <SelectedNodes>
+    <node>empresa.view</node>
+  </SelectedNodes>
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>19b85cac-6d5c-461f-8172-3b2b16fef3cd</OriginalElement>
+  <nodes>
+    <node x="514.0" y="157.0">19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.clientes</node>
+    <node x="571.0" y="314.0">19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.clientes_enderecos</node>
+    <node x="613.375" y="581.0">19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.vendas_itens</node>
+    <node x="1014.5" y="581.0">19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.compras_itens</node>
+    <node x="1409.25" y="314.0">19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.fornecedores_enderecos</node>
+    <node x="325.0" y="347.0">19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.vendas</node>
+    <node x="896.0" y="358.0">19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.produtos</node>
+    <node x="175.5" y="0.0">19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.cargos</node>
+    <node x="149.5" y="146.0">19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.funcionarios</node>
+    <node x="1252.5" y="570.0">19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.financeiros_saidas</node>
+    <node x="1175.25" y="358.0">19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.compras</node>
+    <node x="0.0" y="314.0">19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.funcionarios_enderecos</node>
+    <node x="199.75" y="570.0">19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.financeiros_entradas</node>
+    <node x="1314.5" y="157.0">19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.fornecedores</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.funcionarios_enderecos" target="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.funcionarios">
+      <point x="0.0" y="-103.0" />
+      <point x="152.5" y="289.0" />
+      <point x="208.25" y="289.0" />
+      <point x="-58.75" y="59.0" />
+    </edge>
+    <edge source="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.funcionarios" target="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.cargos">
+      <point x="0.0" y="-59.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.vendas" target="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.clientes">
+      <point x="56.5" y="-70.0" />
+      <point x="494.5" y="289.0" />
+      <point x="561.5" y="289.0" />
+      <point x="-47.5" y="48.0" />
+    </edge>
+    <edge source="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.compras_itens" target="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.compras">
+      <point x="54.5" y="-70.0" />
+      <point x="1178.0" y="545.0" />
+      <point x="1228.75" y="545.0" />
+      <point x="-53.5" y="59.0" />
+    </edge>
+    <edge source="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.fornecedores_enderecos" target="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.fornecedores">
+      <point x="0.0" y="-103.0" />
+      <point x="1561.75" y="289.0" />
+      <point x="1475.75" y="289.0" />
+      <point x="53.75" y="48.0" />
+    </edge>
+    <edge source="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.vendas" target="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.funcionarios">
+      <point x="-56.5" y="-70.0" />
+      <point x="381.5" y="289.0" />
+      <point x="325.75" y="289.0" />
+      <point x="58.75" y="59.0" />
+    </edge>
+    <edge source="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.clientes_enderecos" target="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.clientes">
+      <point x="0.0" y="-103.0" />
+      <point x="723.5" y="289.0" />
+      <point x="656.5" y="289.0" />
+      <point x="47.5" y="48.0" />
+    </edge>
+    <edge source="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.vendas_itens" target="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.vendas">
+      <point x="-54.5" y="-70.0" />
+      <point x="667.875" y="545.0" />
+      <point x="494.5" y="545.0" />
+      <point x="56.5" y="70.0" />
+    </edge>
+    <edge source="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.financeiros_entradas" target="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.vendas">
+      <point x="0.0" y="-81.0" />
+      <point x="333.75" y="545.0" />
+      <point x="381.5" y="545.0" />
+      <point x="-56.5" y="70.0" />
+    </edge>
+    <edge source="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.compras_itens" target="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.produtos">
+      <point x="-54.5" y="-70.0" />
+      <point x="1069.0" y="545.0" />
+      <point x="1058.75" y="545.0" />
+      <point x="54.25" y="59.0" />
+    </edge>
+    <edge source="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.financeiros_saidas" target="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.compras">
+      <point x="0.0" y="-81.0" />
+      <point x="1386.5" y="545.0" />
+      <point x="1335.75" y="545.0" />
+      <point x="53.5" y="59.0" />
+    </edge>
+    <edge source="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.vendas_itens" target="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.produtos">
+      <point x="54.5" y="-70.0" />
+      <point x="776.875" y="545.0" />
+      <point x="950.25" y="545.0" />
+      <point x="-54.25" y="59.0" />
+    </edge>
+    <edge source="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.compras" target="19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.fornecedores">
+      <point x="0.0" y="-59.0" />
+      <point x="1282.25" y="289.0" />
+      <point x="1368.25" y="289.0" />
+      <point x="-53.75" y="48.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.4946808510638298" x="857.5" y="366.0" />
+  <SelectedNodes>
+    <node>19b85cac-6d5c-461f-8172-3b2b16fef3cd.TABLE:empresa.public.fornecedores</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+  </Categories>
+</Diagram>
+
