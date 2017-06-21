@@ -1,7 +1,6 @@
 package empresa.controller;
 
-import empresa.model.CargoDAO;
-import empresa.model.FuncionarioDAO;
+import empresa.model.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,7 +16,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * Created by Marcio on 06/12/2016.
+ * Created by IFGoiano on 06/12/2016.
  */
 public class FXMLMantemFuncionarioController implements Initializable{
     Funcionario f;
@@ -50,6 +49,9 @@ public class FXMLMantemFuncionarioController implements Initializable{
 
     @FXML
     private TextField textFieldCEP;
+
+    @FXML
+    private TextField textFieldSenha;
 
     @FXML
     private ComboBox<Cargo> comboBoxCargos;

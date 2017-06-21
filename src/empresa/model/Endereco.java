@@ -1,8 +1,5 @@
-package empresa.controller;
+package empresa.model;
 
-import empresa.model.EnderecoDAO;
-
-import java.sql.SQLException;
 
 public class Endereco {
     private String logradouro;    
@@ -15,7 +12,7 @@ public class Endereco {
     private int pk_endereco;
     private int fk;
 
-    Endereco() {
+    public Endereco() {
 
     }
 

@@ -7,12 +7,8 @@ package empresa.controller;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
-import empresa.model.DAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -41,8 +37,6 @@ public class FXMLTelaPrincipalController implements Initializable {
     @FXML
     private AnchorPane anchorPaneTelas;
 
-    @FXML
-    private Label contagemFornecedores;
 
     /**
      * Initializes the controller class.
@@ -67,7 +61,7 @@ public class FXMLTelaPrincipalController implements Initializable {
     }
 
     public void abraTelaMantemProduto() throws IOException {
-        AnchorPane a = FXMLLoader.load(getClass().getResource("/empresa/view/FXMLMantemProduto.fxml"));
+        AnchorPane a = FXMLLoader.load(getClass().getResource("/empresa/view/FXMLMantemImovel.fxml"));
         anchorPaneTelas.getChildren().setAll(a);
     }
 
@@ -78,21 +72,6 @@ public class FXMLTelaPrincipalController implements Initializable {
 
     public void abraTelaMantemFuncionario() throws IOException {
         AnchorPane a = FXMLLoader.load(getClass().getResource("/empresa/view/FXMLMantemFuncionario.fxml"));
-        anchorPaneTelas.getChildren().setAll(a);
-    }
-
-    public void abraTelaMantemFornecedor() throws IOException {
-        AnchorPane a = FXMLLoader.load(getClass().getResource("/empresa/view/FXMLMantemFornecedor.fxml"));
-        anchorPaneTelas.getChildren().setAll(a);
-    }
-
-    public void abraTelaMantemVenda() throws IOException {
-        AnchorPane a = FXMLLoader.load(getClass().getResource("/empresa/view/FXMLMantemVenda.fxml"));
-        anchorPaneTelas.getChildren().setAll(a);
-    }
-
-    public void abraTelaMantemVendaAdmin() throws IOException {
-        AnchorPane a = FXMLLoader.load(getClass().getResource("/empresa/view/FXMLMantemVendaAdmin.fxml"));
         anchorPaneTelas.getChildren().setAll(a);
     }
 

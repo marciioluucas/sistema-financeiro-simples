@@ -16,7 +16,7 @@ import javafx.stage.StageStyle;
 
 /**
  *
- * @author Marcinho
+ * @author Lukee
  */
 public class Main extends Application {
     
@@ -32,7 +32,7 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.show();
         
-        stage.setTitle("SUPERFOX v1.0 Pré Alpha");
+        stage.setTitle("Sistema imobiliario simples");
         Image icone = new Image(
                 getClass().
                    getResourceAsStream(

@@ -5,9 +5,6 @@
  */
 package empresa.model;
 
-import empresa.controller.Cliente;
-import empresa.controller.Endereco;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -18,7 +15,7 @@ import java.util.logging.Logger;
 /**
  * @author L
  */
-public class ClienteDAO {
+public class ClienteDAO extends DAO{
 
     private ClienteDAO() {
     }
@@ -32,7 +29,7 @@ public class ClienteDAO {
 
 
             String sql =
-                    "insert into clientes (nome, cpf) values ('" +
+                    "insert into cliente (nome, cpf) values ('" +
                             c.getNome() + "','" +
                             c.getCpf() + "')";
 
@@ -42,7 +39,7 @@ public class ClienteDAO {
             int key = rs.getInt(1);
             c.setPk_cliente(key);
             try {
-                EnderecoDAO.create(c.getEndereco(),"clientes_enderecos","fk_cliente", c.getPk_cliente());
+                EnderecoDAO.create(c.getEndereco(),"cliente_endereco","fk_cliente", c.getPk_cliente());
                 return true;
 
             } catch (Exception e) {
@@ -62,12 +59,12 @@ public class ClienteDAO {
                     BancoDados.createConnection().
                             createStatement();
 
-            String sql = "select * from clientes where pk_cliente =" + pk_cliente;
+            String sql = "select * from cliente where pk_cliente =" + pk_cliente;
 
             ResultSet rs = stm.executeQuery(sql);
             rs.next();
 
-            Endereco e = EnderecoDAO.retreaveBy("clientes_enderecos","fk_cliente", pk_cliente);
+            Endereco e = EnderecoDAO.retreaveBy("cliente_endereco","fk_cliente", pk_cliente);
             return new Cliente(pk_cliente,
                     rs.getString("nome"),
                     rs.getString("cpf"),
@@ -86,12 +83,12 @@ public class ClienteDAO {
                     BancoDados.createConnection().
                             createStatement();
 
-            String sql = "SELECT * FROM clientes";
+            String sql = "SELECT * FROM cliente";
 
             ResultSet rs = stm.executeQuery(sql);
             ArrayList<Cliente> cs = new ArrayList<>();
             while (rs.next()) {
-                Endereco e = EnderecoDAO.retreaveBy("clientes_enderecos","fk_cliente",rs.getInt("pk_cliente"));
+                Endereco e = EnderecoDAO.retreaveBy("cliente_endereco","fk_cliente", rs.getInt("pk_cliente"));
                 cs.add(new Cliente(
                         rs.getInt("pk_cliente"),
                         rs.getString("nome"),
@@ -111,9 +108,9 @@ public class ClienteDAO {
     public static boolean update(Cliente c) throws SQLException {
         try {
             Statement stm = BancoDados.createConnection().createStatement();
-            String sql = "update clientes set nome='" + c.getNome() + "'," +
+            String sql = "update cliente set nome='" + c.getNome() + "'," +
                     "cpf ='" + c.getCpf() + "' where pk_cliente = " + c.getPk_cliente();
-            EnderecoDAO.update(c.getEndereco(),"clientes_enderecos","pk_endereco");
+            EnderecoDAO.update(c.getEndereco(),"cliente_endereco","pk_endereco");
             stm.execute(sql);
             return true;
         } catch (SQLException e) {
@@ -124,10 +121,10 @@ public class ClienteDAO {
     public static boolean delete(Cliente c) throws SQLException {
         Statement stm = BancoDados.createConnection().createStatement();
         try {
-        String sql = "delete from clientes where pk_cliente =" + c.getPk_cliente();
+        String sql = "delete from cliente where pk_cliente =" + c.getPk_cliente();
         stm.execute(sql);
         try{
-            EnderecoDAO.delete(c.getEndereco(),"clientes_enderecos","pk_endereco");
+            EnderecoDAO.delete(c.getEndereco(),"cliente_endereco");
         } catch (Exception e) {
             throw new SQLException("Erro ao tentar excluir o endereço do cliente: ", e.getMessage());
         }

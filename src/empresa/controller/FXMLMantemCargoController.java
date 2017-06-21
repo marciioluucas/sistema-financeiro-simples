@@ -1,5 +1,6 @@
 package empresa.controller;
 
+import empresa.model.Cargo;
 import empresa.model.CargoDAO;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +18,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 /**
- * Created by Marcio on 05/12/2016.
+ * Created by IFGoiano on 05/12/2016.
  */
 public class FXMLMantemCargoController implements Initializable {
     Cargo c;

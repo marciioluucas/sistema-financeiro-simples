@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  *
  * @author L
  */
-public class BancoDados {
+public class BancoDados extends BDConfig {
 
     private static Connection conn;
     

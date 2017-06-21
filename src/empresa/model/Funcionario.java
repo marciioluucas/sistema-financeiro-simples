@@ -1,18 +1,15 @@
-package empresa.controller;
-
-import empresa.model.DAO;
-import empresa.model.FuncionarioDAO;
+package empresa.model;
 
 import java.sql.SQLException;
 
 /**
- * Created by Marcio on 02/12/2016.
+ * Created by IFGoiano on 02/12/2016.
  */
 public class Funcionario {
 
     private String nome;
     private String cpf;
-
+    private String senha;
     private int pk_funcionario;
     private Cargo cargo;
 
@@ -83,8 +80,16 @@ public class Funcionario {
         this.endereco = endereco;
     }
 
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
     public int contar() throws SQLException {
-        return DAO.contar("funcionarios","");
+        return DAO.contar("funcionario", "");
     }
 
     @Override

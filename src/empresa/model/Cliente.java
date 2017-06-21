@@ -1,8 +1,5 @@
 
-package empresa.controller;
-
-import empresa.model.ClienteDAO;
-import empresa.model.DAO;
+package empresa.model;
 
 import java.sql.SQLException;
 
@@ -85,7 +82,7 @@ public class Cliente {
     }
 
     public int contar() throws SQLException {
-        return DAO.contar("clientes","");
+        return DAO.contar("cliente","");
     }
 }
 

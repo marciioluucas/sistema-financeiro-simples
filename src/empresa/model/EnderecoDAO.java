@@ -5,8 +5,6 @@
  */
 package empresa.model;
 
-import empresa.controller.Endereco;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -17,17 +15,13 @@ import java.util.logging.Logger;
 /**
  * @author LUKE
  */
-public class EnderecoDAO {
+public class EnderecoDAO extends DAO{
 
     public static boolean create(Endereco objetoEndereco, String tabela, String fk, int valorFk) {
         try {
             Statement stm =
                     BancoDados.createConnection().
                             createStatement();
-            //INSERT INTO clientes_enderecos(
-            //pk_enderenco, fk_cliente, logradouro, bairro, cidade, estado,
-            //pais, cep)VALUES (?, ?, ?, ?, ?, ?, ?, ?);
-
 
             String sql =
                     "insert into "+tabela+" ("+fk+", logradouro, bairro, cidade, estado, pais, cep) values (" +
@@ -57,7 +51,7 @@ public class EnderecoDAO {
             Statement stm =
                     BancoDados.createConnection().
                             createStatement();
-            String sql = "Select * from clientes_enderecos where pk_endereco =" + pkEndereco;
+            String sql = "Select * from cliente_endereco where pk_endereco =" + pkEndereco;
             ResultSet rs = stm.executeQuery(sql);
             rs.next();
 
@@ -107,7 +101,7 @@ public class EnderecoDAO {
             Statement stm =
                     BancoDados.createConnection().
                             createStatement();
-            String sql = "SELECT * FROM clientes_enderecos";
+            String sql = "SELECT * FROM cliente_endereco";
             ResultSet rs = stm.executeQuery(sql);
 
             ArrayList<Endereco> e = new ArrayList<>();
@@ -130,14 +124,14 @@ public class EnderecoDAO {
         return null;
     }
 
-    public static void delete(Endereco objetoEndereco, String tabela, String pk) {
+    public static void delete(Endereco objetoEndereco, String tabela) {
 
         try {
             Statement stm =
                     BancoDados.createConnection().
                             createStatement();
 
-            String sql = "delete from "+tabela+" where "+pk+"="
+            String sql = "delete from "+tabela+" where pk_endereco="
                     + objetoEndereco.getPk_endereco();
             stm.execute(sql);
         } catch (SQLException ex) {

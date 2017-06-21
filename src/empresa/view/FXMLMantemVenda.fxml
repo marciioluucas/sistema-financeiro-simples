@@ -17,10 +17,10 @@
             <Image url="@../resources/header.png" />
          </image>
       </ImageView>
-      <ComboBox fx:id="comboBoxProdutos" layoutX="74.0" layoutY="63.0" prefHeight="25.0" prefWidth="110.0" promptText="Selecione" />
+      <ComboBox fx:id="comboBoxImoveis" layoutX="74.0" layoutY="63.0" prefHeight="25.0" prefWidth="110.0" promptText="Selecione" />
       <TextField fx:id="textFieldQuantidade" layoutX="222.0" layoutY="63.0" prefHeight="25.0" prefWidth="54.0" />
       <ComboBox fx:id="comboBoxClientes" layoutX="289.0" layoutY="63.0" prefHeight="25.0" prefWidth="118.0" promptText="Cliente" />
-      <Button fx:id="btnAddItem" layoutX="554.0" layoutY="63.0" mnemonicParsing="false" onAction="#adicionarProduto" prefHeight="25.0" prefWidth="29.0" text="+" />
+      <Button fx:id="btnAddItem" layoutX="554.0" layoutY="63.0" mnemonicParsing="false" onAction="#adicionarImovel" prefHeight="25.0" prefWidth="29.0" text="+" />
       <TextArea fx:id="textAreaNf" editable="false" layoutX="22.0" layoutY="100.0" prefHeight="251.0" prefWidth="300.0">
          <font>
             <Font name="Consolas" size="12.0" />

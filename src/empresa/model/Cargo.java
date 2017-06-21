@@ -1,9 +1,9 @@
-package empresa.controller;
+package empresa.model;
 
 import empresa.model.CargoDAO;
 
 /**
- * Created by Marcio on 01/12/2016.
+ * Created by IFGoiano on 01/12/2016.
  */
 public class Cargo {
     private int pk_cargo;

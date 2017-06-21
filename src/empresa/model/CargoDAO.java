@@ -1,7 +1,5 @@
 package empresa.model;
 
-import empresa.controller.Cargo;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -10,9 +8,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * Created by Marcio on 01/12/2016.
+ * Created by IFGoiano on 01/12/2016.
  */
-public class CargoDAO {
+public class CargoDAO extends DAO {
     public CargoDAO() {
 
     }
@@ -20,7 +18,7 @@ public class CargoDAO {
     public static boolean create(Cargo c) throws Exception {
         Statement stm = BancoDados.createConnection().createStatement();
         try {
-            String sql = "insert into cargos (nome, descricao)" +
+            String sql = "insert into cargo (nome, descricao)" +
                     "VALUES ('" + c.getNome() + "', '" + c.getDescricao() + "')";
             stm.execute(sql, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stm.getGeneratedKeys();
@@ -37,7 +35,7 @@ public class CargoDAO {
     public static boolean update(Cargo c) throws Exception {
         Statement stm = BancoDados.createConnection().createStatement();
         try {
-            String sql = "update cargos set nome='" + c.getNome() + "'," +
+            String sql = "update cargo set nome='" + c.getNome() + "'," +
                     "descricao='" + c.getDescricao() + "' " +
                     "where pk_cargo=" + c.getPk_cargo();
 
@@ -54,7 +52,7 @@ public class CargoDAO {
                     BancoDados.createConnection().
                             createStatement();
 
-            String sql = "select * from cargos where pk_cargo =" + pk_cargo;
+            String sql = "select * from cargo where pk_cargo =" + pk_cargo;
 
             ResultSet rs = stm.executeQuery(sql);
             rs.next();
@@ -77,7 +75,7 @@ public class CargoDAO {
                     BancoDados.createConnection().
                             createStatement();
 
-            String sql = "SELECT * FROM cargos";
+            String sql = "SELECT * FROM cargo";
 
             ResultSet rs = stm.executeQuery(sql);
             ArrayList<Cargo> cs = new ArrayList<>();
@@ -96,7 +94,7 @@ public class CargoDAO {
 
     public static boolean delete(Cargo c) throws SQLException {
         Statement stm = BancoDados.createConnection().createStatement();
-        String sql = "delete from cargos where pk_cargo =" + c.getPk_cargo();
+        String sql = "delete from cargo where pk_cargo =" + c.getPk_cargo();
         stm.execute(sql);
         return false;
     }

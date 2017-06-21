@@ -56,5 +56,7 @@
       <Label layoutX="447.0" layoutY="88.0" text="CPF:" />
       <Label layoutX="14.0" layoutY="121.0" text="Cargo:" />
       <ComboBox fx:id="comboBoxCargos" layoutX="80.0" layoutY="117.0" prefWidth="150.0" promptText="Selecione" />
+      <TextField fx:id="textFieldSenha" layoutX="293.0" layoutY="117.0" prefHeight="25.0" prefWidth="104.0" />
+      <Label layoutX="250.0" layoutY="121.0" text="Senha:" />
    </children>
 </AnchorPane>

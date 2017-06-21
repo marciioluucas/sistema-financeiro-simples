@@ -5,12 +5,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * Created by Marcio on 05/12/2016.
+ * Created by IFGoiano on 05/12/2016.
  */
 public class DAO {
-    DAO() {
 
-    }
 
     public static int contar(String tabela, String condicoes) throws SQLException{
         Statement stm = BancoDados.createConnection().createStatement();

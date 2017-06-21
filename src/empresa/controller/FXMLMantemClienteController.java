@@ -5,6 +5,7 @@
  */
 package empresa.controller;
 
+import empresa.model.Cliente;
 import empresa.model.ClienteDAO;
 
 import java.io.IOException;
@@ -13,6 +14,7 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import empresa.model.Endereco;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;

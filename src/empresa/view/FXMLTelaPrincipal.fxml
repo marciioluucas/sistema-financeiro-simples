@@ -21,13 +21,9 @@
               <items>
                 <MenuItem onAction="#abraTelaMantemCliente" text="Clientes" />
                   <MenuItem onAction="#abraTelaMantemCargo" text="Cargos" />
-                  <MenuItem mnemonicParsing="false" onAction="#abraTelaMantemFornecedor" text="Fornecedores" />
                   <MenuItem mnemonicParsing="false" onAction="#abraTelaMantemFuncionario" text="Funcionários" />
                   <SeparatorMenuItem mnemonicParsing="false" style="-fx-background-color: #3d3d3d;" />
-                  <MenuItem onAction="#abraTelaMantemProduto" text="Produtos" />
-                  <MenuItem mnemonicParsing="false" text="Compras" />
-                  <MenuItem mnemonicParsing="false" onAction="#abraTelaMantemVenda" text="Vendas" />
-                  <MenuItem mnemonicParsing="false" onAction="#abraTelaMantemVendaAdmin" text="Admin de vendas" />
+                  <MenuItem onAction="#abraTelaMantemProduto" text="Imoveis" />
               </items>
             </Menu>
          </menus>
